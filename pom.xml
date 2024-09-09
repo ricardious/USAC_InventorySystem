@@ -22,16 +22,19 @@
     </repositories>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.password4j/password4j -->
         <dependency>
             <groupId>com.password4j</groupId>
             <artifactId>password4j</artifactId>
             <version>1.8.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.miglayout/miglayout -->
         <dependency>
             <groupId>com.miglayout</groupId>
             <artifactId>miglayout</artifactId>
             <version>3.7.4</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jdesktop/timingframework -->
         <dependency>
             <groupId>org.jdesktop</groupId>
             <artifactId>timingframework</artifactId>
@@ -44,28 +47,17 @@
             <version>24-ea+5</version>
             <type>pom</type>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-media -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-media</artifactId>
-            <version>24-ea+5</version>
-        </dependency>
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>24-ea+5</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-graphics -->
+
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-media -->
         <dependency>
             <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>24-ea+5</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
+            <artifactId>javafx-media</artifactId>
             <version>24-ea+5</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.github.typhon0/AnimateFX -->

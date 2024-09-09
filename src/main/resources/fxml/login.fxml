@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="526.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ricardious.controllers.LoginController">
+   <children>
+      <BorderPane prefHeight="539.0" prefWidth="823.0" style="-fx-background-color: #fff;">
+         <left>
+            <Pane prefHeight="539.0" prefWidth="390.0" styleClass="linear-grad" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="243.0" fitWidth="259.0" layoutX="66.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logos/Logo_EscuelaHistoria.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="99.0" layoutY="364.0" prefHeight="64.0" prefWidth="192.0" text="Bienvenido a donde todo está bajo control" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </left>
+         <center>
+            <StackPane prefHeight="539.0" prefWidth="440.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <TextField fx:id="tfUser" layoutX="99.0" layoutY="235.0" prefHeight="35.0" prefWidth="250.0" promptText="Usuario" />
+                        <PasswordField fx:id="tfPass" layoutX="99.0" layoutY="296.0" prefHeight="35.0" prefWidth="250.0" promptText="Contraseña" />
+                        <Button fx:id="btnSignIn" layoutX="241.0" layoutY="384.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../css/style.css" text="Iniciar Sesión" />
+                        <Label fx:id="lblForgot" layoutX="77.0" layoutY="387.0" prefHeight="28.0" prefWidth="140.0" text="¿Olvidaste tu contraseña?" textFill="#717171" />
+                        <Label fx:id="lblForgot1" layoutX="147.0" layoutY="165.0" prefHeight="40.0" prefWidth="154.0" text="Iniciar Sesión">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="348.0" layoutY="24.0" prefHeight="20.0" prefWidth="31.0" spacing="10.0">
+                           <children>
+                              <ImageView fx:id="btnMinimize" fitHeight="25.0" fitWidth="40.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/boton-menos.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="btnClose" fitHeight="25.0" fitWidth="40.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/boton-cerrar.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+
+</AnchorPane>

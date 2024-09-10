@@ -24,9 +24,9 @@
                         <Image url="@../images/logos/Logo_EscuelaHistoria.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="99.0" layoutY="364.0" prefHeight="64.0" prefWidth="192.0" text="Bienvenido a donde todo está bajo control" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Label layoutX="99.0" layoutY="364.0" prefHeight="64.0" prefWidth="192.0" text="ID Y ENSEÑAD A TODOS" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="Gabriola" size="22.0" />
                      </font>
                   </Label>
                </children>

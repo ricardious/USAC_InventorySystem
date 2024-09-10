@@ -1,5 +1,6 @@
 package com.ricardious.controllers;
 
+import com.ricardious.dao.Database;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -8,8 +9,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import com.ricardious.dao.Database;
+
+import java.awt.event.ActionEvent;
 
 public class LoginController {
+
 
         @FXML
         private ImageView btnMinimize;
@@ -31,6 +36,12 @@ public class LoginController {
 
         @FXML
         private TextField tfUser;
+
+        @FXML
+        void SignIn(MouseEvent event) {
+
+            System.out.println("hola mundo");
+        }
 
         @FXML
         void handleMouseEvent(MouseEvent event) {

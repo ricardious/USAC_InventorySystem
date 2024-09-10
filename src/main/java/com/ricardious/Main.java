@@ -1,11 +1,15 @@
 package com.ricardious;
 
+import com.ricardious.dao.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+
+import static com.ricardious.dao.Database.myMethod;
 
 public class Main extends Application {
     private double xOffset = 0;
@@ -35,6 +39,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        myMethod();
         launch(args);
     }
 }

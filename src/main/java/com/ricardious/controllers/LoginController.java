@@ -1,27 +1,47 @@
 package com.ricardious.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+public class LoginController {
 
-public class LoginController implements Initializable {
+        @FXML
+        private ImageView btnMinimize;
 
-    @FXML
-    private Label label;
+        @FXML
+        private ImageView btnClose;
 
-    @FXML
-    public void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+        @FXML
+        private Button btnSignIn;
+
+        @FXML
+        private Label lblForgot;
+
+        @FXML
+        private Label lblForgot1;
+
+        @FXML
+        private PasswordField tfPass;
+
+        @FXML
+        private TextField tfUser;
+
+        @FXML
+        void handleMouseEvent(MouseEvent event) {
+            if (event.getSource() == btnClose) {
+                System.exit(0);
+            } else if (event.getSource() == btnMinimize) {
+                Stage stage = (Stage) btnMinimize.getScene().getWindow();
+                stage.setIconified(true);
+            }
+
+        }
+
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
-
-}

@@ -24,9 +24,9 @@
                         <Image url="@../images/logos/Logo_EscuelaHistoria.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="99.0" layoutY="364.0" prefHeight="64.0" prefWidth="192.0" text="ID Y ENSEÑAD A NEGRBERTH" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Label layoutX="99.0" layoutY="364.0" prefHeight="64.0" prefWidth="192.0" text="Bienvenido a donde todo está bajo control" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
-                        <Font name="Gabriola" size="25.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
                </children>
@@ -39,7 +39,7 @@
                      <children>
                         <TextField fx:id="tfUser" layoutX="99.0" layoutY="235.0" prefHeight="35.0" prefWidth="250.0" promptText="Usuario" />
                         <PasswordField fx:id="tfPass" layoutX="99.0" layoutY="296.0" prefHeight="35.0" prefWidth="250.0" promptText="Contraseña" />
-                        <Button fx:id="btnSignIn" layoutX="241.0" layoutY="384.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../css/style.css" text="Iniciar Sesión" />
+                        <Button fx:id="btnSignIn" layoutX="241.0" layoutY="384.0" mnemonicParsing="false" onMouseClicked="#SignIn" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../css/style.css" text="Iniciar Sesión" />
                         <Label fx:id="lblForgot" layoutX="77.0" layoutY="387.0" prefHeight="28.0" prefWidth="140.0" text="¿Olvidaste tu contraseña?" textFill="#717171" />
                         <Label fx:id="lblForgot1" layoutX="147.0" layoutY="165.0" prefHeight="40.0" prefWidth="154.0" text="Iniciar Sesión">
                            <font>
@@ -60,7 +60,7 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <Label fx:id="loginMessageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="84.0" prefHeight="49.0" prefWidth="271.0" styleClass="label-ricardo" stylesheets="@../css/style.css" text="Error" textAlignment="CENTER" visible="false" wrapText="true" />
+                        <Label fx:id="errorLBL" alignment="CENTER" contentDisplay="CENTER" layoutX="196.0" layoutY="348.0" textAlignment="CENTER" textFill="RED" />
                      </children>
                   </Pane>
                </children>

@@ -60,6 +60,7 @@
                               </ImageView>
                            </children>
                         </HBox>
+                        <Label fx:id="errorLBL" alignment="CENTER" contentDisplay="CENTER" layoutX="196.0" layoutY="348.0" textAlignment="CENTER" textFill="RED" />
                      </children>
                   </Pane>
                </children>

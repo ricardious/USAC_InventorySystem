@@ -1,6 +1,6 @@
 package com.ricardious.controllers;
 
-import com.ricardious.database.Database;
+import com.ricardious.database.DatabaseConnection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,9 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Objects;
 
 public class LoginController {
@@ -60,31 +58,37 @@ public class LoginController {
 
     @FXML
     void SignIn(MouseEvent event) {
-        if (btnSignIn.getText().equals("Iniciar Sesión")){
+            String user = tfUser.getText();
+            String password = tfPass.getText();
 
-            String User = tfUser.getText();
-            String Password = tfPass.getText();
-            Database connectNow = new Database();
-            Connection connectDB = connectNow.myConnection();
-            String verifyLogin = "SELECT * FROM usac_inventory.login WHERE Usuario = '" + User + "' AND Contraseña = '" + Password + "'";
-            try {
-                Statement statement = connectDB.createStatement();
-                ResultSet queryResult = statement.executeQuery(verifyLogin);
-                if (queryResult.next()) {
-                    errorLBL.setTextFill(Color.GREEN);
-                    errorLBL.setText("Login Correcto!");
-                } else {
-                    errorLBL.setText("Datos Incorrectos");
+            if (user.isEmpty() || password.isEmpty()) {
+                errorLBL.setText("Por favor, complete todos los campos.");
+                return;
+            }
+
+            DatabaseConnection connectNow = new DatabaseConnection();
+            String verifyLogin = "SELECT * FROM usac_inventory.login WHERE Usuario = ? AND Contraseña = ?";
+
+            try (Connection connectDB = connectNow.getConnection();
+                 PreparedStatement preparedStatement = connectDB.prepareStatement(verifyLogin)) {
+
+                preparedStatement.setString(1, user);
+                preparedStatement.setString(2, password);
+
+                try (ResultSet queryResult = preparedStatement.executeQuery()) {
+                    if (queryResult.next()) {
+                        errorLBL.setTextFill(Color.GREEN);
+                        errorLBL.setText("Login Correcto!");
+                    } else {
+                        errorLBL.setText("Datos Incorrectos");
+                    }
                 }
-
-
-            } catch (Exception e) {
+            } catch (SQLException e) {
+                errorLBL.setText("Error al intentar iniciar sesión. Intente de nuevo.");
                 e.printStackTrace();
             }
-        }
-
-
     }
+
 
     @FXML
     void handleMouseEvent(MouseEvent event) {
@@ -98,8 +102,8 @@ public class LoginController {
     }
 
     @FXML
-    public void Registro(){
-        btnSignIn1.setOnMouseClicked(event->toggleVisibility());
+    public void Registro() {
+        btnSignIn1.setOnMouseClicked(event -> toggleVisibility());
 
     }
 
@@ -107,7 +111,7 @@ public class LoginController {
         String texto;
         texto = btnSignIn1.getText();
 
-        if (Objects.equals(texto, "Registro")){
+        if (Objects.equals(texto, "Registro")) {
             btnSignIn1.setText("Regresar");
             btnSignIn.setText("Crear Usuario");
             tfUser.setVisible(false);

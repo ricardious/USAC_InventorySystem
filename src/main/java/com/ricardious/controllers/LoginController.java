@@ -1,30 +1,52 @@
 package com.ricardious.controllers;
 
+import animatefx.animation.FadeIn;
 import com.ricardious.database.DatabaseConnection;
+import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
-import java.sql.*;
-import java.util.Objects;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
+    @FXML
+    private ImageView btnBack;
 
     @FXML
     private ImageView btnMinimize;
 
     @FXML
+    private ImageView btnMinimize1;
+
+    @FXML
     private ImageView btnClose;
 
     @FXML
+    private ImageView btnClose1;
+
+    @FXML
     private Button btnSignIn;
+
+    @FXML
+    private Button btnSignUp;
 
     @FXML
     private Label lblForgot;
@@ -42,27 +64,29 @@ public class LoginController {
     private TextField tfUser;
 
     @FXML
-    private Label Rg;
+    private Pane pnlSignIn;
 
     @FXML
-    private TextField UR;
+    private Pane pnlSignUp;
+
+    private void hideErrorLabelAfterDelay() {
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(4), errorLBL);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.0);
+        fadeTransition.setOnFinished(event -> errorLBL.setVisible(false));
+        fadeTransition.play();
+    }
 
     @FXML
-    private TextField CC;
-
-    @FXML
-    private TextField CC1;
-
-    @FXML
-    private Button btnSignIn1;
-
-    @FXML
-    void SignIn(MouseEvent event) {
+    private void SignIn(MouseEvent event) {
+        if (event.getSource().equals(btnSignIn)) {
             String user = tfUser.getText();
             String password = tfPass.getText();
 
             if (user.isEmpty() || password.isEmpty()) {
                 errorLBL.setText("Por favor, complete todos los campos.");
+                errorLBL.setVisible(true);
+                hideErrorLabelAfterDelay();
                 return;
             }
 
@@ -82,57 +106,42 @@ public class LoginController {
                     } else {
                         errorLBL.setText("Datos Incorrectos");
                     }
+                    errorLBL.setVisible(true);
+                    hideErrorLabelAfterDelay();
                 }
             } catch (SQLException e) {
                 errorLBL.setText("Error al intentar iniciar sesión. Intente de nuevo.");
+                errorLBL.setVisible(true);
+                hideErrorLabelAfterDelay();
                 e.printStackTrace();
             }
+        }
     }
 
+    @FXML
+    private void handleButtonAction(javafx.event.ActionEvent event) {
+        if (event.getSource().equals(btnSignUp)) {
+
+            new FadeIn(pnlSignUp).play();
+            pnlSignUp.toFront();
+        }
+    }
 
     @FXML
-    void handleMouseEvent(MouseEvent event) {
-        if (event.getSource() == btnClose) {
+    private void handleMouseEvent(MouseEvent event) {
+        if (event.getSource() == btnClose || event.getSource() == btnClose1) {
             System.exit(0);
-        } else if (event.getSource() == btnMinimize) {
+        } else if (event.getSource() == btnMinimize || event.getSource() == btnMinimize1) {
             Stage stage = (Stage) btnMinimize.getScene().getWindow();
             stage.setIconified(true);
-        }
-
-    }
-
-    @FXML
-    public void Registro() {
-        btnSignIn1.setOnMouseClicked(event -> toggleVisibility());
-
-    }
-
-    private void toggleVisibility() {
-        String texto;
-        texto = btnSignIn1.getText();
-
-        if (Objects.equals(texto, "Registro")) {
-            btnSignIn1.setText("Regresar");
-            btnSignIn.setText("Crear Usuario");
-            tfUser.setVisible(false);
-            tfPass.setVisible(false);
-            lblForgot1.setVisible(false);
-            Rg.setVisible(true);
-            UR.setVisible(true);
-            CC.setVisible(true);
-            CC1.setVisible(true);
-
-        } else if (Objects.equals(texto, "Regresar")) {
-            btnSignIn1.setText("Registro");
-            btnSignIn.setText("Iniciar Sesión");
-            tfUser.setVisible(true);
-            tfPass.setVisible(true);
-            lblForgot1.setVisible(true);
-            Rg.setVisible(false);
-            UR.setVisible(false);
-            CC.setVisible(false);
-            CC1.setVisible(false);
+        } else if (event.getSource().equals(btnBack)) {
+            new FadeIn(pnlSignIn).play();
+            pnlSignIn.toFront();
         }
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

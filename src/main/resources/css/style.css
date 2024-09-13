@@ -18,6 +18,20 @@
     -fx-text-fill : #0575E6 ;
 }
 
+.buttonr
+{
+    -fx-background-color : #666666;
+    -fx-text-fill: #ffffff;
+}
+.buttonr:hover
+{
+    -fx-text-fill : #DCDCDC ;
+}
+.buttonr:pressed
+{
+    -fx-text-fill : #DCDCDC ;
+}
+
 
 .button2
 {

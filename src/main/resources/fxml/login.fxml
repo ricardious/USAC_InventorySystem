@@ -40,7 +40,7 @@
                         <TextField fx:id="tfUser" layoutX="99.0" layoutY="235.0" prefHeight="35.0" prefWidth="250.0" promptText="Usuario" />
                         <PasswordField fx:id="tfPass" layoutX="99.0" layoutY="296.0" prefHeight="35.0" prefWidth="250.0" promptText="Contraseña" />
                         <Button fx:id="btnSignIn" layoutX="241.0" layoutY="384.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../css/style.css" text="Iniciar Sesión" />
-                        <Label fx:id="lblForgot" layoutX="77.0" layoutY="387.0" prefHeight="28.0" prefWidth="140.0" text="¿Olvidaste tu contraseña?" textFill="#717171" />
+                        <Label fx:id="lblForgot" layoutX="147.0" layoutY="438.0" onMouseClicked="#Registro" prefHeight="28.0" prefWidth="140.0" text="¿Olvidaste tu contraseña?" textFill="#717171" />
                         <Label fx:id="lblForgot1" layoutX="147.0" layoutY="165.0" prefHeight="40.0" prefWidth="154.0" text="Iniciar Sesión">
                            <font>
                               <Font name="System Bold" size="24.0" />
@@ -60,6 +60,15 @@
                               </ImageView>
                            </children>
                         </HBox>
+                        <Button fx:id="btnSignIn1" layoutX="87.0" layoutY="384.0" mnemonicParsing="false" onAction="#Registro" prefHeight="35.0" prefWidth="120.0" styleClass="buttonr" stylesheets="@../css/style.css" text="Registro" />
+                        <Label fx:id="Rg" layoutX="167.0" layoutY="103.0" text="Registro" visible="false">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="UR" layoutX="99.0" layoutY="170.0" prefHeight="35.0" prefWidth="250.0" promptText="Escribe tú usuario" visible="false" />
+                        <TextField fx:id="CC" layoutX="99.0" layoutY="235.0" prefHeight="35.0" prefWidth="250.0" promptText="Escribe tú contraseña" visible="false" />
+                        <TextField fx:id="CC1" layoutX="99.0" layoutY="296.0" prefHeight="35.0" prefWidth="250.0" promptText="Confirma tú contraseña" visible="false" />
                      </children>
                   </Pane>
                </children>

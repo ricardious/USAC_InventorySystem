@@ -18,23 +18,37 @@
     -fx-text-fill : #0575E6 ;
 }
 
+.buttonr
+{
+    -fx-background-color : #666666;
+    -fx-text-fill: #ffffff;
+}
+.buttonr:hover
+{
+    -fx-text-fill : #DCDCDC ;
+}
+.buttonr:pressed
+{
+    -fx-text-fill : #DCDCDC ;
+}
+
 
 .button2
 {
-    -fx-background-color : #F8E1E1;
+    -fx-background-color : #A9D1F4;
     -fx-background-radius :  5;
-    -fx-text-fill: #B50504;
-    -fx-border-color: #B50504;
+    -fx-text-fill: #08098B;
+    -fx-border-color: #002ff5;
     -fx-border-radius: 5;
 }
 .button2:hover
 {
-    -fx-background-color : #524A7B;
+    -fx-background-color : #CFD9F6;
 }
 .button2:pressed
 {
-    -fx-background-color : #2F2B43 ;
-    -fx-background-radius :  20;
+    -fx-background-color : #CFD9F6;
+    -fx-background-radius : 5;
 }
 
 .button3
@@ -175,13 +189,4 @@
 .linear-grad-2
 {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #965DE9 10.8%, #6358EE 94.3%);
-}
-.label-ricardo
-{
-    -fx-background-color : #F8E1E1;
-    -fx-background-radius :  5;
-    -fx-text-fill: #B50504;
-    -fx-border-color: #B50504;
-    -fx-border-radius: 5;
-    -fx-alignment: center;
 }

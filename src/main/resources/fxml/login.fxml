@@ -35,31 +35,69 @@
          <center>
             <StackPane prefHeight="539.0" prefWidth="440.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                  <Pane fx:id="pnlSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                      <children>
-                        <TextField fx:id="tfUser" layoutX="99.0" layoutY="235.0" prefHeight="35.0" prefWidth="250.0" promptText="Usuario" />
-                        <PasswordField fx:id="tfPass" layoutX="99.0" layoutY="296.0" prefHeight="35.0" prefWidth="250.0" promptText="Contraseña" />
-                        <Button fx:id="btnSignIn" layoutX="241.0" layoutY="384.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../css/style.css" text="Iniciar Sesión" />
-                        <Label fx:id="lblForgot" layoutX="77.0" layoutY="387.0" prefHeight="28.0" prefWidth="140.0" text="¿Olvidaste tu contraseña?" textFill="#717171" />
-                        <Label fx:id="lblForgot1" layoutX="147.0" layoutY="165.0" prefHeight="40.0" prefWidth="154.0" text="Iniciar Sesión">
+                        <TextField fx:id="tfUser1" layoutX="92.0" layoutY="194.0" prefHeight="35.0" prefWidth="250.0" promptText="Escribe tu usuario" />
+                        <TextField fx:id="tfUser11" layoutX="92.0" layoutY="252.0" prefHeight="35.0" prefWidth="250.0" promptText="Escribe tu contraseña" />
+                        <TextField fx:id="tfUser111" layoutX="92.0" layoutY="309.0" prefHeight="35.0" prefWidth="250.0" promptText="Confirma tu contraseña" />
+                        <Button fx:id="btnSignIn2" layoutX="156.0" layoutY="381.0" mnemonicParsing="false" onMouseClicked="#SignIn" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../css/style.css" text="Crear Cuenta" />
+                        <Label fx:id="lblForgot11" layoutX="158.0" layoutY="130.0" prefHeight="40.0" prefWidth="117.0" text="Regístrate" textAlignment="CENTER">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <HBox layoutX="348.0" layoutY="24.0" prefHeight="20.0" prefWidth="31.0" spacing="10.0">
+                        <ImageView fx:id="btnBack" fitHeight="42.0" fitWidth="40.0" layoutX="39.0" layoutY="20.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/atras64px.png" />
+                           </image>
+                        </ImageView>
+                        <HBox layoutX="349.0" layoutY="14.0" prefHeight="20.0" prefWidth="31.0" spacing="10.0">
                            <children>
-                              <ImageView fx:id="btnMinimize" fitHeight="25.0" fitWidth="40.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnMinimize1" fitHeight="25.0" fitWidth="40.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/icons/boton-menos.png" />
+                                    <Image url="@../images/icons/menos64px.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="btnClose" fitHeight="25.0" fitWidth="40.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnClose1" fitHeight="25.0" fitWidth="43.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/icons/boton-cerrar.png" />
+                                    <Image url="@../images/icons/eliminar64px.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </HBox>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnlSignIn" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <TextField fx:id="tfUser" layoutX="99.0" layoutY="190.0" prefHeight="35.0" prefWidth="250.0" promptText="Usuario" />
+                        <PasswordField fx:id="tfPass" layoutX="99.0" layoutY="252.0" prefHeight="35.0" prefWidth="250.0" promptText="Contraseña" />
+                        <Button fx:id="btnSignIn" layoutX="241.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#SignIn" prefHeight="35.0" prefWidth="120.0" styleClass="button1" stylesheets="@../css/style.css" text="Iniciar Sesión" />
+                        <Label fx:id="lblForgot" layoutX="77.0" layoutY="351.0" prefHeight="28.0" prefWidth="140.0" text="¿Olvidaste tu contraseña?" textFill="#717171" />
+                        <Label fx:id="lblForgot1" layoutX="147.0" layoutY="89.0" prefHeight="40.0" prefWidth="154.0" text="Iniciar Sesión">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="349.0" layoutY="14.0" prefHeight="20.0" prefWidth="31.0" spacing="10.0">
+                           <children>
+                              <ImageView fx:id="btnMinimize" fitHeight="25.0" fitWidth="40.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/menos64px.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="btnClose" fitHeight="25.0" fitWidth="40.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/eliminar64px.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Button fx:id="btnSignUp" layoutX="99.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="48.0" prefWidth="250.0" styleClass="button2" stylesheets="@../css/style.css" text="¿No tienes una cuenta? Regístrate" />
+                        <Label fx:id="errorLBL" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="307.0" prefHeight="27.0" prefWidth="250.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                </children>

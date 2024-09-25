@@ -26,7 +26,7 @@
                <top>
                   <AnchorPane prefHeight="45.0" prefWidth="200.0" styleClass="semi-top-form" stylesheets="@../css/dashboardDesign.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="145.0" layoutY="-77.0" prefHeight="35.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="-1.0" prefHeight="35.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <FontAwesomeIcon glyphName="USERS" layoutX="14.0" layoutY="24.0" size="1.5em" />
                               <Label layoutX="41.0" layoutY="10.0" text="Employee Management System">
@@ -34,19 +34,19 @@
                                     <Font name="Tahoma" size="14.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="close" layoutX="1010.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="60.0" styleClass="close" stylesheets="@../css/dashboardDesign.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                              <Button fx:id="close" layoutX="1010.0" layoutY="2.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="45.0" styleClass="close" stylesheets="@../css/dashboardDesign.css" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="2.0">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="CLOSE" size="1.2em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="minimize" layoutX="962.0" layoutY="3.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="45.0" styleClass="minimize" stylesheets="@../css/dashboardDesign.css" AnchorPane.rightAnchor="90.80000000000007" AnchorPane.topAnchor="3.0">
+                              <Button fx:id="minimize" layoutX="958.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="24.0" prefWidth="45.0" styleClass="minimize" stylesheets="@../css/dashboardDesign.css" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="2.0">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="MINUS" size="1.2em" text="" />
                                  </graphic>
                               </Button>
-                              <Button layoutX="1014.0" layoutY="3.0" mnemonicParsing="false" styleClass="white-bg" stylesheets="@../css/dashboardDesign.css">
+                              <Button fx:id="maximize" layoutX="1003.0" layoutY="2.0" mnemonicParsing="false" onAction="#maximize" prefHeight="24.0" prefWidth="45.0" styleClass="maximize" stylesheets="@../css/dashboardDesign.css" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="2.0">
                                  <graphic>
-                                    <FontAwesomeIcon glyphName="SQUARE" />
+                                    <FontAwesomeIcon glyphName="SQUARE" text="" />
                                  </graphic>
                               </Button>
                            </children>
@@ -71,22 +71,22 @@
                                  </font>
                               </Label>
                               <Line endX="69.0" layoutX="121.0" layoutY="178.0" startX="-100.0" stroke="WHITE" />
-                              <Button fx:id="home_btn" layoutX="16.0" layoutY="207.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Home">
+                              <Button fx:id="home_btn" layoutX="16.0" layoutY="207.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Home">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="addEmployee_btn" layoutX="16.0" layoutY="242.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Add Employee">
+                              <Button fx:id="addEmployee_btn" layoutX="16.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Add Employee">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="salary_btn" layoutX="16.0" layoutY="278.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Employee Salary">
+                              <Button fx:id="salary_btn" layoutX="16.0" layoutY="278.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Employee Salary">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="logout" layoutX="9.0" layoutY="509.0" mnemonicParsing="false" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="9.0">
+                              <Button fx:id="logout" layoutX="9.0" layoutY="509.0" mnemonicParsing="false" onAction="#logout" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="9.0">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" />
                                  </graphic>

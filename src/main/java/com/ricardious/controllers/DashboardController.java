@@ -173,21 +173,133 @@ public class DashboardController implements Initializable {
     @FXML
     private Label username;
 
+    @FXML
+    private Button addEmployee_addBtn1;
+
+    @FXML
+    private Button addEmployee_clearBtn1;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_date1;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_employeeID1;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_firstName1;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_gender1;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_lastName1;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_phoneNum1;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_position1;
+
+    @FXML
+    private Button addEmployee_deleteBtn1;
+
+    @FXML
+    private TextField addEmployee_employeeID1;
+
+    @FXML
+    private TextField addEmployee_firstName1;
+
+    @FXML
+    private AnchorPane addEmployee_form1;
+
+    @FXML
+    private ComboBox<?> addEmployee_gender1;
+
+    @FXML
+    private ImageView addEmployee_image1;
+
+    @FXML
+    private Button addEmployee_importBtn1;
+
+    @FXML
+    private TextField addEmployee_lastName1;
+
+    @FXML
+    private TextField addEmployee_phoneNum1;
+
+    @FXML
+    private ComboBox<?> addEmployee_position1;
+
+    @FXML
+    private TextField addEmployee_search1;
+
+    @FXML
+    private TableView<?> addEmployee_tableView1;
+
+    @FXML
+    private Button addEmployee_updateBtn1;
+
+    @FXML
+    private Button inventory_btn1;
+
+    @FXML
+    private AnchorPane inventoryeployee_form;
+
+    @FXML
+    private Button inventory_btn11;
+
+    @FXML
+    private AnchorPane inventoryglobal_form;
+
+
+
+
     public void switchForm(ActionEvent event){
 
         if(event.getSource() == home_btn){
             home_form.setVisible(true);
             addEmployee_form.setVisible(false);
             salary_form.setVisible(false);
+            addEmployee_form1.setVisible(false);
+            inventoryeployee_form.setVisible(false);
+            inventoryglobal_form.setVisible(false);
         }else if(event.getSource() == addEmployee_btn){
             home_form.setVisible(false);
             addEmployee_form.setVisible(true);
             salary_form.setVisible(false);
+            addEmployee_form1.setVisible(false);
+            inventoryeployee_form.setVisible(false);
+            inventoryglobal_form.setVisible(false);
         }else if(event.getSource() == salary_btn){
             home_form.setVisible(false);
             addEmployee_form.setVisible(false);
             salary_form.setVisible(true);
+            addEmployee_form1.setVisible(false);
+            inventoryeployee_form.setVisible(false);
+            inventoryglobal_form.setVisible(false);
+        }else if(event.getSource() == inventory_btn){
+            home_form.setVisible(false);
+            addEmployee_form.setVisible(false);
+            salary_form.setVisible(false);
+            addEmployee_form1.setVisible(true);
+            inventoryeployee_form.setVisible(false);
+            inventoryglobal_form.setVisible(false);
+        }else if(event.getSource() == inventory_btn1){
+            home_form.setVisible(false);
+            addEmployee_form.setVisible(false);
+            salary_form.setVisible(false);
+            addEmployee_form1.setVisible(false);
+            inventoryeployee_form.setVisible(true);
+            inventoryglobal_form.setVisible(false);
+        }else if(event.getSource() == inventory_btn11){
+            home_form.setVisible(false);
+            addEmployee_form.setVisible(false);
+            salary_form.setVisible(false);
+            addEmployee_form1.setVisible(false);
+            inventoryeployee_form.setVisible(false);
+            inventoryglobal_form.setVisible(true);
         }
+
 
     }
 

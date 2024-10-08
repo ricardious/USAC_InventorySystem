@@ -1,5 +1,6 @@
 package com.ricardious.controllers;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.input.MouseEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -346,7 +348,24 @@ public class DashboardController implements Initializable {
 
     public void maximize(){
         Stage stage = (Stage)main_form.getScene().getWindow();
-        stage.setMaximized(!stage.isMaximized());
+        if (!stage.isMaximized()) {
+            // Get the size of the screen
+            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+
+            // Adjust the window size to simulate a custom maximized state
+            stage.setX(screenBounds.getMinX());
+            stage.setY(screenBounds.getMinY());
+            stage.setWidth(screenBounds.getWidth());
+            stage.setHeight(screenBounds.getHeight());
+        } else {
+            // Restore the previous window size if it was already "maximized"
+            stage.setWidth(800);  // Default or desired width
+            stage.setHeight(600); // Default or desired height
+            stage.centerOnScreen(); // Center the window if necessary
+        }
+
+        stage.setMaximized(!stage.isMaximized()); // Toggle the maximized state
+
     }
 
     public void close(){

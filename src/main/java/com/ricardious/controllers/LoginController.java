@@ -91,7 +91,7 @@ public class LoginController implements Initializable {
             }
 
             DatabaseConnection connectNow = new DatabaseConnection();
-            String verifyLogin = "SELECT * FROM usac_inventory.login WHERE Usuario = ? AND Contraseña = ?";
+            String verifyLogin = "SELECT * FROM ricardious.users WHERE username = ? AND Contraseña = ?";
 
             try (Connection connectDB = connectNow.getConnection();
                  PreparedStatement preparedStatement = connectDB.prepareStatement(verifyLogin)) {

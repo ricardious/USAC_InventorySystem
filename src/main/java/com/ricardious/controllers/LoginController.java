@@ -6,16 +6,17 @@ import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -23,6 +24,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -77,6 +79,36 @@ public class LoginController implements Initializable {
         fadeTransition.play();
     }
 
+    private double x=0;
+    private double y=0;
+    public void loginS(){
+        try {
+
+                btnSignUp.getScene().getWindow().hide();
+
+                Parent root = FXMLLoader.load(getClass().getResource("/fxml/dashboard.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+
+                stage.setScene(scene);
+                stage.initStyle(StageStyle.TRANSPARENT);
+
+                root.setOnMousePressed(event -> {
+                    x = event.getSceneX();
+                    y = event.getSceneY();
+                });
+
+                root.setOnMouseDragged(event -> {
+                    stage.setX(event.getScreenX() - x);
+                    stage.setY(event.getScreenY() - y);
+                });
+
+                stage.setScene(scene);
+                stage.show();
+            }
+        catch(Exception e){e.printStackTrace();}
+}
+
     @FXML
     private void SignIn(MouseEvent event) {
         if (event.getSource().equals(btnSignIn)) {
@@ -91,7 +123,7 @@ public class LoginController implements Initializable {
             }
 
             DatabaseConnection connectNow = new DatabaseConnection();
-            String verifyLogin = "SELECT * FROM usac_inventory.login WHERE Usuario = ? AND Contraseña = ?";
+            String verifyLogin = "SELECT * FROM ricardious.users WHERE username = ? AND Contraseña = ?";
 
             try (Connection connectDB = connectNow.getConnection();
                  PreparedStatement preparedStatement = connectDB.prepareStatement(verifyLogin)) {
@@ -103,6 +135,7 @@ public class LoginController implements Initializable {
                     if (queryResult.next()) {
                         errorLBL.setTextFill(Color.GREEN);
                         errorLBL.setText("Login Correcto!");
+                        loginS();
                     } else {
                         errorLBL.setText("Datos Incorrectos");
                     }

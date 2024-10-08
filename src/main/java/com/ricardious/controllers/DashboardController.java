@@ -1,5 +1,6 @@
 package com.ricardious.controllers;
 
+import javafx.scene.input.MouseEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -251,7 +252,10 @@ public class DashboardController implements Initializable {
     @FXML
     private AnchorPane inventoryglobal_form;
 
+    @FXML
+    void importEXCEL(MouseEvent event) {
 
+    }
 
 
     public void switchForm(ActionEvent event){
@@ -342,7 +346,7 @@ public class DashboardController implements Initializable {
 
     public void maximize(){
         Stage stage = (Stage)main_form.getScene().getWindow();
-        stage.setFullScreen(!stage.isFullScreen());
+        stage.setMaximized(!stage.isMaximized());
     }
 
     public void close(){

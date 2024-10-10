@@ -81,7 +81,7 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="salary_btn" layoutX="16.0" layoutY="278.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Saldo de Activos">
+                              <Button fx:id="salaryactivos" layoutX="16.0" layoutY="278.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Saldo de Activos">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.5em" />
                                  </graphic>
@@ -100,7 +100,7 @@
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="inventory_btn" layoutX="16.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventario Empleado">
+                              <Button fx:id="inventory_Employee" layoutX="16.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventario Empleado">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" text="" />
                                  </graphic>
@@ -123,7 +123,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="13.0" layoutY="17.0" prefHeight="521.0" prefWidth="863.0" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="15.799999999999955" AnchorPane.leftAnchor="12.799999999999955" AnchorPane.rightAnchor="12.599999999999909" AnchorPane.topAnchor="16.799999999999955">
                                  <styleClass>
@@ -196,7 +196,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="addEmployee_form" layoutX="35.0" layoutY="78.0" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="inventoryactivos_form" layoutX="35.0" layoutY="78.0" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="528.0" prefWidth="859.0" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
                                  <children>
@@ -345,7 +345,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="addEmployee_form1" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="inventory_employee" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="528.0" prefWidth="859.0" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
                                  <children>

@@ -273,10 +273,10 @@ public class DashboardController implements Initializable {
     private Button inventory_activos;
 
     @FXML
-    private AnchorPane inventory_bienes;
+    private AnchorPane inventory_employee;
 
     @FXML
-    private Button inventory_btn;
+    private Button inventory_Employee;
 
     @FXML
     private AnchorPane inventoryeployee_form;
@@ -297,7 +297,7 @@ public class DashboardController implements Initializable {
     private Button minimize;
 
     @FXML
-    private Button salary_btn;
+    private Button salaryactivos;
 
     @FXML
     private Button salary_clearBtn;
@@ -399,48 +399,48 @@ public class DashboardController implements Initializable {
 
         if(event.getSource() == home_btn){
             home_form.setVisible(true);
-            addEmployee_form.setVisible(false);
+            bienes.setVisible(false);
             salary_form.setVisible(false);
-            inventory_bienes.setVisible(false);
-            inventoryeployee_form.setVisible(false);
+            inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(false);
+            inventoryeployee_form.setVisible(false);
         }else if(event.getSource() == inventory_activos){
             home_form.setVisible(false);
             bienes.setVisible(true);
             salary_form.setVisible(false);
-            inventory_bienes.setVisible(false);
-            inventoryeployee_form.setVisible(false);
+            inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(false);
+            inventoryeployee_form.setVisible(false);
             llenarTablaBienes();
 
-        }else if(event.getSource() == salary_btn){
+        }else if(event.getSource() == salaryactivos){
             home_form.setVisible(false);
-            addEmployee_form.setVisible(false);
+            bienes.setVisible(false);
             salary_form.setVisible(true);
-            inventory_bienes.setVisible(false);
-            inventoryeployee_form.setVisible(false);
+            inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(false);
-        }else if(event.getSource() == inventory_btn){
+            inventoryeployee_form.setVisible(false);
+        }else if(event.getSource() == addEmployee_btn){
             home_form.setVisible(false);
-            addEmployee_form.setVisible(false);
+            bienes.setVisible(false);
             salary_form.setVisible(false);
-            inventory_bienes.setVisible(true);
-            inventoryeployee_form.setVisible(false);
+            inventory_employee.setVisible(true);
             inventoryglobal_form.setVisible(false);
+            inventoryeployee_form.setVisible(false);
         }else if(event.getSource() == inventory_Global){
             home_form.setVisible(false);
-            addEmployee_form.setVisible(false);
+            bienes.setVisible(false);
             salary_form.setVisible(false);
-            inventory_bienes.setVisible(false);
-            inventoryeployee_form.setVisible(true);
-            inventoryglobal_form.setVisible(false);
-        }else if(event.getSource() == inventory_btn){
-            home_form.setVisible(false);
-            addEmployee_form.setVisible(false);
-            salary_form.setVisible(false);
-            inventory_bienes.setVisible(false);
-            inventoryeployee_form.setVisible(false);
+            inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(true);
+            inventoryeployee_form.setVisible(false);
+        }else if(event.getSource() == inventory_Employee){
+            home_form.setVisible(false);
+            bienes.setVisible(false);
+            salary_form.setVisible(false);
+            inventory_employee.setVisible(false);
+            inventoryglobal_form.setVisible(false);
+            inventoryeployee_form.setVisible(true);
         }
 
 

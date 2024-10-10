@@ -1,12 +1,22 @@
 package com.ricardious.controllers;
 
+import com.ricardious.database.DatabaseConnection;
+import com.ricardious.models.bienes;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -197,7 +207,7 @@ public class DashboardController implements Initializable {
     private TableView<?> addEmployee_tableView1;
 
     @FXML
-    private TableView<?> addEmployee_tableView11;
+    private TableView<Map> addEmployee_tableView11;
 
     @FXML
     private Button addEmployee_updateBtn;
@@ -345,6 +355,45 @@ public class DashboardController implements Initializable {
 
     }
 
+    private String ColLiteral = "Literal";
+    private String ColDescripcion = "Descripcion";
+    private String ColRenglonGasto = "RenglonGasto";
+
+    public ObservableList<Map> getBienes(){
+        var sql = "SELECT * FROM usac_inventory.bienes";
+        ObservableList<Map> bienesList = FXCollections.observableArrayList();
+        try{
+        DatabaseConnection connectNow = new DatabaseConnection();
+        PreparedStatement consulta = connectNow.getConnection().prepareStatement(sql);
+        ResultSet resultSet = consulta.executeQuery();
+        while (resultSet.next()){
+            bienes Bienes = new bienes();
+            Map<String, Object> coleccion = new HashMap<>();
+            Bienes.setLiteral(resultSet.getString("Literal"));
+            Bienes.setDescripcion(resultSet.getString("Descripcion"));
+            Bienes.setRenglonGasto(Integer.parseInt(resultSet.getString("RenglonGasto")));
+            coleccion.put(ColLiteral, Bienes.getLiteral());
+            coleccion.put(ColDescripcion, Bienes.getDescripcion());
+            coleccion.put(ColRenglonGasto, String.valueOf(resultSet.getInt("RenglonGasto")));
+            bienesList.add(coleccion);
+        }
+        resultSet.close();
+        consulta.close();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return bienesList;
+    }
+
+    private void llenarTablaBienes(){
+        ObservableList<Map> lista = getBienes();
+        this.addEmployee_col_employeeID11.setCellValueFactory(new MapValueFactory(ColLiteral));
+        this.addEmployee_col_firstName11.setCellValueFactory(new MapValueFactory(ColDescripcion));
+        this.addEmployee_col_lastName11.setCellValueFactory(new MapValueFactory(ColRenglonGasto));
+        this.addEmployee_tableView11.setItems(lista);
+    }
+
 
     public void switchForm(ActionEvent event){
 
@@ -362,6 +411,8 @@ public class DashboardController implements Initializable {
             inventory_bienes.setVisible(false);
             inventoryeployee_form.setVisible(false);
             inventoryglobal_form.setVisible(false);
+            llenarTablaBienes();
+
         }else if(event.getSource() == salary_btn){
             home_form.setVisible(false);
             addEmployee_form.setVisible(false);

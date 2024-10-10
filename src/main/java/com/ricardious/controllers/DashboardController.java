@@ -404,6 +404,19 @@ public class DashboardController implements Initializable {
             inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(false);
             inventoryeployee_form.setVisible(false);
+
+
+            //Color que muestra en que pestaña estamos
+            home_btn.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventory_activos.setStyle("-fx-background-color: transparent");
+            salaryactivos.setStyle("-fx-background-color: transparent");
+            addEmployee_btn.setStyle("-fx-background-color: transparent");
+            inventory_Global.setStyle("-fx-background-color: transparent");
+            inventory_Employee.setStyle("-fx-background-color: transparent");
+
+
+
+
         }else if(event.getSource() == inventory_activos){
             home_form.setVisible(false);
             bienes.setVisible(true);
@@ -411,6 +424,14 @@ public class DashboardController implements Initializable {
             inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(false);
             inventoryeployee_form.setVisible(false);
+              //Color que muestra en que pestaña estamos
+            inventory_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            home_btn.setStyle("-fx-background-color: transparent");
+            salaryactivos.setStyle("-fx-background-color: transparent");
+            addEmployee_btn.setStyle("-fx-background-color: transparent");
+            inventory_Global.setStyle("-fx-background-color: transparent");
+            inventory_Employee.setStyle("-fx-background-color: transparent");
+
             llenarTablaBienes();
 
         }else if(event.getSource() == salaryactivos){
@@ -420,6 +441,14 @@ public class DashboardController implements Initializable {
             inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(false);
             inventoryeployee_form.setVisible(false);
+            //Color que muestra en que pestaña estamos
+            salaryactivos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventory_activos.setStyle("-fx-background-color: transparent");
+            home_btn.setStyle("-fx-background-color: transparent");
+            addEmployee_btn.setStyle("-fx-background-color: transparent");
+            inventory_Global.setStyle("-fx-background-color: transparent");
+            inventory_Employee.setStyle("-fx-background-color: transparent");
+
         }else if(event.getSource() == addEmployee_btn){
             home_form.setVisible(false);
             bienes.setVisible(false);
@@ -427,6 +456,13 @@ public class DashboardController implements Initializable {
             inventory_employee.setVisible(true);
             inventoryglobal_form.setVisible(false);
             inventoryeployee_form.setVisible(false);
+
+            addEmployee_btn.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventory_activos.setStyle("-fx-background-color: transparent");
+            salaryactivos.setStyle("-fx-background-color: transparent");
+            home_btn.setStyle("-fx-background-color: transparent");
+            inventory_Global.setStyle("-fx-background-color: transparent");
+            inventory_Employee.setStyle("-fx-background-color: transparent");
         }else if(event.getSource() == inventory_Global){
             home_form.setVisible(false);
             bienes.setVisible(false);
@@ -434,6 +470,14 @@ public class DashboardController implements Initializable {
             inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(true);
             inventoryeployee_form.setVisible(false);
+
+            inventory_Global.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventory_activos.setStyle("-fx-background-color: transparent");
+            salaryactivos.setStyle("-fx-background-color: transparent");
+            addEmployee_btn.setStyle("-fx-background-color: transparent");
+            home_btn.setStyle("-fx-background-color: transparent");
+            inventory_Employee.setStyle("-fx-background-color: transparent");
+
         }else if(event.getSource() == inventory_Employee){
             home_form.setVisible(false);
             bienes.setVisible(false);
@@ -441,6 +485,13 @@ public class DashboardController implements Initializable {
             inventory_employee.setVisible(false);
             inventoryglobal_form.setVisible(false);
             inventoryeployee_form.setVisible(true);
+
+            inventory_Employee.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventory_activos.setStyle("-fx-background-color: transparent");
+            salaryactivos.setStyle("-fx-background-color: transparent");
+            addEmployee_btn.setStyle("-fx-background-color: transparent");
+            inventory_Global.setStyle("-fx-background-color: transparent");
+            home_btn.setStyle("-fx-background-color: transparent");
         }
 
 

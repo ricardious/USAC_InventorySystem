@@ -380,6 +380,13 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        setColumnResizePolicy(addEmployee_tableView);
+        setColumnResizePolicy(salary_tableView);
+        setColumnResizePolicy(addEmployee_tableView1);
     }
+
+    private void setColumnResizePolicy(TableView<?> tableView) {
+        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+    }
+
 }

@@ -29,7 +29,7 @@
                         <AnchorPane layoutX="-1.0" prefHeight="35.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <FontAwesomeIcon glyphName="USERS" layoutX="14.0" layoutY="24.0" size="1.5em" />
-                              <Label layoutX="41.0" layoutY="10.0" text="Employee Management System">
+                              <Label layoutX="41.0" layoutY="10.0" text="USAC Inventory System">
                                  <font>
                                     <Font name="Tahoma" size="14.0" />
                                  </font>
@@ -60,12 +60,12 @@
                         <AnchorPane prefHeight="555.0" prefWidth="214.0" styleClass="nav-form" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="73.0" layoutY="105.0" size="7em" />
-                              <Label layoutX="69.0" layoutY="117.0" text="Welcome," textFill="WHITE">
+                              <Label layoutX="69.0" layoutY="117.0" text="Bienvenido," textFill="WHITE">
                                  <font>
                                     <Font name="Tahoma" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="username" alignment="CENTER" layoutX="9.0" layoutY="138.0" prefHeight="23.0" prefWidth="194.0" text="RicardiousMan" textFill="WHITE">
+                              <Label fx:id="username" alignment="CENTER" layoutX="9.0" layoutY="138.0" prefHeight="23.0" prefWidth="194.0" text="Administrador" textFill="WHITE">
                                  <font>
                                     <Font name="Arial Bold" size="20.0" />
                                  </font>
@@ -76,12 +76,12 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="addEmployee_btn" layoutX="16.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Add Employee">
+                              <Button fx:id="addEmployee_btn" layoutX="16.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Agregar Empleado">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="salary_btn" layoutX="16.0" layoutY="278.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Employee Salary">
+                              <Button fx:id="salary_btn" layoutX="16.0" layoutY="278.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Saldo de Activos">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.5em" />
                                  </graphic>
@@ -95,22 +95,22 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                               </Button>
-                              <Label layoutX="62.0" layoutY="515.0" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="62.0">
+                              <Label layoutX="62.0" layoutY="515.0" text="Cerrar Sesión" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="62.0">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="inventory_btn" layoutX="16.0" layoutY="313.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventory">
+                              <Button fx:id="inventory_btn" layoutX="16.0" layoutY="313.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventario Empleado">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" text="" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="inventory_btn1" layoutX="16.0" layoutY="348.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventory empleado">
+                              <Button fx:id="inventory_btn1" layoutX="16.0" layoutY="348.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventario Activos">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="inventory_btn11" layoutX="16.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventory Global">
+                              <Button fx:id="inventory_Global" layoutX="16.0" layoutY="383.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventario Global">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" />
                                  </graphic>
@@ -123,7 +123,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="13.0" layoutY="17.0" prefHeight="521.0" prefWidth="863.0" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="15.799999999999955" AnchorPane.leftAnchor="12.799999999999955" AnchorPane.rightAnchor="12.599999999999909" AnchorPane.topAnchor="16.799999999999955">
                                  <styleClass>
@@ -140,7 +140,7 @@
                                           <AnchorPane layoutX="14.0" layoutY="10.0" prefHeight="170.0" prefWidth="315.0" styleClass="card" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.4">
                                              <children>
                                                 <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="14.0" layoutY="85.0" size="4em" />
-                                                <Label layoutX="77.0" layoutY="92.0" text="Total Employees" textFill="WHITE">
+                                                <Label layoutX="77.0" layoutY="92.0" text="Empleados en Total" textFill="WHITE">
                                                    <font>
                                                       <Font name="Tahoma" size="17.0" />
                                                    </font>
@@ -155,7 +155,7 @@
                                           <AnchorPane layoutX="358.0" layoutY="10.0" prefHeight="170.0" prefWidth="315.0" styleClass="card" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="9.599999999999994" AnchorPane.leftAnchor="357.6000000000002" AnchorPane.rightAnchor="359.6000000000002" AnchorPane.topAnchor="10.0">
                                              <children>
                                                 <FontAwesomeIcon fill="WHITE" glyphName="CHECK" layoutX="14.0" layoutY="90.0" size="4em" />
-                                                <Label layoutX="77.0" layoutY="97.0" text="Total Presents" textFill="WHITE">
+                                                <Label layoutX="77.0" layoutY="97.0" text="Empleados Activos" textFill="WHITE">
                                                    <font>
                                                       <Font name="Tahoma" size="17.0" />
                                                    </font>
@@ -170,7 +170,7 @@
                                           <AnchorPane layoutX="703.0" layoutY="10.0" prefHeight="170.0" prefWidth="315.0" styleClass="card" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="14.600000000000136" AnchorPane.topAnchor="10.0">
                                              <children>
                                                 <FontAwesomeIcon fill="WHITE" glyphName="MINUS" layoutX="14.0" layoutY="90.0" size="4em" />
-                                                <Label layoutX="60.0" layoutY="97.0" text="Total Inactive Employees" textFill="WHITE">
+                                                <Label layoutX="60.0" layoutY="97.0" text="Empleados Inactivos" textFill="WHITE">
                                                    <font>
                                                       <Font name="Tahoma" size="16.0" />
                                                    </font>
@@ -184,7 +184,7 @@
                                           </AnchorPane>
                                        </children>
                                     </AnchorPane>
-                                    <BarChart fx:id="home_chart" layoutX="87.2" layoutY="264.8" prefHeight="422.0" prefWidth="858.0" title="Employees Data Chart" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="265.0">
+                                    <BarChart fx:id="home_chart" layoutX="87.2" layoutY="264.8" prefHeight="422.0" prefWidth="858.0" title="Gráfica de Empleados" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="265.0">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" />
                                       </xAxis>
@@ -456,9 +456,9 @@
                                     <TableColumn prefWidth="240.0" text="C1" />
                                 </columns>
                               </TableView>
-                              <Button layoutX="52.0" layoutY="485.0" mnemonicParsing="false" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="CLEAN" />
-                              <Button layoutX="138.0" layoutY="485.0" mnemonicParsing="false" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="UPDATE" />
-                              <Button layoutX="230.0" layoutY="485.0" mnemonicParsing="false" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="ELIMINATE" />
+                              <Button layoutX="52.0" layoutY="485.0" mnemonicParsing="false" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Limpiar" />
+                              <Button layoutX="138.0" layoutY="485.0" mnemonicParsing="false" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Actualizar" />
+                              <Button layoutX="230.0" layoutY="485.0" mnemonicParsing="false" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Eliminar" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="inventoryglobal_form" layoutX="153.0" layoutY="164.0" onMouseClicked="#importEXCEL" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

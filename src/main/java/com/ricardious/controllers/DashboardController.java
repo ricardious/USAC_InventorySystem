@@ -571,6 +571,7 @@ public class DashboardController implements Initializable {
         setColumnResizePolicy(addEmployee_tableView);
         setColumnResizePolicy(salary_tableView);
         setColumnResizePolicy(addEmployee_tableView1);
+        setColumnResizePolicy(addEmployee_tableView11);
     }
 
     private void setColumnResizePolicy(TableView<?> tableView) {

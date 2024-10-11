@@ -73,28 +73,38 @@ Ricardius el negro
     -fx-background-radius:5px;
 }
 
-.table-view{
-    -fx-background-color:transparent;
-    -fx-border-color:linear-gradient(to bottom right, #272b3f, #256b51);
-    -fx-border-radius:8px;
-    -fx-padding:0px;
+.table-view {
+    -fx-border-color: linear-gradient(to bottom right, #021b79, #0575e6);
+    -fx-border-radius: 8px;
+    -fx-padding: 0px;
 }
-.table-view .table-column{
-    -fx-alignment:CENTER;
+
+.table-view .table-column {
+    -fx-alignment: CENTER;
 }
-.table-view .column-header-background{
-    -fx-background-color:linear-gradient(to bottom right, #272b3f, #256b51);
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom right, #021b79, #0575e6);
     -fx-background-insets: 0 0 0 0;
-    -f-background-radius:8px 8px 0px 0px;
+    -fx-background-radius: 8px 8px 0px 0px;
 }
-.table-view .column-header, .filter{
+
+.table-view .column-header {
+    -fx-background-color: transparent; /* Hace la columna del encabezado transparente */
+    -fx-border-color: transparent; /* Hace el borde del encabezado transparente */
+}
+
+
+.table-view .column-header, .filter {
     -fx-background-color: transparent;
-    -fx-size:40px;
+    -fx-size: 40px;
 }
-.table-view .column-header .label{
-    -fx-text-fill:#fff;
-    -fx-font-family:"Arial";
+
+.table-view .column-header .label {
+    -fx-text-fill: #fff;
+    -fx-font-family: "Arial";
 }
+
 
 .textfield{
     -fx-background-color:linear-gradient(to bottom, #efefef, #eee);

@@ -32,104 +32,42 @@ import javafx.stage.StageStyle;
 
 public class DashboardController implements Initializable {
 
+
     @FXML
     private Button addEmployee_addBtn;
-
-    @FXML
-    private Button addEmployee_addBtn1;
-
-    @FXML
-    private Button addEmployee_addBtn11;
-
-    @FXML
-    private Button addEmployee_btn;
 
     @FXML
     private Button addEmployee_clearBtn;
 
     @FXML
-    private Button addEmployee_clearBtn1;
-
-    @FXML
-    private Button addEmployee_clearBtn11;
-
-    @FXML
     private TableColumn<?, ?> addEmployee_col_date;
-
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_date1;
 
     @FXML
     private TableColumn<?, ?> addEmployee_col_employeeID;
 
     @FXML
-    private TableColumn<?, ?> addEmployee_col_employeeID1;
-
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_employeeID11;
-
-    @FXML
     private TableColumn<?, ?> addEmployee_col_firstName;
-
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_firstName1;
-
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_firstName11;
 
     @FXML
     private TableColumn<?, ?> addEmployee_col_gender;
 
     @FXML
-    private TableColumn<?, ?> addEmployee_col_gender1;
-
-    @FXML
     private TableColumn<?, ?> addEmployee_col_lastName;
-
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_lastName1;
-
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_lastName11;
 
     @FXML
     private TableColumn<?, ?> addEmployee_col_phoneNum;
 
     @FXML
-    private TableColumn<?, ?> addEmployee_col_phoneNum1;
-
-    @FXML
     private TableColumn<?, ?> addEmployee_col_position;
-
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_position1;
 
     @FXML
     private Button addEmployee_deleteBtn;
 
     @FXML
-    private Button addEmployee_deleteBtn1;
-
-    @FXML
-    private Button addEmployee_deleteBtn11;
-
-    @FXML
     private TextField addEmployee_employeeID;
 
     @FXML
-    private TextField addEmployee_employeeID1;
-
-    @FXML
-    private TextField addEmployee_employeeID11;
-
-    @FXML
     private TextField addEmployee_firstName;
-
-    @FXML
-    private TextField addEmployee_firstName1;
-
-    @FXML
-    private TextField addEmployee_firstName11;
 
     @FXML
     private AnchorPane addEmployee_form;
@@ -138,16 +76,10 @@ public class DashboardController implements Initializable {
     private ComboBox<?> addEmployee_gender;
 
     @FXML
-    private ComboBox<?> addEmployee_gender1;
-
-    @FXML
     private ComboBox<?> addEmployee_gender11;
 
     @FXML
     private ImageView addEmployee_image;
-
-    @FXML
-    private ImageView addEmployee_image1;
 
     @FXML
     private ImageView addEmployee_image11;
@@ -156,16 +88,10 @@ public class DashboardController implements Initializable {
     private Button addEmployee_importBtn;
 
     @FXML
-    private Button addEmployee_importBtn1;
-
-    @FXML
     private Button addEmployee_importBtn11;
 
     @FXML
     private TextField addEmployee_lastName;
-
-    @FXML
-    private TextField addEmployee_lastName1;
 
     @FXML
     private TextField addEmployee_lastName11;
@@ -174,82 +100,75 @@ public class DashboardController implements Initializable {
     private TextField addEmployee_phoneNum;
 
     @FXML
-    private TextField addEmployee_phoneNum1;
-
-    @FXML
-    private TextField addEmployee_phoneNum11;
-
-    @FXML
     private TextField addEmployee_phoneNum111;
 
     @FXML
     private ComboBox<?> addEmployee_position;
 
     @FXML
-    private ComboBox<?> addEmployee_position1;
-
-    @FXML
-    private ComboBox<?> addEmployee_position11;
-
-    @FXML
     private TextField addEmployee_search;
-
-    @FXML
-    private TextField addEmployee_search1;
-
-    @FXML
-    private TextField addEmployee_search11;
 
     @FXML
     private TableView<?> addEmployee_tableView;
 
     @FXML
-    private TableView<?> addEmployee_tableView1;
-
-    @FXML
-    private TableView<Map> addEmployee_tableView11;
-
-    @FXML
     private Button addEmployee_updateBtn;
 
     @FXML
-    private Button addEmployee_updateBtn1;
+    private TextField saldo_empleadoID;
 
     @FXML
-    private Button addEmployee_updateBtn11;
+    private Label saldo_nombre;
 
     @FXML
-    private AnchorPane bienes;
+    private AnchorPane inventoryactivos_form;
+
+
+    @FXML
+    private AnchorPane main_form;
+
+
+
+
 
     @FXML
     private Button close;
 
     @FXML
-    private TableColumn<?, ?> colum1;
+    private Button minimize;
 
     @FXML
-    private TableColumn<?, ?> colum2;
+    private Button maximize;
+
+
+
 
     @FXML
-    private TableColumn<?, ?> colum3;
-
-    @FXML
-    private TableColumn<?, ?> colum4;
-
-    @FXML
-    private TableColumn<?, ?> colum5;
-
-    @FXML
-    private TableColumn<?, ?> colum6;
-
-    @FXML
-    private TableColumn<?, ?> colum7;
+    private Label username;
 
     @FXML
     private Button home_btn;
 
     @FXML
-    private BarChart<?, ?> home_chart;
+    private Button agregar_empleado;
+
+    @FXML
+    private Button saldo_activos;
+
+    @FXML
+    private Button logout;
+
+    @FXML
+    private Button inventario_empleado;
+
+    @FXML
+    private Button inventario_activos;
+
+    @FXML
+    private Button inventario_Global;
+
+
+
 
     @FXML
     private AnchorPane home_form;
@@ -258,97 +177,258 @@ public class DashboardController implements Initializable {
     private Label home_totalEmployees;
 
     @FXML
+    private Label home_totalPresents;
+
+    @FXML
     private Label home_totalInactiveEm;
 
     @FXML
-    private Label home_totalPresents;
+    private BarChart<?, ?> home_chart;
+
+
+
+    @FXML
+    private AnchorPane inventarioempleado_form;
+
+    @FXML
+    private TextField inventarioempl_codigo;
+
+    @FXML
+    private TableView<?> inventarioempl_tableView1;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_tarjeta;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_activo;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_desc;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_estado;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_condicion;
+
+    @FXML
+    private Button inventarioempl_cleanbtn;
+
+    @FXML
+    private Button inventarioempl_updatebtn;
+
+    @FXML
+    private Button inventarioempl_eliminarbtn;
+
+
+
+    @FXML
+    private AnchorPane bienes;
+
+    @FXML
+    private TextField addEmployee_search11;
+
+    @FXML
+    private TableView<Map> addEmployee_tableView11;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_employeeID11;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_firstName11;
+
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_lastName11;
+
+    @FXML
+    private TextField addEmployee_employeeID11;
+
+    @FXML
+    private TextField addEmployee_firstName11;
+
+    @FXML
+    private ComboBox<?> addEmployee_position11;
+
+    @FXML
+    private Button addEmployee_clearBtn11;
+
+    @FXML
+    private Button addEmployee_deleteBtn11;
+
+    @FXML
+    private Button addEmployee_updateBtn11;
+
+    @FXML
+    private Button addEmployee_addBtn11;
+
+
+
+
+
+    @FXML
+    private AnchorPane inventarioglobal_form;
+
+    @FXML
+    private TableView<?> inventarioglobal_tableView;
+
+    @FXML
+    private TableColumn<?, ?> global_col_tarjeta;
+
+    @FXML
+    private TableColumn<?, ?> global_col_codgo;
+
+    @FXML
+    private TableColumn<?, ?> global_col_desc;
+
+    @FXML
+    private TableColumn<?, ?> global_col_ubi;
+
+    @FXML
+    private TableColumn<?, ?> global_col_dueño;
+
+    @FXML
+    private TableColumn<?, ?> global_col_costo;
+
+    @FXML
+    private TableColumn<?, ?> global_col_estado;
+
+    @FXML
+    private TableColumn<?, ?> global_col_condicion;
 
     @FXML
     private Label inftotal;
 
     @FXML
-    private Button inventory_Global;
-
-    @FXML
-    private Button inventory_activos;
-
-    @FXML
-    private AnchorPane inventory_employee;
-
-    @FXML
-    private Button inventory_Employee;
-
-    @FXML
-    private AnchorPane inventoryeployee_form;
-
-    @FXML
-    private AnchorPane inventoryglobal_form;
-
-    @FXML
-    private Button logout;
-
-    @FXML
-    private AnchorPane main_form;
-
-    @FXML
-    private Button maximize;
-
-    @FXML
-    private Button minimize;
-
-    @FXML
-    private Button salaryactivos;
-
-    @FXML
-    private Button salary_clearBtn;
-
-    @FXML
-    private TableColumn<?, ?> salary_col_employeeID;
-
-    @FXML
-    private TableColumn<?, ?> salary_col_firstName;
-
-    @FXML
-    private TableColumn<?, ?> salary_col_lastName;
-
-    @FXML
-    private TableColumn<?, ?> salary_col_position;
-
-    @FXML
-    private TableColumn<?, ?> salary_col_salary;
-
-    @FXML
-    private TextField salary_employeeID;
-
-    @FXML
-    private Label salary_firstName;
-
-    @FXML
-    private AnchorPane salary_form;
-
-    @FXML
-    private Label salary_lastName;
-
-    @FXML
-    private Label salary_position;
-
-    @FXML
-    private TextField salary_salary;
-
-    @FXML
-    private TableView<?> salary_tableView;
-
-    @FXML
-    private Button salary_updateBtn;
+    private Label totalinvent;
 
     @FXML
     private Button total_btn;
 
     @FXML
-    private Label totalinvent;
+    private Button inventarioglobal_cleanbtn1;
 
     @FXML
-    private Label username;
+    private Button inventarioglobal_updatebtn1;
+
+    @FXML
+    private Button inventarioglobal_eliminarbtn1;
+
+
+
+    @FXML
+    private AnchorPane agregar_empleado_form;
+
+    @FXML
+    private TextField agregarempleado_search;
+
+    @FXML
+    private TableView<?> addEmployee_tableView1;
+
+    @FXML
+    private TableColumn<?, ?> agregarempl_col_tarjeta;
+
+    @FXML
+    private TableColumn<?, ?> agregarempl_col_codigo;
+
+    @FXML
+    private TableColumn<?, ?> agregarempl_col_desc;
+
+    @FXML
+    private TableColumn<?, ?> agregarempl_col_ubic;
+
+    @FXML
+    private TableColumn<?, ?> agregarempl_col_dueño;
+
+    @FXML
+    private TableColumn<?, ?> agregarempl_col_estado;
+
+    @FXML
+    private TableColumn<?, ?> agregarempl_col_condicion;
+
+    @FXML
+    private TextField agregarempl_tarjeta;
+
+    @FXML
+    private TextField agregarempl_codigo;
+
+    @FXML
+    private TextField agregarempl_desc;
+
+    @FXML
+    private ComboBox<?> agregarempl_ubic;
+
+    @FXML
+    private TextField agregarempl_dueño;
+
+    @FXML
+    private ComboBox<?> agregarempl_estado;
+
+    @FXML
+    private TextField agregarempl_condicion;
+
+    @FXML
+    private ImageView agregarempl_image1;
+
+    @FXML
+    private Button agregarempl_importBtn1;
+
+    @FXML
+    private Button agregarempl_clearBtn1;
+
+    @FXML
+    private Button agregarempl_deleteBtn1;
+
+    @FXML
+    private Button agregarempl_updateBtn1;
+
+    @FXML
+    private Button agregarempl_addBtn1;
+
+
+
+
+
+    @FXML
+    private AnchorPane saldo_activos_form;
+
+    @FXML
+    private Label saldo_apellido;
+
+    @FXML
+    private Label saldo_cargo;
+
+    @FXML
+    private TextField saldo_saldoactivos;
+
+    @FXML
+    private TableView<?> saldo_tableView;
+
+    @FXML
+    private Button saldo_updateBtn;
+
+    @FXML
+    private Button saldo_clearBtn;
+
+    @FXML
+    private TableColumn<?, ?> saldo_col_employeeID;
+
+    @FXML
+    private TableColumn<?, ?> saldo_col_firstName;
+
+    @FXML
+    private TableColumn<?, ?> saldo_col_lastName;
+
+    @FXML
+    private TableColumn<?, ?> saldo_col_position;
+
+    @FXML
+    private TableColumn<?, ?> saldo_col_salary;
+
+
+
+
+
+
 
     @FXML
     void importEXCEL(MouseEvent event) {
@@ -400,97 +480,98 @@ public class DashboardController implements Initializable {
         if(event.getSource() == home_btn){
             home_form.setVisible(true);
             bienes.setVisible(false);
-            salary_form.setVisible(false);
-            inventory_employee.setVisible(false);
-            inventoryglobal_form.setVisible(false);
-            inventoryeployee_form.setVisible(false);
+            saldo_activos_form.setVisible(false);
+            agregar_empleado_form.setVisible(false);
+            inventarioglobal_form.setVisible(false);
+            inventarioempleado_form.setVisible(false);
 
 
             //Color que muestra en que pestaña estamos
             home_btn.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventory_activos.setStyle("-fx-background-color: transparent");
-            salaryactivos.setStyle("-fx-background-color: transparent");
-            addEmployee_btn.setStyle("-fx-background-color: transparent");
-            inventory_Global.setStyle("-fx-background-color: transparent");
-            inventory_Employee.setStyle("-fx-background-color: transparent");
+            inventario_activos.setStyle("-fx-background-color: transparent");
+            saldo_activos.setStyle("-fx-background-color: transparent");
+            agregar_empleado_form.setStyle("-fx-background-color: transparent");
+            inventario_Global.setStyle("-fx-background-color: transparent");
+            inventario_empleado.setStyle("-fx-background-color: transparent");
 
 
 
 
-        }else if(event.getSource() == inventory_activos){
+        }else if(event.getSource() == inventario_activos){
             home_form.setVisible(false);
             bienes.setVisible(true);
-            salary_form.setVisible(false);
-            inventory_employee.setVisible(false);
-            inventoryglobal_form.setVisible(false);
-            inventoryeployee_form.setVisible(false);
+            saldo_activos_form.setVisible(false);
+            agregar_empleado_form.setVisible(false);
+            inventarioglobal_form.setVisible(false);
+            inventarioempleado_form.setVisible(false);
               //Color que muestra en que pestaña estamos
-            inventory_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventario_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
             home_btn.setStyle("-fx-background-color: transparent");
-            salaryactivos.setStyle("-fx-background-color: transparent");
-            addEmployee_btn.setStyle("-fx-background-color: transparent");
-            inventory_Global.setStyle("-fx-background-color: transparent");
-            inventory_Employee.setStyle("-fx-background-color: transparent");
+            saldo_activos.setStyle("-fx-background-color: transparent");
+            agregar_empleado.setStyle("-fx-background-color: transparent");
+            inventario_Global.setStyle("-fx-background-color: transparent");
+            inventario_empleado.setStyle("-fx-background-color: transparent");
 
             llenarTablaBienes();
 
-        }else if(event.getSource() == salaryactivos){
+        }else if(event.getSource() == saldo_activos){
             home_form.setVisible(false);
             bienes.setVisible(false);
-            salary_form.setVisible(true);
-            inventory_employee.setVisible(false);
-            inventoryglobal_form.setVisible(false);
-            inventoryeployee_form.setVisible(false);
+            saldo_activos_form.setVisible(true);
+            agregar_empleado_form.setVisible(false);
+            inventarioglobal_form.setVisible(false);
+            inventarioempleado_form.setVisible(false);
             //Color que muestra en que pestaña estamos
-            salaryactivos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventory_activos.setStyle("-fx-background-color: transparent");
+            saldo_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventario_activos.setStyle("-fx-background-color: transparent");
             home_btn.setStyle("-fx-background-color: transparent");
-            addEmployee_btn.setStyle("-fx-background-color: transparent");
-            inventory_Global.setStyle("-fx-background-color: transparent");
-            inventory_Employee.setStyle("-fx-background-color: transparent");
+            agregar_empleado.setStyle("-fx-background-color: transparent");
+            inventario_Global.setStyle("-fx-background-color: transparent");
+            inventario_empleado.setStyle("-fx-background-color: transparent");
 
-        }else if(event.getSource() == addEmployee_btn){
+        }else if(event.getSource() == agregar_empleado){
             home_form.setVisible(false);
             bienes.setVisible(false);
-            salary_form.setVisible(false);
-            inventory_employee.setVisible(true);
-            inventoryglobal_form.setVisible(false);
-            inventoryeployee_form.setVisible(false);
+            saldo_activos_form.setVisible(false);
+            agregar_empleado_form.setVisible(true);
+            inventarioglobal_form.setVisible(false);
+            inventarioempleado_form.setVisible(false);
 
-            addEmployee_btn.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventory_activos.setStyle("-fx-background-color: transparent");
-            salaryactivos.setStyle("-fx-background-color: transparent");
+            agregar_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventario_activos.setStyle("-fx-background-color: transparent");
+            saldo_activos.setStyle("-fx-background-color: transparent");
             home_btn.setStyle("-fx-background-color: transparent");
-            inventory_Global.setStyle("-fx-background-color: transparent");
-            inventory_Employee.setStyle("-fx-background-color: transparent");
-        }else if(event.getSource() == inventory_Global){
+            inventario_Global.setStyle("-fx-background-color: transparent");
+            inventario_empleado.setStyle("-fx-background-color: transparent");
+
+        }else if(event.getSource() == inventario_Global){
             home_form.setVisible(false);
             bienes.setVisible(false);
-            salary_form.setVisible(false);
-            inventory_employee.setVisible(false);
-            inventoryglobal_form.setVisible(true);
-            inventoryeployee_form.setVisible(false);
+            saldo_activos_form.setVisible(false);
+            agregar_empleado_form.setVisible(false);
+            inventarioglobal_form.setVisible(true);
+            inventarioempleado_form.setVisible(false);
 
-            inventory_Global.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventory_activos.setStyle("-fx-background-color: transparent");
-            salaryactivos.setStyle("-fx-background-color: transparent");
-            addEmployee_btn.setStyle("-fx-background-color: transparent");
+            inventario_Global.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventario_activos.setStyle("-fx-background-color: transparent");
+            saldo_activos.setStyle("-fx-background-color: transparent");
+            agregar_empleado.setStyle("-fx-background-color: transparent");
             home_btn.setStyle("-fx-background-color: transparent");
-            inventory_Employee.setStyle("-fx-background-color: transparent");
+            inventario_empleado.setStyle("-fx-background-color: transparent");
 
-        }else if(event.getSource() == inventory_Employee){
+        }else if(event.getSource() == inventario_empleado){
             home_form.setVisible(false);
             bienes.setVisible(false);
-            salary_form.setVisible(false);
-            inventory_employee.setVisible(false);
-            inventoryglobal_form.setVisible(false);
-            inventoryeployee_form.setVisible(true);
+            saldo_activos_form.setVisible(false);
+            agregar_empleado_form.setVisible(false);
+            inventarioglobal_form.setVisible(false);
+            inventarioempleado_form.setVisible(true);
 
-            inventory_Employee.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventory_activos.setStyle("-fx-background-color: transparent");
-            salaryactivos.setStyle("-fx-background-color: transparent");
-            addEmployee_btn.setStyle("-fx-background-color: transparent");
-            inventory_Global.setStyle("-fx-background-color: transparent");
+            inventario_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventario_activos.setStyle("-fx-background-color: transparent");
+            saldo_activos.setStyle("-fx-background-color: transparent");
+            agregar_empleado.setStyle("-fx-background-color: transparent");
+            inventario_Global.setStyle("-fx-background-color: transparent");
             home_btn.setStyle("-fx-background-color: transparent");
         }
 
@@ -569,7 +650,7 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setColumnResizePolicy(addEmployee_tableView);
-        setColumnResizePolicy(salary_tableView);
+        setColumnResizePolicy(saldo_tableView);
         setColumnResizePolicy(addEmployee_tableView1);
         setColumnResizePolicy(addEmployee_tableView11);
     }

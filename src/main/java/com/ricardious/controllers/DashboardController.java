@@ -167,6 +167,12 @@ public class DashboardController implements Initializable {
     @FXML
     private Button inventario_Global;
 
+    @FXML
+    private Button empleado;
+
+    @FXML
+    private Button edificio;
+
 
 
 
@@ -426,6 +432,17 @@ public class DashboardController implements Initializable {
 
 
 
+    @FXML
+    private AnchorPane edificios_form;
+
+
+
+
+    @FXML
+    private AnchorPane empleado_form;
+
+
+
 
 
 
@@ -484,6 +501,8 @@ public class DashboardController implements Initializable {
             agregar_empleado_form.setVisible(false);
             inventarioglobal_form.setVisible(false);
             inventarioempleado_form.setVisible(false);
+            empleado_form.setVisible(false);
+            edificios_form.setVisible(false);
 
 
             //Color que muestra en que pestaña estamos
@@ -493,6 +512,9 @@ public class DashboardController implements Initializable {
             agregar_empleado_form.setStyle("-fx-background-color: transparent");
             inventario_Global.setStyle("-fx-background-color: transparent");
             inventario_empleado.setStyle("-fx-background-color: transparent");
+            empleado.setStyle("-fx-background-color: transparent");
+            edificio.setStyle("-fx-background-color: transparent");
+
 
 
 
@@ -504,6 +526,8 @@ public class DashboardController implements Initializable {
             agregar_empleado_form.setVisible(false);
             inventarioglobal_form.setVisible(false);
             inventarioempleado_form.setVisible(false);
+            empleado_form.setVisible(false);
+            edificios_form.setVisible(false);
               //Color que muestra en que pestaña estamos
             inventario_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
             home_btn.setStyle("-fx-background-color: transparent");
@@ -511,6 +535,8 @@ public class DashboardController implements Initializable {
             agregar_empleado.setStyle("-fx-background-color: transparent");
             inventario_Global.setStyle("-fx-background-color: transparent");
             inventario_empleado.setStyle("-fx-background-color: transparent");
+            empleado.setStyle("-fx-background-color: transparent");
+            edificio.setStyle("-fx-background-color: transparent");
 
             llenarTablaBienes();
 
@@ -521,6 +547,8 @@ public class DashboardController implements Initializable {
             agregar_empleado_form.setVisible(false);
             inventarioglobal_form.setVisible(false);
             inventarioempleado_form.setVisible(false);
+            empleado_form.setVisible(false);
+            edificios_form.setVisible(false);
             //Color que muestra en que pestaña estamos
             saldo_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
             inventario_activos.setStyle("-fx-background-color: transparent");
@@ -528,6 +556,8 @@ public class DashboardController implements Initializable {
             agregar_empleado.setStyle("-fx-background-color: transparent");
             inventario_Global.setStyle("-fx-background-color: transparent");
             inventario_empleado.setStyle("-fx-background-color: transparent");
+            empleado.setStyle("-fx-background-color: transparent");
+            edificio.setStyle("-fx-background-color: transparent");
 
         }else if(event.getSource() == agregar_empleado){
             home_form.setVisible(false);
@@ -536,6 +566,8 @@ public class DashboardController implements Initializable {
             agregar_empleado_form.setVisible(true);
             inventarioglobal_form.setVisible(false);
             inventarioempleado_form.setVisible(false);
+            empleado_form.setVisible(false);
+            edificios_form.setVisible(false);
 
             agregar_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
             inventario_activos.setStyle("-fx-background-color: transparent");
@@ -543,6 +575,8 @@ public class DashboardController implements Initializable {
             home_btn.setStyle("-fx-background-color: transparent");
             inventario_Global.setStyle("-fx-background-color: transparent");
             inventario_empleado.setStyle("-fx-background-color: transparent");
+            empleado.setStyle("-fx-background-color: transparent");
+            edificio.setStyle("-fx-background-color: transparent");
 
         }else if(event.getSource() == inventario_Global){
             home_form.setVisible(false);
@@ -551,6 +585,8 @@ public class DashboardController implements Initializable {
             agregar_empleado_form.setVisible(false);
             inventarioglobal_form.setVisible(true);
             inventarioempleado_form.setVisible(false);
+            empleado_form.setVisible(false);
+            edificios_form.setVisible(false);
 
             inventario_Global.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
             inventario_activos.setStyle("-fx-background-color: transparent");
@@ -558,6 +594,8 @@ public class DashboardController implements Initializable {
             agregar_empleado.setStyle("-fx-background-color: transparent");
             home_btn.setStyle("-fx-background-color: transparent");
             inventario_empleado.setStyle("-fx-background-color: transparent");
+            empleado.setStyle("-fx-background-color: transparent");
+            edificio.setStyle("-fx-background-color: transparent");
 
         }else if(event.getSource() == inventario_empleado){
             home_form.setVisible(false);
@@ -566,6 +604,8 @@ public class DashboardController implements Initializable {
             agregar_empleado_form.setVisible(false);
             inventarioglobal_form.setVisible(false);
             inventarioempleado_form.setVisible(true);
+            empleado_form.setVisible(false);
+            edificios_form.setVisible(false);
 
             inventario_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
             inventario_activos.setStyle("-fx-background-color: transparent");
@@ -573,7 +613,61 @@ public class DashboardController implements Initializable {
             agregar_empleado.setStyle("-fx-background-color: transparent");
             inventario_Global.setStyle("-fx-background-color: transparent");
             home_btn.setStyle("-fx-background-color: transparent");
+            empleado.setStyle("-fx-background-color: transparent");
+            edificio.setStyle("-fx-background-color: transparent");
+
+        }else if(event.getSource() == empleado){
+            home_form.setVisible(false);
+            bienes.setVisible(false);
+            saldo_activos_form.setVisible(false);
+            agregar_empleado_form.setVisible(false);
+            inventarioglobal_form.setVisible(false);
+            inventarioempleado_form.setVisible(false);
+            empleado_form.setVisible(true);
+            edificios_form.setVisible(false);
+
+
+            empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventario_activos.setStyle("-fx-background-color: transparent");
+            saldo_activos.setStyle("-fx-background-color: transparent");
+            agregar_empleado.setStyle("-fx-background-color: transparent");
+            inventario_Global.setStyle("-fx-background-color: transparent");
+            home_btn.setStyle("-fx-background-color: transparent");
+            inventario_empleado.setStyle("-fx-background-color: transparent");
+            edificio.setStyle("-fx-background-color: transparent");
+
+
+        }else if(event.getSource() == edificio){
+            home_form.setVisible(false);
+            bienes.setVisible(false);
+            saldo_activos_form.setVisible(false);
+            agregar_empleado_form.setVisible(false);
+            inventarioglobal_form.setVisible(false);
+            inventarioempleado_form.setVisible(false);
+            empleado_form.setVisible(false);
+            edificios_form.setVisible(true);
+
+
+
+            edificio.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
+            inventario_activos.setStyle("-fx-background-color: transparent");
+            saldo_activos.setStyle("-fx-background-color: transparent");
+            agregar_empleado.setStyle("-fx-background-color: transparent");
+            inventario_Global.setStyle("-fx-background-color: transparent");
+            home_btn.setStyle("-fx-background-color: transparent");
+            empleado.setStyle("-fx-background-color: transparent");
+            inventario_empleado.setStyle("-fx-background-color: transparent");
+
+
+
         }
+
+
+
+
+
+
+
 
 
     }

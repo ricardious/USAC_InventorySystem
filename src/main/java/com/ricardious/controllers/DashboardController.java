@@ -1,10 +1,9 @@
 package com.ricardious.controllers;
 
 import com.ricardious.database.DatabaseConnection;
-import com.ricardious.models.bienes;
+import com.ricardious.models.ActivoFijo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableMap;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -14,7 +13,6 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -367,13 +365,13 @@ public class DashboardController implements Initializable {
         PreparedStatement consulta = connectNow.getConnection().prepareStatement(sql);
         ResultSet resultSet = consulta.executeQuery();
         while (resultSet.next()){
-            bienes Bienes = new bienes();
+            ActivoFijo ActivoFijo = new ActivoFijo();
             Map<String, Object> coleccion = new HashMap<>();
-            Bienes.setLiteral(resultSet.getString("Literal"));
-            Bienes.setDescripcion(resultSet.getString("Descripcion"));
-            Bienes.setRenglonGasto(Integer.parseInt(resultSet.getString("RenglonGasto")));
-            coleccion.put(ColLiteral, Bienes.getLiteral());
-            coleccion.put(ColDescripcion, Bienes.getDescripcion());
+            ActivoFijo.setLiteral(resultSet.getString("Literal"));
+            ActivoFijo.setDescripcion(resultSet.getString("Descripcion"));
+            ActivoFijo.setRenglonGasto(Integer.parseInt(resultSet.getString("RenglonGasto")));
+            coleccion.put(ColLiteral, ActivoFijo.getLiteral());
+            coleccion.put(ColDescripcion, ActivoFijo.getDescripcion());
             coleccion.put(ColRenglonGasto, String.valueOf(resultSet.getInt("RenglonGasto")));
             bienesList.add(coleccion);
         }

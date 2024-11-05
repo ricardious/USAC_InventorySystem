@@ -1,6 +1,6 @@
 package com.ricardious.models;
 
-public class bienes {
+public class ActivoFijo {
     private String Literal;
     private String Descripcion;
     private int RenglonGasto;

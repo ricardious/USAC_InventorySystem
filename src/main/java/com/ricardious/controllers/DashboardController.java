@@ -32,6 +32,8 @@ import javafx.stage.StageStyle;
 
 public class DashboardController implements Initializable {
 
+    @FXML
+    private TextField Search_Bienes;
 
     @FXML
     private Button addEmployee_addBtn;
@@ -230,9 +232,6 @@ public class DashboardController implements Initializable {
 
     @FXML
     private AnchorPane bienes;
-
-    @FXML
-    private TextField addEmployee_search11;
 
     @FXML
     private TableView<Map> addEmployee_tableView11;
@@ -743,7 +742,6 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setColumnResizePolicy(addEmployee_tableView);
         setColumnResizePolicy(saldo_tableView);
         setColumnResizePolicy(addEmployee_tableView1);
         setColumnResizePolicy(addEmployee_tableView11);

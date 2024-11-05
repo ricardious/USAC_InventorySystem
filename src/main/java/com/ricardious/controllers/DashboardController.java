@@ -4,6 +4,8 @@ import com.ricardious.database.DatabaseConnection;
 import com.ricardious.models.ActivoFijo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -439,8 +441,60 @@ public class DashboardController implements Initializable {
     private AnchorPane empleado_form;
 
 
+    private FilteredList<Map> filteredData;
+    private SortedList<Map> sortedData;
 
 
+    private <T> void setupTableSearch(TextField searchField, TableView<T> tableView, ObservableList<T> data,
+                                      String... searchProperties) {
+        // Inicializa FilteredList con todos los datos
+        FilteredList<T> filteredData = new FilteredList<>(data, p -> true);
+
+        // Añade listener al campo de búsqueda
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(item -> {
+                // Si el texto de búsqueda está vacío, muestra todos los items
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                // Busca en todas las propiedades especificadas
+                for (String property : searchProperties) {
+                    String value = "";
+                    if (item instanceof Map) {
+                        value = String.valueOf(((Map) item).get(property));
+                    } else {
+                        try {
+                            value = String.valueOf(item.getClass().getField(property).get(item));
+                        } catch (Exception e) {
+                            continue;
+                        }
+                    }
+
+                    if (value.toLowerCase().contains(lowerCaseFilter)) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+        });
+
+        // Enlaza SortedList con FilteredList
+        SortedList<T> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tableView.comparatorProperty());
+
+        // Vincula los datos filtrados y ordenados a la tabla
+        tableView.setItems(sortedData);
+    }
+
+    private void setupBienesSearch() {
+        setupTableSearch(Search_Bienes,
+                addEmployee_tableView11,
+                getBienes(),
+                ColLiteral, ColDescripcion, ColRenglonGasto);
+    }
 
 
 
@@ -486,6 +540,8 @@ public class DashboardController implements Initializable {
         this.addEmployee_col_firstName11.setCellValueFactory(new MapValueFactory(ColDescripcion));
         this.addEmployee_col_lastName11.setCellValueFactory(new MapValueFactory(ColRenglonGasto));
         this.addEmployee_tableView11.setItems(lista);
+
+        setupBienesSearch();
     }
 
 

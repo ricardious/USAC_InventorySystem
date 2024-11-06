@@ -440,23 +440,22 @@
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="addEmployee_employeeID11" layoutX="222.0" layoutY="499.0" prefHeight="25.0" prefWidth="250.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="180.19999999999993" AnchorPane.leftAnchor="222.0" />
+                                    <TextField fx:id="Literal_Activos" layoutX="222.0" layoutY="499.0" prefHeight="25.0" prefWidth="250.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="180.19999999999993" AnchorPane.leftAnchor="222.0" />
                                     <Label layoutX="128.0" layoutY="551.0" text="Descripción:" AnchorPane.bottomAnchor="135.39999999999998" AnchorPane.leftAnchor="128.0">
                                        <font>
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="addEmployee_firstName11" layoutX="222.0" layoutY="548.0" prefHeight="25.0" prefWidth="250.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="131.19999999999993" AnchorPane.leftAnchor="222.0" />
+                                    <TextField fx:id="Descripcion_Activos" layoutX="222.0" layoutY="548.0" prefHeight="25.0" prefWidth="250.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="131.19999999999993" AnchorPane.leftAnchor="222.0" />
                                     <Label layoutX="514.0" layoutY="530.0" text="Renglón de Gasto:" AnchorPane.bottomAnchor="156.39999999999995" AnchorPane.rightAnchor="399.6">
                                        <font>
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="addEmployee_position11" layoutX="641.0" layoutY="526.0" prefHeight="25.0" prefWidth="250.0" promptText="Choose" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="153.19999999999996" AnchorPane.rightAnchor="136.6" />
-                                    <Button fx:id="addEmployee_addBtn11" layoutX="719.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../css/dashboardDesign.css" text="Add" AnchorPane.bottomAnchor="28.799999999999976" />
-                                    <Button fx:id="addEmployee_updateBtn11" layoutX="595.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Update" AnchorPane.bottomAnchor="28.799999999999976" />
-                                    <Button fx:id="addEmployee_deleteBtn11" layoutX="433.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Delete" AnchorPane.bottomAnchor="28.799999999999976" />
-                                    <Button fx:id="addEmployee_clearBtn11" layoutX="320.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Clear" AnchorPane.bottomAnchor="29.199999999999953" />
+                                    <Button fx:id="Add_Activos" layoutX="641.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Add" prefHeight="41.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../css/dashboardDesign.css" text="Add" AnchorPane.bottomAnchor="29.199999999999932" />
+                                    <Button fx:id="Delete_Activos" layoutX="483.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Delete" prefHeight="41.0" prefWidth="94.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Delete" AnchorPane.bottomAnchor="29.199999999999932" />
+                                    <Button fx:id="Clear_Campos" layoutX="320.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Clear" prefHeight="41.0" prefWidth="94.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Clear" AnchorPane.bottomAnchor="29.199999999999953" />
+                                    <TextField fx:id="Renglon_Gasto_Activos" layoutX="641.0" layoutY="527.0" prefHeight="25.0" prefWidth="250.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
                                  </children>
                                  <styleClass>
                                     <String fx:value="white-bg" />

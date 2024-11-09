@@ -2,6 +2,7 @@ package com.ricardious.controllers;
 
 import com.ricardious.database.DatabaseConnection;
 import com.ricardious.models.ActivoFijo;
+import com.ricardious.models.EdificioFijo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -111,14 +112,11 @@ public class DashboardController implements Initializable {
     @FXML
     private AnchorPane inventarioglobal_form;
 
-
     @FXML
     private AnchorPane agregar_empleado_form;
 
-
     @FXML
     private TableView<?> addEmployee_tableView1;
-
 
     @FXML
     private AnchorPane saldo_activos_form;
@@ -127,10 +125,54 @@ public class DashboardController implements Initializable {
     private TableView<?> saldo_tableView;
 
     @FXML
+    private AnchorPane empleado_form;
+
+    @FXML
     private AnchorPane edificios_form;
 
     @FXML
-    private AnchorPane empleado_form;
+    private TableView<Map> edificiotabla;
+
+    @FXML
+    private TableColumn<?, ?> col_id_edificios;
+
+    @FXML
+    private TableColumn<?, ?> col_nombre_edificios;
+
+    @FXML
+    private TableColumn<?, ?> col_ubicacion_edificios;
+
+    @FXML
+    private TableColumn<?, ?> col_descripcion_edificios;
+
+    @FXML
+    private TableColumn<?, ?> col_seccion_edificios;
+
+    @FXML
+    private TextField agregar_idedificio;
+
+    @FXML
+    private TextField agregar_nombreedificios;
+
+    @FXML
+    private TextField agregar_ubicacion;
+
+    @FXML
+    private TextField agregar_descripcion;
+
+    @FXML
+    private TextField agregar_seccion;
+
+    @FXML
+    private Button limpiardatos_edificiosbt;
+
+    @FXML
+    private Button agregarinfo_edificiosbt;
+
+    @FXML
+    private Button eliminaredificio_bt;
+
+
 
 
     private FilteredList<Map> filteredData;
@@ -190,6 +232,7 @@ public class DashboardController implements Initializable {
 
 
 
+
     @FXML
     void importEXCEL(MouseEvent event) {
 
@@ -235,6 +278,70 @@ public class DashboardController implements Initializable {
 
         setupBienesSearch();
     }
+
+
+
+    @FXML
+    void importEXCELL(MouseEvent event) {
+
+    }
+
+    private String ColNumero = "Numero";
+    private String ColNombreedificio = "Nombreedificio";
+    private String ColDescripcionn = "Descripcion";
+    private String ColUbicacion = "Ubicacion";
+    private String ColSeccion = "Seccion";
+
+
+
+    public ObservableList<Map> getEdificios(){
+        var sql = "SELECT * FROM usac_inventory.edificios";
+        ObservableList<Map> edificiosList = FXCollections.observableArrayList();
+        try{
+            DatabaseConnection connectNoww = new DatabaseConnection();
+            PreparedStatement consultaa = connectNoww.getConnection().prepareStatement(sql);
+            ResultSet resultSett = consultaa.executeQuery();
+            while (resultSett.next()){
+                EdificioFijo EdificioFijo = new EdificioFijo();
+                Map<String, Object> coleccionn = new HashMap<>();
+                EdificioFijo.setNumero(resultSett.getInt("Numero"));
+                EdificioFijo.setNombreedificio(resultSett.getString("Nombreedificio"));
+                EdificioFijo.setUbicacion(resultSett.getString("Descripcion"));
+                EdificioFijo.setDescripcion(resultSett.getString("Ubicacion"));
+                EdificioFijo.setSeccion(resultSett.getString("Seccion"));
+                coleccionn.put(ColNumero, EdificioFijo.getNumero());
+                coleccionn.put(ColNombreedificio, EdificioFijo.getNombreedificio());
+                coleccionn.put(ColDescripcionn,  EdificioFijo.getUbicacion());
+                coleccionn.put(ColUbicacion, EdificioFijo.getDescripcion());
+                coleccionn.put(ColSeccion,  EdificioFijo.getSeccion());
+
+                edificiosList.add(coleccionn);
+            }
+            resultSett.close();
+            consultaa.close();
+
+        } catch (Exception u) {
+            throw new RuntimeException(u);
+        }
+        return edificiosList;
+    }
+
+    private void llenarTablaEdificios(){
+        ObservableList<Map> listaa = getEdificios();
+        this.col_id_edificios.setCellValueFactory(new MapValueFactory(ColNumero));
+        this.col_nombre_edificios.setCellValueFactory(new MapValueFactory(ColNombreedificio));
+        this.col_ubicacion_edificios.setCellValueFactory(new MapValueFactory(ColDescripcionn));
+        this.col_descripcion_edificios.setCellValueFactory(new MapValueFactory(ColUbicacion));
+        this.col_seccion_edificios.setCellValueFactory(new MapValueFactory(ColSeccion));
+        
+
+        this.edificiotabla.setItems(listaa);
+
+
+    }
+
+
+
 
 
     public void switchForm(ActionEvent event){
@@ -392,7 +499,7 @@ public class DashboardController implements Initializable {
             empleado_form.setVisible(false);
             edificios_form.setVisible(true);
 
-
+            llenarTablaEdificios();
 
             edificio.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
             inventario_activos.setStyle("-fx-background-color: transparent");
@@ -406,11 +513,6 @@ public class DashboardController implements Initializable {
 
 
         }
-
-
-
-
-
 
 
 
@@ -486,6 +588,9 @@ public class DashboardController implements Initializable {
 
     }
 
+
+
+
     @FXML
     void Add(MouseEvent event) {
         String Literal = Literal_Activos.getText();
@@ -541,6 +646,76 @@ public class DashboardController implements Initializable {
     }
         llenarTablaBienes();
     }
+
+
+
+
+    @FXML
+    void Addd(MouseEvent event) {
+        String Numero = agregar_idedificio.getText();
+        Integer numero = Integer.parseInt(Numero);
+        String Nombreedificio = agregar_nombreedificios.getText();
+        String Ubicacion = agregar_ubicacion.getText();
+        String Descripcion = agregar_descripcion.getText();
+        String Seccion = agregar_seccion.getText();
+
+
+        DatabaseConnection connectNoww = new DatabaseConnection();
+        String addEdificio = "INSERT INTO usac_inventory.edificios(Numero, Nombreedificio, Ubicacion, Descripcion, Seccion) VALUES (?, ? , ?, ?, ? )";
+        try (Connection connectDBs = connectNoww.getConnection();
+             PreparedStatement preparedStatementt = connectDBs.prepareStatement(addEdificio)){
+            preparedStatementt.setInt(1, numero);
+            preparedStatementt.setString(2, Nombreedificio);
+            preparedStatementt.setString(3, Ubicacion);
+            preparedStatementt.setString(4, Descripcion);
+            preparedStatementt.setString(5, Seccion);
+            preparedStatementt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Se han insertado los datos");
+        }
+        catch (SQLException u) {
+            JOptionPane.showMessageDialog(null, "Datos ingresados no validos");
+            u.printStackTrace();
+        }
+        llenarTablaEdificios();
+    }
+
+    @FXML
+    void Clearr(MouseEvent event) {
+        agregar_idedificio.setText("");
+        agregar_nombreedificios.setText("");
+        agregar_ubicacion.setText("");
+        agregar_descripcion.setText("");
+        agregar_seccion.setText("");
+    }
+
+    @FXML
+    void Deletee(MouseEvent event) {
+        String Numero = JOptionPane.showInputDialog(null, "Ingrese el numero a Eliminar: ", "Ingrese aquí el texto", JOptionPane.OK_CANCEL_OPTION);
+
+        if (Numero == null || Numero.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada");
+            return; // Sale del método sin hacer nada
+        }
+        else {
+            DatabaseConnection connectNoww = new DatabaseConnection();
+            String addEdificio = "DELETE FROM usac_inventory.edificios WHERE (Numero = ?)";
+            try (Connection connectDBs = connectNoww.getConnection();
+                 PreparedStatement preparedStatementt = connectDBs.prepareStatement(addEdificio)){
+                preparedStatementt.setString(1, Numero);
+                preparedStatementt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Se han Eliminado los datos");
+            }
+            catch (SQLException u) {
+                JOptionPane.showMessageDialog(null, "Datos ingresados no validos");
+                u.printStackTrace();
+            }
+        }
+        llenarTablaEdificios();
+    }
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

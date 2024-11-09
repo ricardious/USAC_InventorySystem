@@ -133,7 +133,7 @@
                <center>
                   <AnchorPane prefHeight="878.0" prefWidth="1058.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="13.0" layoutY="17.0" prefHeight="521.0" prefWidth="863.0" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="15.799999999999955" AnchorPane.leftAnchor="12.799999999999955" AnchorPane.rightAnchor="12.599999999999909" AnchorPane.topAnchor="16.799999999999955">
                                  <styleClass>
@@ -527,7 +527,7 @@
                               <TextField layoutX="578.0" layoutY="604.0" prefHeight="25.0" prefWidth="257.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="edificios_form" layoutX="127.0" layoutY="110.0" onMouseClicked="#importEXCELL" prefHeight="735.0" prefWidth="1058.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="edificios_form" layoutX="127.0" layoutY="110.0" onMouseClicked="#importEXCELL" prefHeight="735.0" prefWidth="1058.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="24.0" layoutY="78.0" prefHeight="461.0" prefWidth="1011.0" stylesheets="@../css/dashboardDesign.css">
                                  <styleClass>

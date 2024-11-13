@@ -3,6 +3,7 @@ package com.ricardious.controllers;
 import com.ricardious.database.DatabaseConnection;
 import com.ricardious.models.ActivoFijo;
 import com.ricardious.models.EdificioFijo;
+import com.ricardious.models.EmpleadobienesFijo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -32,6 +33,26 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Map;
+
+import org.apache.poi.ss.usermodel.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+
+
+
+
+
+
 
 import javax.swing.*;
 
@@ -90,9 +111,6 @@ public class DashboardController implements Initializable {
 
     @FXML
     private AnchorPane home_form;
-
-    @FXML
-    private AnchorPane inventarioempleado_form;
 
     @FXML
     private AnchorPane bienes;
@@ -175,8 +193,48 @@ public class DashboardController implements Initializable {
 
 
 
+
+    @FXML
+    private AnchorPane inventarioempleado_form;
+
+    @FXML
+    private TableView<Map> inventarioempl_table;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_tarjeta;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_activo;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_desc;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_estado;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleo_condicion;
+
+
+    @FXML
+    private Button inventarioempl_cleanbtn;
+
+    @FXML
+    private Button inventarioempl_updatebtn;
+
+    @FXML
+    private Button inventarioempl_eliminarbtn;
+
+
+
+
+
+
+
+
     private FilteredList<Map> filteredData;
     private SortedList<Map> sortedData;
+
 
 
     private <T> void setupTableSearch(TextField searchField, TableView<T> tableView, ObservableList<T> data,
@@ -281,6 +339,8 @@ public class DashboardController implements Initializable {
 
 
 
+
+
     @FXML
     void importEXCELL(MouseEvent event) {
 
@@ -340,6 +400,68 @@ public class DashboardController implements Initializable {
 
     }
 
+
+
+
+
+    @FXML
+    void importtEXCELL(MouseEvent event) {
+
+    }
+
+    private String ColTarjeta = "Tarjeta";
+    private String ColCodigoActivo = "CodigoActivo";
+    private String ColDescripcionnn = "Descripcion";
+    private String ColEstado = "Estado";
+    private String ColCondicion = "Condicion";
+
+
+
+    public ObservableList<Map> getEmpleadobienes(){
+        var sql = "SELECT * FROM usac_inventory.empleadobienes";
+        ObservableList<Map> empleadobienesList = FXCollections.observableArrayList();
+        try{
+            DatabaseConnection connecttNow = new DatabaseConnection();
+            PreparedStatement consullta = connecttNow.getConnection().prepareStatement(sql);
+            ResultSet resulttSet = consullta.executeQuery();
+            while (resulttSet.next()){
+                EmpleadobienesFijo EmpleadobienesFijo = new EmpleadobienesFijo();
+                Map<String, Object> colecccion = new HashMap<>();
+                EmpleadobienesFijo.setTarjeta(resulttSet.getInt("Tarjeta"));
+                EmpleadobienesFijo.setCodigoActivo(resulttSet.getString("CodigoActivo"));
+                EmpleadobienesFijo.setDescripcion(resulttSet.getString("Descripcion"));
+                EmpleadobienesFijo.setEstado(resulttSet.getString("Estado"));
+                EmpleadobienesFijo.setCondicion(resulttSet.getString("Condicion"));
+                colecccion.put(ColTarjeta, EmpleadobienesFijo.getTarjeta());
+                colecccion.put(ColCodigoActivo, EmpleadobienesFijo.getCodigoActivo());
+                colecccion.put(ColDescripcionnn,  EmpleadobienesFijo.getDescripcion());
+                colecccion.put(ColEstado, EmpleadobienesFijo.getEstado());
+                colecccion.put(ColCondicion,  EmpleadobienesFijo.getCondicion());
+
+                empleadobienesList.add(colecccion);
+            }
+            resulttSet.close();
+            consullta.close();
+
+        } catch (Exception a) {
+            throw new RuntimeException(a);
+        }
+        return empleadobienesList;
+    }
+
+    private void llenarTablaEmpleadobienes(){
+        ObservableList<Map> listta = getEmpleadobienes();
+        this.inventarioempleo_tarjeta.setCellValueFactory(new MapValueFactory(ColTarjeta));
+        this.inventarioempleo_activo.setCellValueFactory(new MapValueFactory(ColCodigoActivo));
+        this.inventarioempleo_desc.setCellValueFactory(new MapValueFactory(ColDescripcionnn));
+        this.inventarioempleo_estado.setCellValueFactory(new MapValueFactory(ColEstado));
+        this.inventarioempleo_condicion.setCellValueFactory(new MapValueFactory(ColCondicion));
+
+
+        this.inventarioempl_table.setItems(listta);
+
+
+    }
 
 
 
@@ -467,6 +589,9 @@ public class DashboardController implements Initializable {
             home_btn.setStyle("-fx-background-color: transparent");
             empleado.setStyle("-fx-background-color: transparent");
             edificio.setStyle("-fx-background-color: transparent");
+
+            llenarTablaEmpleadobienes();
+
 
         }else if(event.getSource() == empleado){
             home_form.setVisible(false);
@@ -728,5 +853,121 @@ public class DashboardController implements Initializable {
     private void setColumnResizePolicy(TableView<?> tableView) {
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
+
+
+
+
+
+    @FXML
+    void exportToExcel(MouseEvent event) {
+        ObservableList<Map> dataList = getEmpleadobienes();
+
+        // Crea un archivo Excel
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("Empleadobienes");
+
+            // Crear encabezados
+            Row headerRow = sheet.createRow(0);
+            String[] headers = {ColTarjeta, ColCodigoActivo, ColDescripcionnn, ColEstado, ColCondicion};
+
+            for (int i = 0; i < headers.length; i++) {
+                org.apache.poi.ss.usermodel.Cell cell = headerRow.createCell(i);
+                cell.setCellValue(headers[i]);
+            }
+
+            // Población de datos
+            for (int i = 0; i < dataList.size(); i++) {
+                Row row = sheet.createRow(i + 1);
+                Map<String, Object> dataMap = dataList.get(i);
+
+                for (int j = 0; j < headers.length; j++) {
+                    org.apache.poi.ss.usermodel.Cell cell = row.createCell(j);
+                    Object value = dataMap.get(headers[j]);
+                    if (value instanceof Integer) {
+                        cell.setCellValue((Integer) value);
+                    } else if (value instanceof String) {
+                        cell.setCellValue((String) value);
+                    }
+                }
+            }
+
+            // Guardar el archivo
+            try (FileOutputStream fileOut = new FileOutputStream("empleadobienes.xlsx")) {
+                workbook.write(fileOut);
+            }
+            System.out.println("Archivo exportado exitosamente");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    @FXML
+    void importFromExcel(MouseEvent event) {
+        String filePath = "empleadobienes.xlsx"; // Ruta del archivo Excel
+
+        try (FileInputStream file = new FileInputStream(new File(filePath));
+             Workbook workbook = new XSSFWorkbook(file)) {
+
+            Sheet sheet = workbook.getSheetAt(0);
+            Connection connection = new DatabaseConnection().getConnection();
+            String sql = "INSERT INTO usac_inventory.empleadobienes (Tarjeta, CodigoActivo, Descripcion, Estado, Condicion) VALUES (?, ?, ?, ?, ?)";
+
+            connection.setAutoCommit(false); // Iniciamos una transacción
+
+            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                Row row = sheet.getRow(i);
+                if (row != null) {
+                    try {
+                        // Leer los valores de cada celda, con validación para asegurarnos de que no estén vacíos
+                        Integer tarjeta = (row.getCell(0) != null && row.getCell(0).getCellType() == CellType.NUMERIC) ?
+                                (int) row.getCell(0).getNumericCellValue() : null;
+                        String codigoActivo = (row.getCell(1) != null) ? row.getCell(1).getStringCellValue() : "";
+                        String descripcion = (row.getCell(2) != null) ? row.getCell(2).getStringCellValue() : "";
+                        String estado = (row.getCell(3) != null) ? row.getCell(3).getStringCellValue() : "";
+                        String condicion = (row.getCell(4) != null) ? row.getCell(4).getStringCellValue() : "";
+
+                        if (tarjeta == null || codigoActivo.isEmpty() || descripcion.isEmpty()) {
+                            System.out.println("Fila inválida en el índice " + i + ", se omite.");
+                            continue; // Si faltan campos obligatorios, se omite esta fila
+                        }
+
+                        // Preparar y ejecutar la consulta SQL para insertar los datos
+                        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                        preparedStatement.setInt(1, tarjeta);
+                        preparedStatement.setString(2, codigoActivo);
+                        preparedStatement.setString(3, descripcion);
+                        preparedStatement.setString(4, estado);
+                        preparedStatement.setString(5, condicion);
+                        preparedStatement.executeUpdate();
+                    } catch (Exception e) {
+                        System.err.println("Error al procesar la fila " + i + ": " + e.getMessage());
+                    }
+                }
+            }
+
+            connection.commit(); // Confirmamos los cambios en la base de datos
+            System.out.println("Datos importados exitosamente");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al importar los datos desde Excel: " + e.getMessage());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

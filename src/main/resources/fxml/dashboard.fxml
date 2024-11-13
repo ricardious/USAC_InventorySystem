@@ -356,7 +356,7 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="inventarioempleado_form" layoutX="80.0" layoutY="137.0" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="inventarioempleado_form" layoutX="80.0" layoutY="137.0" onMouseClicked="#importtEXCELL" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="5.0" layoutY="8.0" prefHeight="45.0" prefWidth="1040.0" stylesheets="@../css/dashboardDesign.css">
                                  <styleClass>
@@ -368,7 +368,7 @@
                                     <TextField fx:id="inventarioempl_codigo" layoutX="125.0" layoutY="10.0" />
                                  </children>
                               </AnchorPane>
-                              <TableView fx:id="inventarioempl_tableView1" layoutX="14.0" layoutY="67.0" prefHeight="389.0" prefWidth="1032.0" stylesheets="@../css/dashboardDesign.css">
+                              <TableView fx:id="inventarioempl_table" layoutX="14.0" layoutY="67.0" prefHeight="389.0" prefWidth="1032.0" stylesheets="@../css/dashboardDesign.css">
                                 <columns>
                                   <TableColumn fx:id="inventarioempleo_tarjeta" prefWidth="161.0" text="Tarjeta" />
                                   <TableColumn fx:id="inventarioempleo_activo" prefWidth="167.0" text="codigo de activo" />
@@ -378,8 +378,28 @@
                                 </columns>
                               </TableView>
                               <Button fx:id="inventarioempl_cleanbtn" layoutX="670.0" layoutY="485.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="90.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Limpiar" />
-                              <Button fx:id="inventarioempl_updatebtn" layoutX="790.0" layoutY="485.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="90.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Actualizar" />
+                              <Button fx:id="inventarioempl_updatebtn" layoutX="790.0" layoutY="485.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="90.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Agregar" />
                               <Button fx:id="inventarioempl_eliminarbtn" layoutX="918.0" layoutY="485.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="90.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Eliminar" />
+                              <AnchorPane layoutX="252.0" layoutY="507.0" prefHeight="127.0" prefWidth="101.0" stylesheets="@../css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <ImageView fx:id="agregarempl_image11" fitHeight="127.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Button fx:id="agregarempl_importBtn11" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#exportToExcel" prefWidth="101.0" styleClass="import-btn" stylesheets="@../css/dashboardDesign.css" text="Exportar Excel" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="80.0" layoutY="507.0" prefHeight="127.0" prefWidth="101.0" stylesheets="@../css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <ImageView fx:id="agregarempl_image111" fitHeight="127.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Button fx:id="agregarempl_importBtn111" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#importFromExcel" prefWidth="101.0" styleClass="import-btn" stylesheets="@../css/dashboardDesign.css" text="Importar Excel" />
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="inventarioglobal_form" layoutX="153.0" layoutY="164.0" onMouseClicked="#importEXCEL" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -551,9 +571,9 @@
                                     <Font name="Tahoma Bold" size="24.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="agregarinfo_edificiosbt" layoutX="705.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#Addd" prefHeight="45.0" prefWidth="85.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Add" />
-                              <Button fx:id="limpiardatos_edificiosbt" layoutX="573.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#Clearr" prefHeight="45.0" prefWidth="85.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Clean" />
-                              <Button fx:id="eliminaredificio_bt" layoutX="839.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#Deletee" prefHeight="45.0" prefWidth="85.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Delete" />
+                              <Button fx:id="agregarinfo_edificiosbt" layoutX="705.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#Addd" prefHeight="45.0" prefWidth="85.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Agregar" />
+                              <Button fx:id="limpiardatos_edificiosbt" layoutX="573.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#Clearr" prefHeight="45.0" prefWidth="85.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Limpiar" />
+                              <Button fx:id="eliminaredificio_bt" layoutX="839.0" layoutY="664.0" mnemonicParsing="false" onMouseClicked="#Deletee" prefHeight="45.0" prefWidth="85.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Eliminar" />
                               <Label layoutX="42.0" layoutY="595.0" text="Nombre del Edificio:">
                                  <font>
                                     <Font name="Tahoma Bold" size="12.0" />

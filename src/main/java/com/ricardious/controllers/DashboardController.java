@@ -201,20 +201,31 @@ public class DashboardController implements Initializable {
     private TableView<Map> inventarioempl_table;
 
     @FXML
-    private TableColumn<?, ?> inventarioempleo_tarjeta;
+    private TableColumn<?, ?> inventarioempleado_tarjeta;
 
     @FXML
-    private TableColumn<?, ?> inventarioempleo_activo;
+    private TableColumn<?, ?> inventarioempleado_codigoactivo;
 
     @FXML
-    private TableColumn<?, ?> inventarioempleo_desc;
+    private TableColumn<?, ?> inventarioempleado_desc;
 
     @FXML
-    private TableColumn<?, ?> inventarioempleo_estado;
+    private TableColumn<?, ?> inventarioempleado_valor;
 
     @FXML
-    private TableColumn<?, ?> inventarioempleo_condicion;
+    private TableColumn<?, ?> inventarioempleado_registropersonal;
 
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_nombre;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_activo;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_seccion;
+
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_estado;
 
     @FXML
     private Button inventarioempl_cleanbtn;
@@ -224,6 +235,33 @@ public class DashboardController implements Initializable {
 
     @FXML
     private Button inventarioempl_eliminarbtn;
+
+    @FXML
+    private TextField empleadotarjetafield;
+
+    @FXML
+    private TextField empleadocodigofield;
+
+    @FXML
+    private TextField empleadodescripfield;
+
+    @FXML
+    private TextField empleadovalorfield;
+
+    @FXML
+    private TextField empleadoregistrofield;
+
+    @FXML
+    private TextField empleadonombrefield;
+
+    @FXML
+    private TextField empleadoactivofield;
+
+    @FXML
+    private TextField empleadoseccionfield;
+
+    @FXML
+    private TextField empleadoestadofield;
 
 
 
@@ -412,8 +450,12 @@ public class DashboardController implements Initializable {
     private String ColTarjeta = "Tarjeta";
     private String ColCodigoActivo = "CodigoActivo";
     private String ColDescripcionnn = "Descripcion";
+    private String ColValor = "Valor";
+    private String ColRegistropersonal = "Registropersonal";
+    private String ColNombreempleado = "Nombreempleado";
+    private String ColActivo = "Activo";
+    private String ColSeccionn = "Seccionn";
     private String ColEstado = "Estado";
-    private String ColCondicion = "Condicion";
 
 
 
@@ -430,13 +472,21 @@ public class DashboardController implements Initializable {
                 EmpleadobienesFijo.setTarjeta(resulttSet.getInt("Tarjeta"));
                 EmpleadobienesFijo.setCodigoActivo(resulttSet.getString("CodigoActivo"));
                 EmpleadobienesFijo.setDescripcion(resulttSet.getString("Descripcion"));
+                EmpleadobienesFijo.setValor(resulttSet.getString("Valor"));
+                EmpleadobienesFijo.setRegistropersonal(resulttSet.getString("Registropersonal"));
+                EmpleadobienesFijo.setNombreempleado(resulttSet.getString("Nombreempleado"));
+                EmpleadobienesFijo.setActivo(resulttSet.getString("Activo"));
+                EmpleadobienesFijo.setSeccionn(resulttSet.getString("Seccionn"));
                 EmpleadobienesFijo.setEstado(resulttSet.getString("Estado"));
-                EmpleadobienesFijo.setCondicion(resulttSet.getString("Condicion"));
                 colecccion.put(ColTarjeta, EmpleadobienesFijo.getTarjeta());
                 colecccion.put(ColCodigoActivo, EmpleadobienesFijo.getCodigoActivo());
                 colecccion.put(ColDescripcionnn,  EmpleadobienesFijo.getDescripcion());
+                colecccion.put(ColValor, EmpleadobienesFijo.getValor());
+                colecccion.put(ColRegistropersonal,  EmpleadobienesFijo.getRegistropersonal());
+                colecccion.put(ColNombreempleado, EmpleadobienesFijo.getNombreempleado());
+                colecccion.put(ColActivo, EmpleadobienesFijo.getActivo());
+                colecccion.put(ColSeccionn, EmpleadobienesFijo.getSeccionn());
                 colecccion.put(ColEstado, EmpleadobienesFijo.getEstado());
-                colecccion.put(ColCondicion,  EmpleadobienesFijo.getCondicion());
 
                 empleadobienesList.add(colecccion);
             }
@@ -451,15 +501,17 @@ public class DashboardController implements Initializable {
 
     private void llenarTablaEmpleadobienes(){
         ObservableList<Map> listta = getEmpleadobienes();
-        this.inventarioempleo_tarjeta.setCellValueFactory(new MapValueFactory(ColTarjeta));
-        this.inventarioempleo_activo.setCellValueFactory(new MapValueFactory(ColCodigoActivo));
-        this.inventarioempleo_desc.setCellValueFactory(new MapValueFactory(ColDescripcionnn));
-        this.inventarioempleo_estado.setCellValueFactory(new MapValueFactory(ColEstado));
-        this.inventarioempleo_condicion.setCellValueFactory(new MapValueFactory(ColCondicion));
-
+        this.inventarioempleado_tarjeta.setCellValueFactory(new MapValueFactory(ColTarjeta));
+        this.inventarioempleado_codigoactivo.setCellValueFactory(new MapValueFactory(ColCodigoActivo));
+        this.inventarioempleado_desc.setCellValueFactory(new MapValueFactory(ColDescripcionnn));
+        this.inventarioempleado_valor.setCellValueFactory(new MapValueFactory(ColValor));
+        this.inventarioempleado_registropersonal.setCellValueFactory(new MapValueFactory(ColRegistropersonal));
+        this.inventarioempleado_nombre.setCellValueFactory(new MapValueFactory(ColNombreempleado));
+        this.inventarioempleado_activo.setCellValueFactory(new MapValueFactory(ColActivo));
+        this.inventarioempleado_seccion.setCellValueFactory(new MapValueFactory(ColSeccionn));
+        this.inventarioempleado_estado.setCellValueFactory(new MapValueFactory(ColEstado));
 
         this.inventarioempl_table.setItems(listta);
-
 
     }
 
@@ -858,6 +910,100 @@ public class DashboardController implements Initializable {
 
 
 
+
+
+
+    @FXML
+    void AAdd(MouseEvent event) {
+        String Tarjeta = empleadotarjetafield.getText();
+        Integer tarejta = Integer.parseInt(Tarjeta);
+        String CodigoActivo = empleadocodigofield.getText();
+        String Descripcion = empleadodescripfield.getText();
+        String Valor = empleadovalorfield.getText();
+        String Registropersonal = empleadoregistrofield.getText();
+        String Nombreempleado = empleadonombrefield.getText();
+        String Activo = empleadoactivofield.getText();
+        String Seccionn = empleadoseccionfield.getText();
+        String Estado = empleadoestadofield.getText();
+
+
+
+
+
+        DatabaseConnection connecttNow = new DatabaseConnection();
+        String addEmpleadobienes = "INSERT INTO usac_inventory.empleadobienes(Tarjeta, CodigoActivo, Descripcion, Valor, Registropersonal, Nombreempleado, Activo, Seccionn, Estado) VALUES (?, ? , ?, ?, ?, ?, ?, ?, ? )";
+        try (Connection connectDBs = connecttNow.getConnection();
+             PreparedStatement preparedStatement = connectDBs.prepareStatement(addEmpleadobienes)){
+            preparedStatement.setInt(1, tarejta);
+            preparedStatement.setString(2, CodigoActivo);
+            preparedStatement.setString(3, Descripcion);
+            preparedStatement.setString(4, Valor);
+            preparedStatement.setString(5, Registropersonal);
+            preparedStatement.setString(6, Nombreempleado);
+            preparedStatement.setString(7, Activo);
+            preparedStatement.setString(8, Seccionn);
+            preparedStatement.setString(9, Estado);
+
+
+
+            preparedStatement.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Se han insertado los datos");
+        }
+        catch (SQLException u) {
+            JOptionPane.showMessageDialog(null, "Datos ingresados no validos");
+            u.printStackTrace();
+        }
+        llenarTablaEdificios();
+    }
+
+    @FXML
+    void Cllear(MouseEvent event) {
+        empleadotarjetafield.setText("");
+        empleadocodigofield.setText("");
+        empleadodescripfield.setText("");
+        empleadovalorfield.setText("");
+        empleadoregistrofield.setText("");
+        empleadonombrefield.setText("");
+        empleadoactivofield.setText("");
+        empleadoseccionfield.setText("");
+        empleadoestadofield.setText("");
+
+    }
+
+    @FXML
+    void Delette(MouseEvent event) {
+        String Tarjeta = JOptionPane.showInputDialog(null, "Ingrese el tarejta a Eliminar: ", "Ingrese aquí el texto", JOptionPane.OK_CANCEL_OPTION);
+
+        if (Tarjeta == null || Tarjeta.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada");
+            return; // Sale del método sin hacer nada
+        }
+        else {
+            DatabaseConnection connecttNow = new DatabaseConnection();
+            String addEmpleadobienes = "DELETE FROM usac_inventory.empleadobienes WHERE (Tarjeta = ?)";
+            try (Connection connectDBs = connecttNow.getConnection();
+                 PreparedStatement preparedStatement = connectDBs.prepareStatement(addEmpleadobienes)){
+                preparedStatement.setString(1, Tarjeta);
+                preparedStatement.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Se han Eliminado los datos");
+            }
+            catch (SQLException u) {
+                JOptionPane.showMessageDialog(null, "Datos ingresados no validos");
+                u.printStackTrace();
+            }
+        }
+        llenarTablaEmpleadobienes();
+    }
+
+
+
+
+
+
+
+
+
     @FXML
     void exportToExcel(MouseEvent event) {
         ObservableList<Map> dataList = getEmpleadobienes();
@@ -868,7 +1014,7 @@ public class DashboardController implements Initializable {
 
             // Crear encabezados
             Row headerRow = sheet.createRow(0);
-            String[] headers = {ColTarjeta, ColCodigoActivo, ColDescripcionnn, ColEstado, ColCondicion};
+            String[] headers = {ColTarjeta, ColCodigoActivo, ColDescripcionnn, ColValor, ColRegistropersonal, ColNombreempleado, ColActivo, ColSeccionn, ColEstado};
 
             for (int i = 0; i < headers.length; i++) {
                 org.apache.poi.ss.usermodel.Cell cell = headerRow.createCell(i);
@@ -902,8 +1048,6 @@ public class DashboardController implements Initializable {
         }
     }
 
-
-
     @FXML
     void importFromExcel(MouseEvent event) {
         String filePath = "empleadobienes.xlsx"; // Ruta del archivo Excel
@@ -913,7 +1057,7 @@ public class DashboardController implements Initializable {
 
             Sheet sheet = workbook.getSheetAt(0);
             Connection connection = new DatabaseConnection().getConnection();
-            String sql = "INSERT INTO usac_inventory.empleadobienes (Tarjeta, CodigoActivo, Descripcion, Estado, Condicion) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO usac_inventory.empleadobienes (Tarjeta, CodigoActivo, Descripcion, Valor, Registropersonal, Nombreempleado, Activo, Seccionn, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             connection.setAutoCommit(false); // Iniciamos una transacción
 
@@ -921,13 +1065,16 @@ public class DashboardController implements Initializable {
                 Row row = sheet.getRow(i);
                 if (row != null) {
                     try {
-                        // Leer los valores de cada celda, con validación para asegurarnos de que no estén vacíos
                         Integer tarjeta = (row.getCell(0) != null && row.getCell(0).getCellType() == CellType.NUMERIC) ?
                                 (int) row.getCell(0).getNumericCellValue() : null;
-                        String codigoActivo = (row.getCell(1) != null) ? row.getCell(1).getStringCellValue() : "";
-                        String descripcion = (row.getCell(2) != null) ? row.getCell(2).getStringCellValue() : "";
-                        String estado = (row.getCell(3) != null) ? row.getCell(3).getStringCellValue() : "";
-                        String condicion = (row.getCell(4) != null) ? row.getCell(4).getStringCellValue() : "";
+                        String codigoActivo = getCellValueAsString(row.getCell(1));
+                        String descripcion = getCellValueAsString(row.getCell(2));
+                        String valor = getCellValueAsString(row.getCell(3));
+                        String registropersonal = getCellValueAsString(row.getCell(4));
+                        String nombreempleado = getCellValueAsString(row.getCell(5));
+                        String activo = getCellValueAsString(row.getCell(6));
+                        String seccionn = getCellValueAsString(row.getCell(7));
+                        String estado = getCellValueAsString(row.getCell(8));
 
                         if (tarjeta == null || codigoActivo.isEmpty() || descripcion.isEmpty()) {
                             System.out.println("Fila inválida en el índice " + i + ", se omite.");
@@ -939,8 +1086,13 @@ public class DashboardController implements Initializable {
                         preparedStatement.setInt(1, tarjeta);
                         preparedStatement.setString(2, codigoActivo);
                         preparedStatement.setString(3, descripcion);
-                        preparedStatement.setString(4, estado);
-                        preparedStatement.setString(5, condicion);
+                        preparedStatement.setString(4, valor);
+                        preparedStatement.setString(5, registropersonal);
+                        preparedStatement.setString(6, nombreempleado);
+                        preparedStatement.setString(7, activo);
+                        preparedStatement.setString(8, seccionn);
+                        preparedStatement.setString(9, estado);
+
                         preparedStatement.executeUpdate();
                     } catch (Exception e) {
                         System.err.println("Error al procesar la fila " + i + ": " + e.getMessage());
@@ -956,6 +1108,30 @@ public class DashboardController implements Initializable {
             System.err.println("Error al importar los datos desde Excel: " + e.getMessage());
         }
     }
+
+    // Método auxiliar para convertir el valor de una celda a String
+    private String getCellValueAsString(org.apache.poi.ss.usermodel.Cell cell) {
+        if (cell == null) {
+            return "";
+        }
+        switch (cell.getCellType()) {
+            case STRING:
+                return cell.getStringCellValue();
+            case NUMERIC:
+                if (org.apache.poi.ss.usermodel.DateUtil.isCellDateFormatted(cell)) {
+                    return cell.getDateCellValue().toString(); // Para fechas, puedes formatear esto según necesites
+                } else {
+                    return String.valueOf((int) cell.getNumericCellValue()); // Convertir a entero si es un número
+                }
+            case BOOLEAN:
+                return String.valueOf(cell.getBooleanCellValue());
+            case FORMULA:
+                return cell.getCellFormula();
+            default:
+                return "";
+        }
+    }
+
 
 
 

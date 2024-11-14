@@ -4,8 +4,12 @@ public class EmpleadobienesFijo {
     private int Tarjeta;
     private String CodigoActivo;
     private String Descripcion;
+    private String Valor;
+    private String Registropersonal;
+    private String Nombreempleado;
+    private String Activo;
+    private String Seccionn;
     private String Estado;
-    private String Condicion;
 
 
     public int getTarjeta() {
@@ -29,6 +33,41 @@ public class EmpleadobienesFijo {
     }
 
 
+    public String getValor() {
+        return Valor;
+    }
+
+    public void setValor(String valor) {Valor = valor;}
+
+
+    public String getRegistropersonal() {
+        return Registropersonal;
+    }
+
+    public void setRegistropersonal(String registropersonal) {Registropersonal = registropersonal;}
+
+
+    public String getNombreempleado() {
+        return Nombreempleado;
+    }
+
+    public void setNombreempleado(String nombreempleado) {Nombreempleado = nombreempleado;}
+
+
+    public String getActivo() {
+        return Activo;
+    }
+
+    public void setActivo(String activo) {Activo = activo;}
+
+
+    public String getSeccionn() {
+        return Seccionn;
+    }
+
+    public void setSeccionn(String seccionn) {Seccionn = seccionn;}
+
+
     public String getEstado() {
         return Estado;
     }
@@ -36,11 +75,6 @@ public class EmpleadobienesFijo {
     public void setEstado(String estado) {Estado = estado;}
 
 
-    public String getCondicion() {
-        return Condicion;
-    }
-
-    public void setCondicion(String condicion) {Condicion = condicion;}
 
 
 }

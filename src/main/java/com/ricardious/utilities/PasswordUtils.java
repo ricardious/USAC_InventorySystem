@@ -1,4 +1,4 @@
-package com.ricardious.util;
+package com.ricardious.utilities;
 
 import com.password4j.Hash;
 import com.password4j.Password;

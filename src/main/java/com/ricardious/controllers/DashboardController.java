@@ -281,7 +281,7 @@ public class DashboardController implements Initializable {
      */
     public ObservableList<Map> getBienes() {
         // SQL query to fetch all rows from the "bienes" table
-        var sql = "SELECT * FROM usac_inventory.bienes";
+        var sql = "SELECT * FROM sql5744925.bienes";
         ObservableList<Map> bienesList = FXCollections.observableArrayList();  // List to store the assets
 
         Connection connection = null;  // Connection object to be used to close the connection properly
@@ -361,7 +361,7 @@ public class DashboardController implements Initializable {
 
 
     public ObservableList<Map> getEdificios(){
-        var sql = "SELECT * FROM usac_inventory.edificios";
+        var sql = "SELECT * FROM sql5744925.edificios";
         ObservableList<Map> edificiosList = FXCollections.observableArrayList();
         try{
             DatabaseConnection connectNoww = new DatabaseConnection();
@@ -424,7 +424,7 @@ public class DashboardController implements Initializable {
 
 
     public ObservableList<Map> getEmpleadobienes(){
-        var sql = "SELECT * FROM usac_inventory.empleadobienes";
+        var sql = "SELECT * FROM sql5744925.empleadobienes";
         ObservableList<Map> empleadobienesList = FXCollections.observableArrayList();
         try{
             DatabaseConnection connecttNow = new DatabaseConnection();
@@ -644,7 +644,7 @@ public class DashboardController implements Initializable {
         Integer Renglon_gasto = Integer.parseInt(Renglon_Gasto);
 
         DatabaseConnection connectNow = new DatabaseConnection();
-        String addActivo = "INSERT INTO usac_inventory.bienes(Literal, Descripcion, RenglonGasto) VALUES (?, ? , ?)";
+        String addActivo = "INSERT INTO sql5744925.bienes(Literal, Descripcion, RenglonGasto) VALUES (?, ? , ?)";
         try (Connection connectDB = connectNow.getConnection();
              PreparedStatement preparedStatement = connectDB.prepareStatement(addActivo)){
             preparedStatement.setString(1, Literal);
@@ -677,7 +677,7 @@ public class DashboardController implements Initializable {
         }
         else {
         DatabaseConnection connectNow = new DatabaseConnection();
-        String addActivo = "DELETE FROM usac_inventory.bienes WHERE (Literal = ?)";
+        String addActivo = "DELETE FROM sql5744925.bienes WHERE (Literal = ?)";
         try (Connection connectDB = connectNow.getConnection();
              PreparedStatement preparedStatement = connectDB.prepareStatement(addActivo)){
             preparedStatement.setString(1, Literal);
@@ -706,7 +706,7 @@ public class DashboardController implements Initializable {
 
 
         DatabaseConnection connectNoww = new DatabaseConnection();
-        String addEdificio = "INSERT INTO usac_inventory.edificios(Numero, Nombreedificio, Ubicacion, Descripcion, Seccion) VALUES (?, ? , ?, ?, ? )";
+        String addEdificio = "INSERT INTO sql5744925.edificios(Numero, Nombreedificio, Ubicacion, Descripcion, Seccion) VALUES (?, ? , ?, ?, ? )";
         try (Connection connectDBs = connectNoww.getConnection();
              PreparedStatement preparedStatementt = connectDBs.prepareStatement(addEdificio)){
             preparedStatementt.setInt(1, numero);
@@ -744,7 +744,7 @@ public class DashboardController implements Initializable {
         }
         else {
             DatabaseConnection connectNoww = new DatabaseConnection();
-            String addEdificio = "DELETE FROM usac_inventory.edificios WHERE (Numero = ?)";
+            String addEdificio = "DELETE FROM sql5744925.edificios WHERE (Numero = ?)";
             try (Connection connectDBs = connectNoww.getConnection();
                  PreparedStatement preparedStatementt = connectDBs.prepareStatement(addEdificio)){
                 preparedStatementt.setString(1, Numero);
@@ -796,7 +796,7 @@ public class DashboardController implements Initializable {
 
 
         DatabaseConnection connecttNow = new DatabaseConnection();
-        String addEmpleadobienes = "INSERT INTO usac_inventory.empleadobienes(Tarjeta, CodigoActivo, Descripcion, Valor, Registropersonal, Nombreempleado, Activo, Seccionn, Estado) VALUES (?, ? , ?, ?, ?, ?, ?, ?, ? )";
+        String addEmpleadobienes = "INSERT INTO sql5744925.empleadobienes(Tarjeta, CodigoActivo, Descripcion, Valor, Registropersonal, Nombreempleado, Activo, Seccionn, Estado) VALUES (?, ? , ?, ?, ?, ?, ?, ?, ? )";
         try (Connection connectDBs = connecttNow.getConnection();
              PreparedStatement preparedStatement = connectDBs.prepareStatement(addEmpleadobienes)){
             preparedStatement.setInt(1, tarejta);
@@ -846,7 +846,7 @@ public class DashboardController implements Initializable {
         }
         else {
             DatabaseConnection connecttNow = new DatabaseConnection();
-            String addEmpleadobienes = "DELETE FROM usac_inventory.empleadobienes WHERE (Tarjeta = ?)";
+            String addEmpleadobienes = "DELETE FROM sql5744925.empleadobienes WHERE (Tarjeta = ?)";
             try (Connection connectDBs = connecttNow.getConnection();
                  PreparedStatement preparedStatement = connectDBs.prepareStatement(addEmpleadobienes)){
                 preparedStatement.setString(1, Tarjeta);
@@ -922,7 +922,7 @@ public class DashboardController implements Initializable {
 
             Sheet sheet = workbook.getSheetAt(0);
             Connection connection = new DatabaseConnection().getConnection();
-            String sql = "INSERT INTO usac_inventory.empleadobienes (Tarjeta, CodigoActivo, Descripcion, Valor, Registropersonal, Nombreempleado, Activo, Seccionn, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO sql5744925.empleadobienes (Tarjeta, CodigoActivo, Descripcion, Valor, Registropersonal, Nombreempleado, Activo, Seccionn, Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             connection.setAutoCommit(false); // Iniciamos una transacción
 

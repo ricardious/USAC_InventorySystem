@@ -186,11 +186,6 @@ public class DashboardController implements Initializable {
     @FXML
     private TextField empleadoestadofield;
 
-    // Data filtering and sorting for TableView
-    private FilteredList<Map> filteredData;
-    private SortedList<Map> sortedData;
-
-
 
     /**
      * Sets up search functionality for a TableView by filtering data based on input in a TextField.
@@ -264,8 +259,6 @@ public class DashboardController implements Initializable {
                 getBienes(),
                 ColLiteral, ColDescripcion, ColRenglonGasto);
     }
-
-
 
 
 
@@ -414,7 +407,6 @@ public class DashboardController implements Initializable {
     }
 
 
-
     @FXML
     void importtEXCELL(MouseEvent event) {
 
@@ -429,7 +421,6 @@ public class DashboardController implements Initializable {
     private String ColActivo = "Activo";
     private String ColSeccionn = "Seccionn";
     private String ColEstado = "Estado";
-
 
 
     public ObservableList<Map> getEmpleadobienes(){
@@ -489,207 +480,94 @@ public class DashboardController implements Initializable {
     }
 
 
+    public void switchForm(ActionEvent event) {
+        // Reset all form visibility to false
+        home_form.setVisible(false);
+        bienes.setVisible(false);
+        saldo_activos_form.setVisible(false);
+        agregar_empleado_form.setVisible(false);
+        inventarioglobal_form.setVisible(false);
+        inventarioempleado_form.setVisible(false);
+        empleado_form.setVisible(false);
+        edificios_form.setVisible(false);
 
+        // Reset all button styles to transparent
+        home_btn.setStyle("-fx-background-color: transparent");
+        inventario_activos.setStyle("-fx-background-color: transparent");
+        saldo_activos.setStyle("-fx-background-color: transparent");
+        agregar_empleado.setStyle("-fx-background-color: transparent");
+        inventario_Global.setStyle("-fx-background-color: transparent");
+        inventario_empleado.setStyle("-fx-background-color: transparent");
+        empleado.setStyle("-fx-background-color: transparent");
+        edificio.setStyle("-fx-background-color: transparent");
 
-    public void switchForm(ActionEvent event){
-
-        if(event.getSource() == home_btn){
+        // Show the appropriate form and set the button style
+        if (event.getSource() == home_btn) {
             home_form.setVisible(true);
-            bienes.setVisible(false);
-            saldo_activos_form.setVisible(false);
-            agregar_empleado_form.setVisible(false);
-            inventarioglobal_form.setVisible(false);
-            inventarioempleado_form.setVisible(false);
-            empleado_form.setVisible(false);
-            edificios_form.setVisible(false);
-
-
-            //Color que muestra en que pestaña estamos
-            home_btn.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventario_activos.setStyle("-fx-background-color: transparent");
-            saldo_activos.setStyle("-fx-background-color: transparent");
-            agregar_empleado_form.setStyle("-fx-background-color: transparent");
-            inventario_Global.setStyle("-fx-background-color: transparent");
-            inventario_empleado.setStyle("-fx-background-color: transparent");
-            empleado.setStyle("-fx-background-color: transparent");
-            edificio.setStyle("-fx-background-color: transparent");
-
-
-
-
-
-        }else if(event.getSource() == inventario_activos){
-            home_form.setVisible(false);
+            home_btn.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
+        } else if (event.getSource() == inventario_activos) {
             bienes.setVisible(true);
-            saldo_activos_form.setVisible(false);
-            agregar_empleado_form.setVisible(false);
-            inventarioglobal_form.setVisible(false);
-            inventarioempleado_form.setVisible(false);
-            empleado_form.setVisible(false);
-            edificios_form.setVisible(false);
-              //Color que muestra en que pestaña estamos
-            inventario_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            home_btn.setStyle("-fx-background-color: transparent");
-            saldo_activos.setStyle("-fx-background-color: transparent");
-            agregar_empleado.setStyle("-fx-background-color: transparent");
-            inventario_Global.setStyle("-fx-background-color: transparent");
-            inventario_empleado.setStyle("-fx-background-color: transparent");
-            empleado.setStyle("-fx-background-color: transparent");
-            edificio.setStyle("-fx-background-color: transparent");
-
+            inventario_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
             llenarTablaBienes();
-
-        }else if(event.getSource() == saldo_activos){
-            home_form.setVisible(false);
-            bienes.setVisible(false);
+        } else if (event.getSource() == saldo_activos) {
             saldo_activos_form.setVisible(true);
-            agregar_empleado_form.setVisible(false);
-            inventarioglobal_form.setVisible(false);
-            inventarioempleado_form.setVisible(false);
-            empleado_form.setVisible(false);
-            edificios_form.setVisible(false);
-            //Color que muestra en que pestaña estamos
-            saldo_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventario_activos.setStyle("-fx-background-color: transparent");
-            home_btn.setStyle("-fx-background-color: transparent");
-            agregar_empleado.setStyle("-fx-background-color: transparent");
-            inventario_Global.setStyle("-fx-background-color: transparent");
-            inventario_empleado.setStyle("-fx-background-color: transparent");
-            empleado.setStyle("-fx-background-color: transparent");
-            edificio.setStyle("-fx-background-color: transparent");
-
-        }else if(event.getSource() == agregar_empleado){
-            home_form.setVisible(false);
-            bienes.setVisible(false);
-            saldo_activos_form.setVisible(false);
+            saldo_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
+        } else if (event.getSource() == agregar_empleado) {
             agregar_empleado_form.setVisible(true);
-            inventarioglobal_form.setVisible(false);
-            inventarioempleado_form.setVisible(false);
-            empleado_form.setVisible(false);
-            edificios_form.setVisible(false);
-
-            agregar_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventario_activos.setStyle("-fx-background-color: transparent");
-            saldo_activos.setStyle("-fx-background-color: transparent");
-            home_btn.setStyle("-fx-background-color: transparent");
-            inventario_Global.setStyle("-fx-background-color: transparent");
-            inventario_empleado.setStyle("-fx-background-color: transparent");
-            empleado.setStyle("-fx-background-color: transparent");
-            edificio.setStyle("-fx-background-color: transparent");
-
-        }else if(event.getSource() == inventario_Global){
-            home_form.setVisible(false);
-            bienes.setVisible(false);
-            saldo_activos_form.setVisible(false);
-            agregar_empleado_form.setVisible(false);
+            agregar_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
+        } else if (event.getSource() == inventario_Global) {
             inventarioglobal_form.setVisible(true);
-            inventarioempleado_form.setVisible(false);
-            empleado_form.setVisible(false);
-            edificios_form.setVisible(false);
-
-            inventario_Global.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventario_activos.setStyle("-fx-background-color: transparent");
-            saldo_activos.setStyle("-fx-background-color: transparent");
-            agregar_empleado.setStyle("-fx-background-color: transparent");
-            home_btn.setStyle("-fx-background-color: transparent");
-            inventario_empleado.setStyle("-fx-background-color: transparent");
-            empleado.setStyle("-fx-background-color: transparent");
-            edificio.setStyle("-fx-background-color: transparent");
-
-        }else if(event.getSource() == inventario_empleado){
-            home_form.setVisible(false);
-            bienes.setVisible(false);
-            saldo_activos_form.setVisible(false);
-            agregar_empleado_form.setVisible(false);
-            inventarioglobal_form.setVisible(false);
+            inventario_Global.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
+        } else if (event.getSource() == inventario_empleado) {
             inventarioempleado_form.setVisible(true);
-            empleado_form.setVisible(false);
-            edificios_form.setVisible(false);
-
-            inventario_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventario_activos.setStyle("-fx-background-color: transparent");
-            saldo_activos.setStyle("-fx-background-color: transparent");
-            agregar_empleado.setStyle("-fx-background-color: transparent");
-            inventario_Global.setStyle("-fx-background-color: transparent");
-            home_btn.setStyle("-fx-background-color: transparent");
-            empleado.setStyle("-fx-background-color: transparent");
-            edificio.setStyle("-fx-background-color: transparent");
-
+            inventario_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
             llenarTablaEmpleadobienes();
-
-
-        }else if(event.getSource() == empleado){
-            home_form.setVisible(false);
-            bienes.setVisible(false);
-            saldo_activos_form.setVisible(false);
-            agregar_empleado_form.setVisible(false);
-            inventarioglobal_form.setVisible(false);
-            inventarioempleado_form.setVisible(false);
+        } else if (event.getSource() == empleado) {
             empleado_form.setVisible(true);
-            edificios_form.setVisible(false);
-
-
-            empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventario_activos.setStyle("-fx-background-color: transparent");
-            saldo_activos.setStyle("-fx-background-color: transparent");
-            agregar_empleado.setStyle("-fx-background-color: transparent");
-            inventario_Global.setStyle("-fx-background-color: transparent");
-            home_btn.setStyle("-fx-background-color: transparent");
-            inventario_empleado.setStyle("-fx-background-color: transparent");
-            edificio.setStyle("-fx-background-color: transparent");
-
-
-        }else if(event.getSource() == edificio){
-            home_form.setVisible(false);
-            bienes.setVisible(false);
-            saldo_activos_form.setVisible(false);
-            agregar_empleado_form.setVisible(false);
-            inventarioglobal_form.setVisible(false);
-            inventarioempleado_form.setVisible(false);
-            empleado_form.setVisible(false);
+            empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
+        } else if (event.getSource() == edificio) {
             edificios_form.setVisible(true);
-
+            edificio.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
             llenarTablaEdificios();
-
-            edificio.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-            inventario_activos.setStyle("-fx-background-color: transparent");
-            saldo_activos.setStyle("-fx-background-color: transparent");
-            agregar_empleado.setStyle("-fx-background-color: transparent");
-            inventario_Global.setStyle("-fx-background-color: transparent");
-            home_btn.setStyle("-fx-background-color: transparent");
-            empleado.setStyle("-fx-background-color: transparent");
-            inventario_empleado.setStyle("-fx-background-color: transparent");
-
-
-
         }
-
-
-
-
     }
 
 
-    private double x=0;
-    private double y=0;
+    /**
+     * Coordinates for tracking mouse position during window drag.
+     */
+    private double x = 0;
+    private double y = 0;
 
-    public void logout(){
+    /**
+     * Handles the logout process by showing a confirmation dialog.
+     * If the user confirms, the current window is hidden and the login window is displayed.
+     * The login window can be dragged by clicking and dragging the mouse.
+     */
+    public void logout() {
+        // Create a confirmation alert
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Mensaje de Confirmacion");
         alert.setHeaderText(null);
         alert.setContentText("¿Estás seguro de que deseas salir?");
         Optional<ButtonType> option = alert.showAndWait();
+
         try {
+            // If the user confirms the logout
             if (option.get().equals(ButtonType.OK)) {
+                // Hide the current window
                 logout.getScene().getWindow().hide();
 
+                // Load the login window
                 Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(root);
 
+                // Set the scene and make the window transparent
                 stage.setScene(scene);
                 stage.initStyle(StageStyle.TRANSPARENT);
 
+                // Add mouse event handlers for dragging the window
                 root.setOnMousePressed(event -> {
                     x = event.getSceneX();
                     y = event.getSceneY();
@@ -700,45 +578,62 @@ public class DashboardController implements Initializable {
                     stage.setY(event.getScreenY() - y);
                 });
 
+                // Show the login window
                 stage.setScene(scene);
                 stage.show();
             }
-        }catch(Exception e){e.printStackTrace();}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void maximize(){
-        Stage stage = (Stage)main_form.getScene().getWindow();
+    /**
+     * Maximizes or restores the main application window.
+     * This method toggles the maximized state of the window. If the window is not maximized,
+     * it adjusts the size to fill the primary screen's bounds, simulating a maximized state.
+     * If the window is already maximized, it restores it to a default size and centers it on the screen.
+     */
+    public void maximize() {
+        Stage stage = (Stage) main_form.getScene().getWindow(); // Retrieve the current application stage
+
         if (!stage.isMaximized()) {
-            // Get the size of the screen
+            // Get the size of the primary screen
             Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 
-            // Adjust the window size to simulate a custom maximized state
+            // Adjust the stage to fit the screen bounds
             stage.setX(screenBounds.getMinX());
             stage.setY(screenBounds.getMinY());
             stage.setWidth(screenBounds.getWidth());
             stage.setHeight(screenBounds.getHeight());
         } else {
-            // Restore the previous window size if it was already "maximized"
-            stage.setWidth(800);  // Default or desired width
-            stage.setHeight(600); // Default or desired height
-            stage.centerOnScreen(); // Center the window if necessary
+            // Restore to default size if already maximized
+            stage.setWidth(800);  // Default window width
+            stage.setHeight(600); // Default window height
+            stage.centerOnScreen(); // Optionally center the window
         }
 
-        stage.setMaximized(!stage.isMaximized()); // Toggle the maximized state
-
+        // Toggle the maximized state of the stage
+        stage.setMaximized(!stage.isMaximized());
     }
 
-    public void close(){
+    /**
+     * Closes the application.
+     * This method terminates the program by calling System.exit(0),
+     * ensuring all resources are released and the application stops running.
+     */
+    public void close() {
         System.exit(0);
     }
 
-    public void minimize(){
-        Stage stage = (Stage)main_form.getScene().getWindow();
-        stage.setIconified(true);
-
+    /**
+     * Minimizes the main application window.
+     * This method retrieves the current stage from the main form's scene
+     * and sets its state to "iconified", effectively minimizing the window.
+     */
+    public void minimize() {
+        Stage stage = (Stage) main_form.getScene().getWindow(); // Get the current application stage
+        stage.setIconified(true); // Minimize the stage
     }
-
-
 
 
     @FXML
@@ -879,10 +774,6 @@ public class DashboardController implements Initializable {
     private void setColumnResizePolicy(TableView<?> tableView) {
         tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
-
-
-
-
 
 
 
@@ -1105,19 +996,6 @@ public class DashboardController implements Initializable {
                 return "";
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

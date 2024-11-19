@@ -351,8 +351,7 @@ public class DashboardController implements Initializable {
     void importEXCELL(MouseEvent event) {
 
     }
-
-    private String ColNumero = "Numero";
+    
     private String ColNombreedificio = "Nombreedificio";
     private String ColDescripcionn = "Descripcion";
     private String ColUbicacion = "Ubicacion";
@@ -370,12 +369,10 @@ public class DashboardController implements Initializable {
             while (resultSett.next()){
                 EdificioFijo EdificioFijo = new EdificioFijo();
                 Map<String, Object> coleccionn = new HashMap<>();
-                EdificioFijo.setNumero(resultSett.getInt("Numero"));
                 EdificioFijo.setNombreedificio(resultSett.getString("Nombreedificio"));
                 EdificioFijo.setUbicacion(resultSett.getString("Descripcion"));
                 EdificioFijo.setDescripcion(resultSett.getString("Ubicacion"));
                 EdificioFijo.setSeccion(resultSett.getString("Seccion"));
-                coleccionn.put(ColNumero, EdificioFijo.getNumero());
                 coleccionn.put(ColNombreedificio, EdificioFijo.getNombreedificio());
                 coleccionn.put(ColDescripcionn,  EdificioFijo.getUbicacion());
                 coleccionn.put(ColUbicacion, EdificioFijo.getDescripcion());
@@ -394,7 +391,6 @@ public class DashboardController implements Initializable {
 
     private void llenarTablaEdificios(){
         ObservableList<Map> listaa = getEdificios();
-        this.col_id_edificios.setCellValueFactory(new MapValueFactory(ColNumero));
         this.col_nombre_edificios.setCellValueFactory(new MapValueFactory(ColNombreedificio));
         this.col_ubicacion_edificios.setCellValueFactory(new MapValueFactory(ColDescripcionn));
         this.col_descripcion_edificios.setCellValueFactory(new MapValueFactory(ColUbicacion));

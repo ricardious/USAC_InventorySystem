@@ -1,9 +1,11 @@
 package com.ricardious.controllers;
 
+import com.ricardious.components.ThemeModeToggle;
 import com.ricardious.database.DatabaseConnection;
 import com.ricardious.models.ActivoFijo;
 import com.ricardious.models.EdificioFijo;
 import com.ricardious.models.EmpleadobienesFijo;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -37,9 +39,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.prefs.Preferences;
 import javax.swing.*;
 
 public class DashboardController implements Initializable {
+
+    @FXML
+    private ThemeModeToggle toggleContainer;
+
     // Main form container
     @FXML
     private AnchorPane main_form;
@@ -185,6 +192,9 @@ public class DashboardController implements Initializable {
     private TextField empleadoseccionfield;
     @FXML
     private TextField empleadoestadofield;
+
+
+
 
 
     /**
@@ -762,18 +772,7 @@ public class DashboardController implements Initializable {
 
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        setColumnResizePolicy(saldo_tableView);
-        setColumnResizePolicy(addEmployee_tableView1);
-        setColumnResizePolicy(addEmployee_tableView11);
-        setColumnResizePolicy(edificiotabla);
-        home_btn.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);");
-    }
 
-    private void setColumnResizePolicy(TableView<?> tableView) {
-        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-    }
 
 
 
@@ -997,5 +996,71 @@ public class DashboardController implements Initializable {
         }
     }
 
+
+    private static final String DARK_MODE_KEY = "darkModeEnabled";
+    private static final String DARK_MODE_STYLESHEET = "/css/dashboardDesignDark.css";
+
+    private final Preferences prefs = Preferences.userNodeForPackage(getClass());
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        initializeTableViews();
+        initializeHomeButton();
+        initializeDarkMode();
+    }
+
+    private void initializeTableViews() {
+        setColumnResizePolicy(
+                saldo_tableView,
+                addEmployee_tableView1,
+                addEmployee_tableView11,
+                edificiotabla
+        );
+    }
+
+    private void initializeHomeButton() {
+        home_btn.setStyle(
+                "-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff);"
+        );
+    }
+
+    private void initializeDarkMode() {
+        boolean isDarkModeEnabled = prefs.getBoolean(DARK_MODE_KEY, false);
+
+        toggleContainer.setSwitchedOn(isDarkModeEnabled);
+
+        Platform.runLater(() -> {
+            if (isDarkModeEnabled) {
+                applyDarkMode(true);
+            }
+        });
+
+        toggleContainer.switchedOnProperty().addListener((observable, oldValue, newValue) -> {
+            prefs.putBoolean(DARK_MODE_KEY, newValue);
+
+            applyDarkMode(newValue);
+        });
+    }
+
+    private void applyDarkMode(boolean enable) {
+        Scene scene = toggleContainer.getScene();
+        if (scene != null) {
+            String stylesheet = getClass().getResource(DARK_MODE_STYLESHEET).toExternalForm();
+
+            if (enable) {
+                if (!scene.getRoot().getStylesheets().contains(stylesheet)) {
+                    scene.getRoot().getStylesheets().add(stylesheet);
+                }
+            } else {
+                scene.getRoot().getStylesheets().remove(stylesheet);
+            }
+        }
+    }
+
+    private void setColumnResizePolicy(TableView<?>... tableViews) {
+        for (TableView<?> tableView : tableViews) {
+            tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        }
+    }
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.ricardious.components.ThemeModeToggle?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.lang.String?>
 <?import javafx.scene.chart.BarChart?>
@@ -18,35 +19,35 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ricardious.controllers.DashboardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1269.0" stylesheets="@../css/dashboardDesign.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ricardious.controllers.DashboardController">
    <children>
       <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
          <children>
             <BorderPane layoutX="79.0" layoutY="100.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
-                  <AnchorPane prefHeight="45.0" prefWidth="1260.0" styleClass="semi-top-form" stylesheets="@../css/dashboardDesign.css" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="20.0" prefWidth="1270.0" styleClass="semi-top-form" stylesheets="@../css/dashboardDesign.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="0.8" prefHeight="47.0" prefWidth="1268.0" styleClass="top-form" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="0.8" prefHeight="34.0" prefWidth="1278.0" styleClass="top-form" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <FontAwesomeIcon glyphName="USERS" layoutX="14.0" layoutY="24.0" size="1.5em" />
-                              <Label layoutX="41.0" layoutY="10.0" text="USAC Inventory System">
+                              <FontAwesomeIcon glyphName="USERS" layoutX="14.0" layoutY="20.0" size="1.5em" styleClass="font-awesome-icon" />
+                              <Label layoutX="43.0" layoutY="4.0" text="USAC Inventory System">
                                  <font>
                                     <Font name="Tahoma" size="14.0" />
                                  </font>
                               </Label>
                               <Button fx:id="close" layoutX="1010.0" layoutY="2.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="45.0" styleClass="close" stylesheets="@../css/dashboardDesign.css" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="2.0">
                                  <graphic>
-                                    <FontAwesomeIcon glyphName="CLOSE" size="1.2em" />
+                                    <FontAwesomeIcon glyphName="CLOSE" size="1.2em" styleClass="font-awesome-icon" />
                                  </graphic>
                               </Button>
                               <Button fx:id="minimize" layoutX="958.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="24.0" prefWidth="45.0" styleClass="minimize" stylesheets="@../css/dashboardDesign.css" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="2.0">
                                  <graphic>
-                                    <FontAwesomeIcon glyphName="MINUS" size="1.2em" text="" />
+                                    <FontAwesomeIcon glyphName="MINUS" size="1.2em" styleClass="font-awesome-icon" text="" />
                                  </graphic>
                               </Button>
                               <Button fx:id="maximize" layoutX="1003.0" layoutY="2.0" mnemonicParsing="false" onAction="#maximize" prefHeight="24.0" prefWidth="45.0" styleClass="maximize" stylesheets="@../css/dashboardDesign.css" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="2.0">
                                  <graphic>
-                                    <FontAwesomeIcon glyphName="SQUARE" text="" />
+                                    <FontAwesomeIcon glyphName="SQUARE" styleClass="font-awesome-icon" text="" />
                                  </graphic>
                               </Button>
                            </children>
@@ -86,7 +87,7 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.5em" />
                                  </graphic>
                               </Button>
-                              <Button fx:id="logout" layoutX="9.0" layoutY="509.0" mnemonicParsing="false" onAction="#logout" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="9.0">
+                              <Button fx:id="logout" layoutX="34.0" layoutY="700.0" mnemonicParsing="false" onAction="#logout" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="34.0">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" />
                                  </graphic>
@@ -95,7 +96,7 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                               </Button>
-                              <Label layoutX="62.0" layoutY="515.0" text="Cerrar Sesión" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="62.0">
+                              <Label layoutX="85.0" layoutY="706.0" text="Cerrar Sesión" textFill="WHITE" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="85.0">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
@@ -125,13 +126,14 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" text="" />
                                  </graphic>
                               </Button>
+                              <ThemeModeToggle fx:id="toggleContainer" layoutX="56.0" layoutY="626.0" />
                            </children>
                         </AnchorPane>
                      </children>
                   </AnchorPane>
                </left>
                <center>
-                  <AnchorPane prefHeight="878.0" prefWidth="1058.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="771.0" prefWidth="1058.0" BorderPane.alignment="CENTER">
                      <children>
                         <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -512,7 +514,7 @@
                                              <columns>
                                                 <TableColumn fx:id="addEmployee_col_employeeID11" prefWidth="241.60000056028366" text="Literal" />
                                                 <TableColumn fx:id="addEmployee_col_firstName11" prefWidth="399.9999694824219" text="Descripción" />
-                                                <TableColumn fx:id="addEmployee_col_lastName11" maxWidth="759.2000335693358" prefWidth="364.80010986328125" text="Renglon de Gasto" />
+                                                <TableColumn fx:id="addEmployee_col_lastName11" maxWidth="759.2000335693358" prefWidth="362.4000488281249" text="Renglon de Gasto" />
                                              </columns>
                                           </TableView>
                                           <TextField fx:id="Search_Bienes" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="277.0" promptText="Seach" styleClass="search" stylesheets="@../css/dashboardDesign.css" />

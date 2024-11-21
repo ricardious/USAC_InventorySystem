@@ -1,0 +1,310 @@
+/**
+ *
+ * Author: @ricardious
+ * Description:
+ * This CSS file defines the dark theme design for a dashboard application.
+ * It provides styles for various components, ensuring a visually appealing
+ * and consistent user interface. The color palette features deep tones of
+ * purple, blue, and magenta to create a professional and modern dark mode.
+ *
+ * Components covered:
+ * - Root container
+ * - Labels
+ * - Forms (top-form, semi-top-form)
+ * - Buttons (maximize, minimize, close, nav-btn, logout, etc.)
+ * - Table views
+ * - Textfields and search inputs
+ * - Bar charts
+ * - Miscellaneous elements (cards, shadows, etc.)
+ *
+ * Palette:
+ * - Primary Background: #1a1a2e (dark navy)
+ * - Secondary Background: #16213e (blue-gray)
+ * - Accent Colors: #6a0572 (purple), #4a0e4e (deep magenta), #ab83a1 (light purple-pink)
+ * - Text Color: #e1bee7 (lavender)
+ *
+ * Hover Effects:
+ * Hover styles enhance usability by providing subtle visual feedback, making
+ * interactive elements more intuitive.
+ *
+ * Fonts:
+ * - Primary font: Arial (for general text)
+ * - Secondary font: Tahoma (for text fields)
+ *
+ * Usage:
+ * Link this file to your JavaFX project to apply a modern dark mode to the
+ * dashboard.
+ */
+
+.root {
+    -fx-background-color: #1a1a2e;
+}
+
+.label {
+    -fx-text-fill: #e1bee7;
+    -fx-font-family: "Arial";
+}
+
+.top-form {
+    -fx-background-color: #16213e;
+    -fx-border-color: #6a0572;
+    -fx-border-width: .4px .4px .2px .4px;
+}
+
+.semi-top-form {
+    -fx-background-color: #0f3460;
+    -fx-border-color: #6a0572;
+    -fx-border-width: .2px .4px .8px .4px;
+}
+
+.maximize {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.maximize:hover {
+    -fx-background-color: #6a0572;
+}
+
+.close {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.close:hover {
+    -fx-background-color: #9c0f5f;
+}
+
+.minimize {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.minimize:hover {
+    -fx-background-color: #4a0e4e;
+}
+
+.nav-form {
+    -fx-background-color: linear-gradient(to bottom right, #1d1160, #720e9e);
+}
+
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: #e1bee7;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.logout {
+    -fx-background-color: #4a0e4e;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+.logout:hover {
+    -fx-background-color: #6a0572;
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(102,0,102,0.5), 6,0,0,0);
+}
+
+.white-bg {
+    -fx-background-color: #2a2a3e;
+    -fx-background-radius: 8px;
+}
+
+.card {
+    -fx-background-color: linear-gradient(to right, #4a0e4e, #6a0572);
+    -fx-background-radius: 5px;
+}
+
+.table-view {
+    -fx-border-color: linear-gradient(to bottom right, #6a0572, #ab83a1);
+    -fx-border-radius: 8px;
+    -fx-background-color: #2a2a3e;
+}
+
+.table-view .table-column {
+    -fx-alignment: CENTER;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom right, #6a0572, #ab83a1);
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 8px 8px 0px 0px;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #e1bee7;
+    -fx-font-family: "Arial";
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #1a1a2e;
+    -fx-text-fill: #e1bee7;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #4a0e4e;
+    -fx-text-fill: #e1bee7;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #16213e;
+    -fx-text-fill: #e1bee7;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #e1bee7;
+}
+
+.textfield {
+    -fx-background-color: #2a2a3e;
+    -fx-border-color: #6a0572;
+    -fx-border-width: 2px;
+    -fx-font-family: "Tahoma";
+    -fx-border-radius: 4px;
+    -fx-text-fill: #e1bee7;
+}
+
+.textfield:focused {
+    -fx-border-width: 2px;
+    -fx-background-color: #16213e;
+}
+
+.search {
+    -fx-background-color: transparent;
+    -fx-border-color: #6a0572;
+    -fx-border-radius: 5px;
+    -fx-font-size: 13px;
+    -fx-font-family: "Arial";
+    -fx-border-width: 1px;
+    -fx-padding: 0px 0px 0px 28px;
+    -fx-text-fill: #e1bee7;
+}
+.search:focused {
+    -fx-border-width: 2px;
+}
+
+.import-btn {
+    -fx-background-color: #4a0e4e;
+    -fx-text-fill: #e1bee7;
+    -fx-cursor: hand;
+}
+
+.add-btn {
+    -fx-background-color: #6a0572;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #e1bee7;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-cursor: hand;
+}
+.add-btn:hover {
+    -fx-background-color: #ab83a1;
+}
+
+.update-btn {
+    -fx-background-color: #4a0e4e;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #e1bee7;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-cursor: hand;
+}
+.update-btn:hover {
+    -fx-background-color: #6a0572;
+}
+
+.delete-btn {
+    -fx-background-color: #9c0f5f;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #e1bee7;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-cursor: hand;
+}
+.delete-btn:hover {
+    -fx-background-color: #6a0572;
+}
+
+.clear-btn {
+    -fx-background-color: #4a0e4e;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #e1bee7;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-cursor: hand;
+}
+.clear-btn:hover {
+    -fx-background-color: #6a0572;
+}
+
+.label-info {
+    -fx-background-color: transparent;
+    -fx-border-color: #6a0572;
+    -fx-border-radius: 4px;
+    -fx-padding: 0px 0px 0px 8px;
+    -fx-text-fill: #e1bee7;
+}
+
+.bar-chart {
+    -fx-background-color: transparent;
+}
+
+.bar-chart .chart-plot-background {
+    -fx-background-color: #16213e;
+}
+
+.bar-chart .chart-title {
+    -fx-text-fill: #e1bee7;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+}
+
+.bar-chart .axis {
+    -fx-tick-label-fill: #e1bee7;
+    -fx-border-color: #6a0572;
+}
+
+.bar-chart .axis-tick-mark {
+    -fx-stroke: #6a0572;
+}
+
+.bar-chart .chart-bar {
+    -fx-background-radius: 3px;
+    -fx-background-color: linear-gradient(to right, #4a0e4e, #6a0572);
+}
+
+.bar-chart .chart-bar:hover {
+    -fx-background-color: linear-gradient(to right, #6a0572, #ab83a1);
+}
+
+.bar-chart .data0.chart-bar {
+    -fx-background-color: linear-gradient(to right, #4a0e4e, #6a0572);
+}
+
+.bar-chart .data1.chart-bar {
+    -fx-background-color: linear-gradient(to right, #6a0572, #ab83a1);
+}
+
+.bar-chart .chart-legend {
+    -fx-background-color: #2a2a3e;
+    -fx-text-fill: #e1bee7;
+}
+
+.font-awesome-icon {
+    -fx-fill: white;
+}
+
+.nav-btn .font-awesome-icon {
+    -fx-fill: #e1bee7;
+}
+
+.font-awesome-icon:hover {
+    -fx-fill: #ab83a1;
+}

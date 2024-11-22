@@ -244,8 +244,8 @@
                                        </font>
                                     </Label>
                                     <TextField fx:id="saldo_saldoactivos" layoutX="120.0" layoutY="182.0" prefHeight="25.0" prefWidth="150.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
-                                    <Button fx:id="saldo_updateBtn" layoutX="156.0" layoutY="251.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Update" />
-                                    <Button fx:id="saldo_clearBtn" layoutX="28.0" layoutY="251.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Clear" />
+                                    <Button fx:id="saldo_updateBtn" layoutX="156.0" layoutY="251.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Agregar" />
+                                    <Button fx:id="saldo_clearBtn" layoutX="28.0" layoutY="251.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="99.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Limpiar" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="321.0" layoutY="16.0" prefHeight="523.0" prefWidth="554.0" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
@@ -338,10 +338,10 @@
                                           <Button fx:id="agregarempl_importBtn1" layoutY="101.0" mnemonicParsing="false" prefWidth="101.0" styleClass="import-btn" stylesheets="@../css/dashboardDesign.css" text="Import Excel" />
                                        </children>
                                     </AnchorPane>
-                                    <Button fx:id="agregarempl_addBtn1" layoutX="719.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../css/dashboardDesign.css" text="Add" />
-                                    <Button fx:id="agregarempl_updateBtn1" layoutX="595.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Update" />
-                                    <Button fx:id="agregarempl_deleteBtn1" layoutX="433.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Delete" />
-                                    <Button fx:id="agregarempl_clearBtn1" layoutX="320.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Clear" />
+                                    <Button fx:id="agregarempl_addBtn1" layoutX="719.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../css/dashboardDesign.css" text="Agregar" />
+                                    <Button fx:id="agregarempl_updateBtn1" layoutX="595.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Actualizar" />
+                                    <Button fx:id="agregarempl_deleteBtn1" layoutX="433.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Eliminar" />
+                                    <Button fx:id="agregarempl_clearBtn1" layoutX="320.0" layoutY="634.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="94.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Limpiar" />
                                     <Label layoutX="459.0" layoutY="486.0" text="Condición:">
                                        <font>
                                           <Font name="Tahoma" size="14.0" />
@@ -536,9 +536,9 @@
                                           <Font name="Tahoma" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="Add_Activos" layoutX="641.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Add" prefHeight="41.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../css/dashboardDesign.css" text="Add" AnchorPane.bottomAnchor="29.199999999999932" />
-                                    <Button fx:id="Delete_Activos" layoutX="483.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Delete" prefHeight="41.0" prefWidth="94.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Delete" AnchorPane.bottomAnchor="29.199999999999932" />
-                                    <Button fx:id="Clear_Campos" layoutX="320.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Clear" prefHeight="41.0" prefWidth="94.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Clear" AnchorPane.bottomAnchor="29.199999999999953" />
+                                    <Button fx:id="Add_Activos" layoutX="641.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Add" prefHeight="41.0" prefWidth="94.0" styleClass="add-btn" stylesheets="@../css/dashboardDesign.css" text="Agregar" AnchorPane.bottomAnchor="29.199999999999932" />
+                                    <Button fx:id="Delete_Activos" layoutX="483.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Delete" prefHeight="41.0" prefWidth="94.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Eliminar" AnchorPane.bottomAnchor="29.199999999999932" />
+                                    <Button fx:id="Clear_Campos" layoutX="320.0" layoutY="634.0" mnemonicParsing="false" onMouseClicked="#Clear" prefHeight="41.0" prefWidth="94.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Limpiar" AnchorPane.bottomAnchor="29.199999999999953" />
                                     <TextField fx:id="Renglon_Gasto_Activos" layoutX="641.0" layoutY="527.0" prefHeight="25.0" prefWidth="250.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
                                  </children>
                                  <styleClass>
@@ -600,9 +600,9 @@
                                     <Font name="Tahoma Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="907.0" layoutY="526.0" mnemonicParsing="false" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="CLEAN" />
-                              <Button layoutX="907.0" layoutY="569.0" mnemonicParsing="false" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="IMPORT" />
-                              <Button layoutX="907.0" layoutY="616.0" mnemonicParsing="false" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="DELETE" />
+                              <Button layoutX="907.0" layoutY="526.0" mnemonicParsing="false" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Limpiar" />
+                              <Button layoutX="907.0" layoutY="569.0" mnemonicParsing="false" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Importar" />
+                              <Button layoutX="907.0" layoutY="616.0" mnemonicParsing="false" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Eliminar" />
                               <TextField layoutX="130.0" layoutY="520.0" prefHeight="25.0" prefWidth="178.0" />
                               <TextField layoutX="130.0" layoutY="557.0" prefHeight="25.0" prefWidth="306.0" />
                               <TextField layoutX="130.0" layoutY="604.0" prefHeight="25.0" prefWidth="307.0" />
@@ -627,26 +627,27 @@
                                        <children>
                                           <TableView fx:id="edificiotabla" layoutX="7.0" layoutY="73.0" prefHeight="408.0" prefWidth="1017.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                                             <columns>
-                                              <TableColumn fx:id="col_nombre_edificios" prefWidth="251.99996984004974" text="Nombre de Edificio" />
-                                              <TableColumn fx:id="col_ubicacion_edificios" prefWidth="253.60000610351562" text="Ubicación" />
-                                                <TableColumn fx:id="col_descripcion_edificios" prefWidth="294.3998718261719" text="Descripción" />
-                                                <TableColumn fx:id="col_seccion_edificios" prefWidth="218.40008544921875" text="Sección" />
+                                                <TableColumn fx:id="col_edificio" prefWidth="108.7999576330185" text="Numero" />
+                                              <TableColumn fx:id="col_nombre_edificios" prefWidth="258.4000549316406" text="Nombre de Edificio" />
+                                              <TableColumn fx:id="col_ubicacion_edificios" prefWidth="261.59991455078125" text="Ubicación" />
+                                                <TableColumn fx:id="col_descripcion_edificios" maxWidth="226.39996337890625" prefWidth="226.39996337890625" text="Descripción" />
+                                                <TableColumn fx:id="col_seccion_edificios" prefWidth="163.20013427734375" text="Sección" />
                                             </columns>
                                           </TableView>
                                           <TextField fx:id="search_edificios" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="277.0" promptText="Buscar" styleClass="search" stylesheets="@../css/dashboardDesign.css" />
                                           <FontAwesomeIcon glyphName="SEARCH" layoutX="21.0" layoutY="35.0" size="1.5em" />
                                        </children>
                                     </AnchorPane>
-                                    <TextField fx:id="agregar_nombreedificios" layoutX="268.0" layoutY="513.0" prefHeight="26.0" prefWidth="250.0" />
-                                    <TextField fx:id="agregar_descripcion" layoutX="636.0" layoutY="514.0" prefHeight="25.0" prefWidth="250.0" />
-                                    <TextField fx:id="agregar_seccion" layoutX="636.0" layoutY="557.0" prefHeight="26.0" prefWidth="250.0" />
-                                    <TextField fx:id="agregar_ubicacion" layoutX="268.0" layoutY="557.0" prefHeight="26.0" prefWidth="250.0" />
-                                    <Label layoutX="547.0" layoutY="519.0" text="Descripción:">
+                                    <TextField fx:id="agregar_nombreedificios" layoutX="370.0" layoutY="513.0" prefHeight="26.0" prefWidth="250.0" />
+                                    <TextField fx:id="agregar_descripcion" layoutX="738.0" layoutY="514.0" prefHeight="25.0" prefWidth="250.0" />
+                                    <TextField fx:id="agregar_seccion" layoutX="738.0" layoutY="557.0" prefHeight="26.0" prefWidth="250.0" />
+                                    <TextField fx:id="agregar_ubicacion" layoutX="370.0" layoutY="557.0" prefHeight="26.0" prefWidth="250.0" />
+                                    <Label layoutX="649.0" layoutY="519.0" text="Descripción:">
                                        <font>
                                           <Font name="Tahoma Bold" size="12.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="566.0" layoutY="559.0" prefHeight="22.0" prefWidth="56.0" text="Sección:">
+                                    <Label layoutX="668.0" layoutY="559.0" prefHeight="22.0" prefWidth="56.0" text="Sección:">
                                        <font>
                                           <Font name="Tahoma Bold" size="12.0" />
                                        </font>
@@ -654,16 +655,22 @@
                                     <Button fx:id="limpiardatos_edificiosbt" layoutX="368.0" layoutY="639.0" mnemonicParsing="false" onMouseClicked="#Clearr" prefHeight="45.0" prefWidth="85.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Limpiar" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="368.0" />
                                     <Button fx:id="agregarinfo_edificiosbt" alignment="CENTER" contentDisplay="CENTER" layoutX="480.0" layoutY="639.0" mnemonicParsing="false" onMouseClicked="#Addd" prefHeight="45.0" prefWidth="85.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Agregar" textAlignment="CENTER" AnchorPane.bottomAnchor="29.0" />
                                     <Button fx:id="eliminaredificio_bt" layoutX="593.0" layoutY="639.0" mnemonicParsing="false" onMouseClicked="#Deletee" prefHeight="45.0" prefWidth="85.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Eliminar" AnchorPane.bottomAnchor="29.0" />
-                                    <Label layoutX="133.0" layoutY="518.0" text="Nombre del Edificio:">
+                                    <Label layoutX="235.0" layoutY="518.0" text="Nombre del Edificio:">
                                        <font>
                                           <Font name="Tahoma Bold" size="12.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="195.0" layoutY="562.0" text="Ubicación:">
+                                    <Label layoutX="297.0" layoutY="562.0" text="Ubicación:">
                                        <font>
                                           <Font name="Tahoma Bold" size="12.0" />
                                        </font>
                                     </Label>
+                                    <Label layoutX="32.0" layoutY="519.0" text="Numero:">
+                                       <font>
+                                          <Font name="Tahoma Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="agregar_idedificio" layoutX="95.0" layoutY="515.0" prefHeight="26.0" prefWidth="97.0" />
                                  </children>
                               </AnchorPane>
                            </children>

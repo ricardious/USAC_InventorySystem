@@ -1,7 +1,7 @@
 package com.ricardious.controllers;
 
 import com.ricardious.components.ThemeModeToggle;
-import com.ricardious.database.DatabaseConnection;
+import com.ricardious.database.config.DatabaseConnection;
 import com.ricardious.models.ActivoFijo;
 import com.ricardious.models.EdificioFijo;
 import com.ricardious.models.EmpleadobienesFijo;
@@ -409,12 +409,13 @@ public class DashboardController implements Initializable {
         this.col_ubicacion_edificios.setCellValueFactory(new MapValueFactory(ColDescripcionn));
         this.col_descripcion_edificios.setCellValueFactory(new MapValueFactory(ColUbicacion));
         this.col_seccion_edificios.setCellValueFactory(new MapValueFactory(ColSeccion));
-        
+
 
         this.edificiotabla.setItems(listaa);
 
 
     }
+
 
 
     @FXML
@@ -543,107 +544,6 @@ public class DashboardController implements Initializable {
     }
 
 
-    /**
-     * Coordinates for tracking mouse position during window drag.
-     */
-    private double x = 0;
-    private double y = 0;
-
-    /**
-     * Handles the logout process by showing a confirmation dialog.
-     * If the user confirms, the current window is hidden and the login window is displayed.
-     * The login window can be dragged by clicking and dragging the mouse.
-     */
-    public void logout() {
-        // Create a confirmation alert
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Mensaje de Confirmacion");
-        alert.setHeaderText(null);
-        alert.setContentText("¿Estás seguro de que deseas salir?");
-        Optional<ButtonType> option = alert.showAndWait();
-
-        try {
-            // If the user confirms the logout
-            if (option.get().equals(ButtonType.OK)) {
-                // Hide the current window
-                logout.getScene().getWindow().hide();
-
-                // Load the login window
-                Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
-                Stage stage = new Stage();
-                Scene scene = new Scene(root);
-
-                // Set the scene and make the window transparent
-                stage.setScene(scene);
-                stage.initStyle(StageStyle.TRANSPARENT);
-
-                // Add mouse event handlers for dragging the window
-                root.setOnMousePressed(event -> {
-                    x = event.getSceneX();
-                    y = event.getSceneY();
-                });
-
-                root.setOnMouseDragged(event -> {
-                    stage.setX(event.getScreenX() - x);
-                    stage.setY(event.getScreenY() - y);
-                });
-
-                // Show the login window
-                stage.setScene(scene);
-                stage.show();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Maximizes or restores the main application window.
-     * This method toggles the maximized state of the window. If the window is not maximized,
-     * it adjusts the size to fill the primary screen's bounds, simulating a maximized state.
-     * If the window is already maximized, it restores it to a default size and centers it on the screen.
-     */
-    public void maximize() {
-        Stage stage = (Stage) main_form.getScene().getWindow(); // Retrieve the current application stage
-
-        if (!stage.isMaximized()) {
-            // Get the size of the primary screen
-            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-
-            // Adjust the stage to fit the screen bounds
-            stage.setX(screenBounds.getMinX());
-            stage.setY(screenBounds.getMinY());
-            stage.setWidth(screenBounds.getWidth());
-            stage.setHeight(screenBounds.getHeight());
-        } else {
-            // Restore to default size if already maximized
-            stage.setWidth(800);  // Default window width
-            stage.setHeight(600); // Default window height
-            stage.centerOnScreen(); // Optionally center the window
-        }
-
-        // Toggle the maximized state of the stage
-        stage.setMaximized(!stage.isMaximized());
-    }
-
-    /**
-     * Closes the application.
-     * This method terminates the program by calling System.exit(0),
-     * ensuring all resources are released and the application stops running.
-     */
-    public void close() {
-        System.exit(0);
-    }
-
-    /**
-     * Minimizes the main application window.
-     * This method retrieves the current stage from the main form's scene
-     * and sets its state to "iconified", effectively minimizing the window.
-     */
-    public void minimize() {
-        Stage stage = (Stage) main_form.getScene().getWindow(); // Get the current application stage
-        stage.setIconified(true); // Minimize the stage
-    }
 
 
     @FXML
@@ -865,9 +765,6 @@ public class DashboardController implements Initializable {
 
 
 
-
-
-
     @FXML
     void exportToExcel(MouseEvent event) {
         ObservableList<Map> dataList = getEmpleadobienes();
@@ -1062,5 +959,108 @@ public class DashboardController implements Initializable {
             tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         }
     }
+
+    /**
+     * Coordinates for tracking mouse position during window drag.
+     */
+    private double x = 0;
+    private double y = 0;
+
+    /**
+     * Handles the logout process by showing a confirmation dialog.
+     * If the user confirms, the current window is hidden and the login window is displayed.
+     * The login window can be dragged by clicking and dragging the mouse.
+     */
+    public void logout() {
+        // Create a confirmation alert
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Mensaje de Confirmacion");
+        alert.setHeaderText(null);
+        alert.setContentText("¿Estás seguro de que deseas salir?");
+        Optional<ButtonType> option = alert.showAndWait();
+
+        try {
+            // If the user confirms the logout
+            if (option.get().equals(ButtonType.OK)) {
+                // Hide the current window
+                logout.getScene().getWindow().hide();
+
+                // Load the login window
+                Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+
+                // Set the scene and make the window transparent
+                stage.setScene(scene);
+                stage.initStyle(StageStyle.TRANSPARENT);
+
+                // Add mouse event handlers for dragging the window
+                root.setOnMousePressed(event -> {
+                    x = event.getSceneX();
+                    y = event.getSceneY();
+                });
+
+                root.setOnMouseDragged(event -> {
+                    stage.setX(event.getScreenX() - x);
+                    stage.setY(event.getScreenY() - y);
+                });
+
+                // Show the login window
+                stage.setScene(scene);
+                stage.show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Maximizes or restores the main application window.
+     * This method toggles the maximized state of the window. If the window is not maximized,
+     * it adjusts the size to fill the primary screen's bounds, simulating a maximized state.
+     * If the window is already maximized, it restores it to a default size and centers it on the screen.
+     */
+    public void maximize() {
+        Stage stage = (Stage) main_form.getScene().getWindow(); // Retrieve the current application stage
+
+        if (!stage.isMaximized()) {
+            // Get the size of the primary screen
+            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+
+            // Adjust the stage to fit the screen bounds
+            stage.setX(screenBounds.getMinX());
+            stage.setY(screenBounds.getMinY());
+            stage.setWidth(screenBounds.getWidth());
+            stage.setHeight(screenBounds.getHeight());
+        } else {
+            // Restore to default size if already maximized
+            stage.setWidth(800);  // Default window width
+            stage.setHeight(600); // Default window height
+            stage.centerOnScreen(); // Optionally center the window
+        }
+
+        // Toggle the maximized state of the stage
+        stage.setMaximized(!stage.isMaximized());
+    }
+
+    /**
+     * Closes the application.
+     * This method terminates the program by calling System.exit(0),
+     * ensuring all resources are released and the application stops running.
+     */
+    public void close() {
+        System.exit(0);
+    }
+
+    /**
+     * Minimizes the main application window.
+     * This method retrieves the current stage from the main form's scene
+     * and sets its state to "iconified", effectively minimizing the window.
+     */
+    public void minimize() {
+        Stage stage = (Stage) main_form.getScene().getWindow(); // Get the current application stage
+        stage.setIconified(true); // Minimize the stage
+    }
+
 
 }

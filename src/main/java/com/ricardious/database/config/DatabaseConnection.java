@@ -21,7 +21,7 @@ public class DatabaseConnection {
      * Establishes a connection to the database using properties from a configuration file.
      *
      * @return a Connection object to the database, or null if the connection fails
-     */f
+     */
     public Connection getConnection() {
         Connection databaseLink = null;
 

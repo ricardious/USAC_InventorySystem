@@ -7,10 +7,21 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * This class handles the database connection configuration.
+ * It reads the database connection properties from a configuration file
+ * and establishes a connection to the database.
+ */
 public class DatabaseConnection {
 
+    // Logger instance for logging database connection events and errors
     private static final Logger LOGGER = Logger.getLogger(DatabaseConnection.class.getName());
 
+    /**
+     * Establishes a connection to the database using properties from a configuration file.
+     *
+     * @return a Connection object to the database, or null if the connection fails
+     */f
     public Connection getConnection() {
         Connection databaseLink = null;
 

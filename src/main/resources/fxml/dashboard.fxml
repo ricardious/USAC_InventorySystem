@@ -135,7 +135,7 @@
                <center>
                   <AnchorPane prefHeight="771.0" prefWidth="1058.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="home_form" layoutX="63.0" layoutY="87.0" prefHeight="555.0" prefWidth="889.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="13.0" layoutY="17.0" prefHeight="521.0" prefWidth="863.0" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="15.799999999999955" AnchorPane.leftAnchor="12.799999999999955" AnchorPane.rightAnchor="12.599999999999909" AnchorPane.topAnchor="16.799999999999955">
                                  <styleClass>
@@ -613,7 +613,7 @@
                               <TextField layoutX="578.0" layoutY="604.0" prefHeight="25.0" prefWidth="257.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="edificios_form" layoutX="127.0" layoutY="110.0" onMouseClicked="#importEXCELL" prefHeight="735.0" prefWidth="1058.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="edificios_form" layoutX="127.0" layoutY="110.0" onMouseClicked="#importEXCELL" prefHeight="735.0" prefWidth="1058.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="18.0" layoutY="28.0" prefHeight="682.0" prefWidth="1020.0" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                                  <styleClass>
@@ -629,20 +629,21 @@
                                        <children>
                                           <TableView fx:id="edificiotabla" layoutX="7.0" layoutY="73.0" prefHeight="408.0" prefWidth="1017.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                                             <columns>
-                                              <TableColumn fx:id="col_nombre_edificios" prefWidth="251.99996984004974" text="Nombre de Edificio" />
-                                              <TableColumn fx:id="col_ubicacion_edificios" prefWidth="253.60000610351562" text="Ubicación" />
-                                                <TableColumn fx:id="col_descripcion_edificios" prefWidth="294.3998718261719" text="Descripción" />
-                                                <TableColumn fx:id="col_seccion_edificios" prefWidth="218.40008544921875" text="Sección" />
+                                                <TableColumn fx:id="col_id_edificios" prefWidth="144.79998815059662" text="Número" />
+                                              <TableColumn fx:id="col_nombre_edificios" prefWidth="253.59999084472656" text="Nombre de Edificio" />
+                                              <TableColumn fx:id="col_ubicacion_edificios" prefWidth="224.7999267578125" text="Ubicación" />
+                                                <TableColumn fx:id="col_descripcion_edificios" maxWidth="190.40008544921875" prefWidth="190.40008544921875" text="Descripción" />
+                                                <TableColumn fx:id="col_seccion_edificios" prefWidth="201.6001098632811" text="Sección" />
                                             </columns>
                                           </TableView>
                                           <TextField fx:id="search_edificios" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="277.0" promptText="Buscar" styleClass="search" stylesheets="@../css/dashboardDesign.css" />
                                           <FontAwesomeIcon glyphName="SEARCH" layoutX="21.0" layoutY="35.0" size="1.5em" />
                                        </children>
                                     </AnchorPane>
-                                    <TextField fx:id="agregar_nombreedificios" layoutX="268.0" layoutY="513.0" prefHeight="26.0" prefWidth="250.0" />
-                                    <TextField fx:id="agregar_descripcion" layoutX="636.0" layoutY="514.0" prefHeight="25.0" prefWidth="250.0" />
-                                    <TextField fx:id="agregar_seccion" layoutX="636.0" layoutY="557.0" prefHeight="26.0" prefWidth="250.0" />
-                                    <TextField fx:id="agregar_ubicacion" layoutX="268.0" layoutY="557.0" prefHeight="26.0" prefWidth="250.0" />
+                                    <TextField fx:id="agregar_nombreedificios" layoutX="268.0" layoutY="513.0" prefHeight="26.0" prefWidth="250.0" styleClass="textfield" />
+                                    <TextField fx:id="agregar_descripcion" layoutX="636.0" layoutY="514.0" prefHeight="25.0" prefWidth="250.0" styleClass="textfield" />
+                                    <TextField fx:id="agregar_seccion" layoutX="636.0" layoutY="557.0" prefHeight="26.0" prefWidth="250.0" styleClass="textfield" />
+                                    <TextField fx:id="agregar_ubicacion" layoutX="268.0" layoutY="557.0" prefHeight="26.0" prefWidth="250.0" styleClass="textfield" />
                                     <Label layoutX="547.0" layoutY="519.0" text="Descripción:">
                                        <font>
                                           <Font name="Tahoma Bold" size="12.0" />

@@ -58,8 +58,6 @@ public class DashboardController implements Initializable {
     @FXML
     private Button agregar_empleado;
     @FXML
-    private Button saldo_activos;
-    @FXML
     private Button logout;
     @FXML
     private Button inventario_empleado;
@@ -434,7 +432,6 @@ public class DashboardController implements Initializable {
         // Reset all form visibility to false
         home_form.setVisible(false);
         bienes.setVisible(false);
-        saldo_activos_form.setVisible(false);
         agregar_empleado_form.setVisible(false);
         inventarioglobal_form.setVisible(false);
         inventarioempleado_form.setVisible(false);
@@ -444,7 +441,6 @@ public class DashboardController implements Initializable {
         // Reset all button styles to transparent
         home_btn.setStyle("-fx-background-color: transparent");
         inventario_activos.setStyle("-fx-background-color: transparent");
-        saldo_activos.setStyle("-fx-background-color: transparent");
         agregar_empleado.setStyle("-fx-background-color: transparent");
         inventario_Global.setStyle("-fx-background-color: transparent");
         inventario_empleado.setStyle("-fx-background-color: transparent");
@@ -459,9 +455,6 @@ public class DashboardController implements Initializable {
             bienes.setVisible(true);
             inventario_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
             llenarTablaBienes();
-        } else if (event.getSource() == saldo_activos) {
-            saldo_activos_form.setVisible(true);
-            saldo_activos.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
         } else if (event.getSource() == agregar_empleado) {
             agregar_empleado_form.setVisible(true);
             agregar_empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
@@ -847,7 +840,7 @@ public class DashboardController implements Initializable {
 
     private void initializeTableViews() {
         setColumnResizePolicy(
-                saldo_tableView,
+
                 addEmployee_tableView1,
                 addEmployee_tableView11,
                 edificiotabla

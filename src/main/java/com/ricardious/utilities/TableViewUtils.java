@@ -40,7 +40,7 @@ public class TableViewUtils {
                     String value = "";
                     if (item instanceof Map) {
                         // If item is a Map, retrieve value using the property key
-                        value = String.valueOf(((Map) item).get(property));
+                        value = String.valueOf(((Map<?, ?>) item).get(property));
                     } else {
                         try {
                             // If item is not a Map, retrieve value through reflection

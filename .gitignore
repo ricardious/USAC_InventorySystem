@@ -8,6 +8,7 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/artifacts/
 *.iws
 *.iml
 *.ipr
@@ -36,3 +37,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### config.properties ###
+src/main/resources/config.properties

@@ -7,13 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
 public class Main extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
     @Override
     public void start(Stage stage) throws Exception {
+
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/dashboard.fxml"));
 
         Scene scene = new Scene(root);
@@ -34,6 +34,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
 
     public static void main(String[] args) {
         //myMethod();

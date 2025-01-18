@@ -49,197 +49,116 @@ public class DashboardController implements Initializable {
     private ThemeModeToggle toggleContainer;
 
     // Main form container
-    @FXML
-    private AnchorPane main_form;
+    @FXML private AnchorPane main_form;
 
     // Home and navigation buttons
-    @FXML
-    private Button home_btn;
-    @FXML
-    private Button agregar_empleado;
-    @FXML
-    private Button logout;
-    @FXML
-    private Button inventario_empleado;
-    @FXML
-    private Button inventario_activos;
-    @FXML
-    private Button inventario_Global;
-    @FXML
-    private Button empleado;
-    @FXML
-    private Button edificio;
+    @FXML private Button home_btn;
+    @FXML private Button agregar_empleado;
+    @FXML private Button logout;
+    @FXML private Button inventario_empleado;
+    @FXML private Button inventario_activos;
+    @FXML private Button inventario_Global;
+    @FXML private Button empleado;
+    @FXML private Button edificio;
 
     // Home form container
-    @FXML
-    private AnchorPane home_form;
+    @FXML private AnchorPane home_form;
 
     // Form containers for different sections
-    @FXML
-    private AnchorPane bienes;
-    @FXML
-    private AnchorPane inventarioglobal_form;
-    @FXML
-    private AnchorPane agregar_empleado_form;
-    @FXML
-    private AnchorPane empleado_form;
-    @FXML
-    private AnchorPane edificios_form;
-    @FXML
-    private AnchorPane inventarioempleado_form;
+    @FXML private AnchorPane bienes;
+    @FXML private AnchorPane inventarioglobal_form;
+    @FXML private AnchorPane agregar_empleado_form;
+    @FXML private AnchorPane empleado_form;
+    @FXML private AnchorPane edificios_form;
+    @FXML private AnchorPane inventarioempleado_form;
 
     // Buttons related to asset actions
-    @FXML
-    private Button Add_Activos;
-    @FXML
-    private Button Clear_Campos;
-    @FXML
-    private Button Delete_Activos;
+    @FXML private Button Add_Activos;
+    @FXML private Button Clear_Campos;
+    @FXML private Button Delete_Activos;
 
     // TextFields for asset input details
-    @FXML
-    private TextField Descripcion_Activos;
-    @FXML
-    private TextField Literal_Activos;
-    @FXML
-    private TextField Renglon_Gasto_Activos;
-    @FXML
-    private TextField Search_Bienes;
+    @FXML private TextField Descripcion_Activos;
+    @FXML private TextField Literal_Activos;
+    @FXML private TextField Renglon_Gasto_Activos;
+    @FXML private TextField Search_Bienes;
 
     // TableView and columns for adding employees (specific to addEmployee_form)
-    @FXML
-    private TableView<Map> addEmployee_tableView11;
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_employeeID11;
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_firstName11;
-    @FXML
-    private TableColumn<?, ?> addEmployee_col_lastName11;
-    @FXML
-    private TableView<?> addEmployee_tableView1;
+    @FXML private TableView<Map> addEmployee_tableView11;
+    @FXML private TableColumn<?, ?> addEmployee_col_employeeID11;
+    @FXML private TableColumn<?, ?> addEmployee_col_firstName11;
+    @FXML private TableColumn<?, ?> addEmployee_col_lastName11;
+    @FXML private TableView<?> addEmployee_tableView1;
 
     // TableView for asset balances (specific to saldo_activos_form)
-    @FXML
-    private TableView<?> inventarioglobal_tableView;
+    @FXML private TableView<?> inventarioglobal_tableView;
 
     // TableView and columns for buildings inventory
-    @FXML
-    private TableView<Map> edificiotabla;
-    @FXML
-    private TableColumn<?, ?> col_id_edificios;
-    @FXML
-    private TableColumn<?, ?> col_nombre_edificios;
-    @FXML
-    private TableColumn<?, ?> col_ubicacion_edificios;
-    @FXML
-    private TableColumn<?, ?> col_descripcion_edificios;
-    @FXML
-    private TableColumn<?, ?> col_seccion_edificios;
+    @FXML private TableView<Map> edificiotabla;
+    @FXML private TableColumn<?, ?> col_id_edificios;
+    @FXML private TableColumn<?, ?> col_nombre_edificios;
+    @FXML private TableColumn<?, ?> col_ubicacion_edificios;
+    @FXML private TableColumn<?, ?> col_descripcion_edificios;
+    @FXML private TableColumn<?, ?> col_seccion_edificios;
 
     // TextFields for building input details
-    @FXML
-    private TextField agregar_idedificio;
-    @FXML
-    private TextField agregar_nombreedificios;
-    @FXML
-    private TextField agregar_ubicacion;
-    @FXML
-    private TextField agregar_descripcion;
-    @FXML
-    private TextField agregar_seccion;
+    @FXML private TextField agregar_idedificio;
+    @FXML private TextField agregar_nombreedificios;
+    @FXML private TextField agregar_ubicacion;
+    @FXML private TextField agregar_descripcion;
+    @FXML private TextField agregar_seccion;
 
     // TableView and columns for employee inventory (specific to inventarioempleado_form)
-    @FXML
-    private TableView<Map> inventarioempl_table;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_tarjeta;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_codigoactivo;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_desc;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_valor;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_registropersonal;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_nombre;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_activo;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_seccion;
-    @FXML
-    private TableColumn<?, ?> inventarioempleado_estado;
+    @FXML private TableView<Map> inventarioempl_table;
+    @FXML private TableColumn<?, ?> inventarioempleado_tarjeta;
+    @FXML private TableColumn<?, ?> inventarioempleado_codigoactivo;
+    @FXML private TableColumn<?, ?> inventarioempleado_desc;
+    @FXML private TableColumn<?, ?> inventarioempleado_valor;
+    @FXML private TableColumn<?, ?> inventarioempleado_registropersonal;
+    @FXML private TableColumn<?, ?> inventarioempleado_nombre;
+    @FXML private TableColumn<?, ?> inventarioempleado_activo;
+    @FXML private TableColumn<?, ?> inventarioempleado_seccion;
+    @FXML private TableColumn<?, ?> inventarioempleado_estado;
 
     // TextFields for employee inventory details
-    @FXML
-    private TextField empleadotarjetafield;
-    @FXML
-    private TextField empleadocodigofield;
-    @FXML
-    private TextField empleadodescripfield;
-    @FXML
-    private TextField empleadovalorfield;
-    @FXML
-    private TextField empleadoregistrofield;
-    @FXML
-    private TextField empleadonombrefield;
-    @FXML
-    private TextField empleadoactivofield;
-    @FXML
-    private TextField empleadoseccionfield;
-    @FXML
-    private TextField empleadoestadofield;
+    @FXML private TextField empleadotarjetafield;
+    @FXML private TextField empleadocodigofield;
+    @FXML private TextField empleadodescripfield;
+    @FXML private TextField empleadovalorfield;
+    @FXML private TextField empleadoregistrofield;
+    @FXML private TextField empleadonombrefield;
+    @FXML private TextField empleadoactivofield;
+    @FXML private TextField empleadoseccionfield;
+    @FXML private TextField empleadoestadofield;
 
 
     // TableView and columns for employee inventory (specific to agregarempleado_table)
-    @FXML
-    private TableView<Map> agregarempleado_table;
-    @FXML
-    private TableColumn<?, ?> codigoempleado;
-    @FXML
-    private TableColumn<?, ?> apellidoempleado;
-    @FXML
-    private TableColumn<?, ?> dpiempleado;
-    @FXML
-    private TableColumn<?, ?> nombreempleado;
-    @FXML
-    private TableColumn<?, ?> direccionempleado;
-    @FXML
-    private TableColumn<?, ?> telefonoempleado;
-    @FXML
-    private TableColumn<?, ?> puestoempleado;
-    @FXML
-    private TableColumn<?, ?> correoempleado;
+    @FXML private TableView<Map> agregarempleado_table;
+    @FXML private TableColumn<?, ?> codigoempleado;
+    @FXML private TableColumn<?, ?> apellidoempleado;
+    @FXML private TableColumn<?, ?> dpiempleado;
+    @FXML private TableColumn<?, ?> nombreempleado;
+    @FXML private TableColumn<?, ?> direccionempleado;
+    @FXML private TableColumn<?, ?> telefonoempleado;
+    @FXML private TableColumn<?, ?> puestoempleado;
+    @FXML private TableColumn<?, ?> correoempleado;
 
     // TextFields for employee inventory details
-    @FXML
-    private TextField agregarempl_codigo;
-    @FXML
-    private TextField agregarempl_nombre;
-    @FXML
-    private TextField agregarempl_apellido;
-    @FXML
-    private TextField agregarempl_direccion;
-    @FXML
-    private TextField agregarempl_telefono;
-    @FXML
-    private TextField agregarempl_puesto;
-    @FXML
-    private TextField agregarempl_correo;
-    @FXML
-    private TextField agregarempl_dpi;
+    @FXML private TextField agregarempl_codigo;
+    @FXML private TextField agregarempl_nombre;
+    @FXML private TextField agregarempl_apellido;
+    @FXML private TextField agregarempl_direccion;
+    @FXML private TextField agregarempl_telefono;
+    @FXML private TextField agregarempl_puesto;
+    @FXML private TextField agregarempl_correo;
+    @FXML private TextField agregarempl_dpi;
 
 
-    @FXML
-    private TableView<Map> empleados_table;
-    @FXML
-    private TableColumn<?, ?> empleadoscodigo;
-    @FXML
-    private TableColumn<?, ?> empleadosnombre;
-    @FXML
-    private TableColumn<?, ?> empleadosapellido;
-    @FXML
-    private TableColumn<?, ?> empleadospuesto;
+    @FXML  private TableView<Map> empleados_table;
+    @FXML private TableColumn<?, ?> empleadoscodigo;
+    @FXML private TableColumn<?, ?> empleadosnombre;
+    @FXML private TableColumn<?, ?> empleadosapellido;
+    @FXML private TableColumn<?, ?> empleadospuesto;
 
 
     /**
@@ -846,7 +765,6 @@ public class DashboardController implements Initializable {
         }
     }
 
-
     @FXML
     void exportToExcel(MouseEvent event) {
         ObservableList<Map> dataList = getEmpleadobienes();
@@ -1022,45 +940,6 @@ public class DashboardController implements Initializable {
     }
 
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Método auxiliar para convertir el valor de una celda a String
     private String getCellValueAsString(org.apache.poi.ss.usermodel.Cell cell) {
         if (cell == null) {
@@ -1096,18 +975,9 @@ public class DashboardController implements Initializable {
        // initializeTableViews();
         initializeHomeButton();
         initializeDarkMode();
+
+        Platform.runLater(this::maximize);
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1294,6 +1164,5 @@ public class DashboardController implements Initializable {
         Stage stage = (Stage) main_form.getScene().getWindow(); // Get the current application stage
         stage.setIconified(true); // Minimize the stage
     }
-
 
 }

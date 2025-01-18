@@ -49,116 +49,197 @@ public class DashboardController implements Initializable {
     private ThemeModeToggle toggleContainer;
 
     // Main form container
-    @FXML private AnchorPane main_form;
+    @FXML
+    private AnchorPane main_form;
 
     // Home and navigation buttons
-    @FXML private Button home_btn;
-    @FXML private Button agregar_empleado;
-    @FXML private Button logout;
-    @FXML private Button inventario_empleado;
-    @FXML private Button inventario_activos;
-    @FXML private Button inventario_Global;
-    @FXML private Button empleado;
-    @FXML private Button edificio;
+    @FXML
+    private Button home_btn;
+    @FXML
+    private Button agregar_empleado;
+    @FXML
+    private Button logout;
+    @FXML
+    private Button inventario_empleado;
+    @FXML
+    private Button inventario_activos;
+    @FXML
+    private Button inventario_Global;
+    @FXML
+    private Button empleado;
+    @FXML
+    private Button edificio;
 
     // Home form container
-    @FXML private AnchorPane home_form;
+    @FXML
+    private AnchorPane home_form;
 
     // Form containers for different sections
-    @FXML private AnchorPane bienes;
-    @FXML private AnchorPane inventarioglobal_form;
-    @FXML private AnchorPane agregar_empleado_form;
-    @FXML private AnchorPane empleado_form;
-    @FXML private AnchorPane edificios_form;
-    @FXML private AnchorPane inventarioempleado_form;
+    @FXML
+    private AnchorPane bienes;
+    @FXML
+    private AnchorPane inventarioglobal_form;
+    @FXML
+    private AnchorPane agregar_empleado_form;
+    @FXML
+    private AnchorPane empleado_form;
+    @FXML
+    private AnchorPane edificios_form;
+    @FXML
+    private AnchorPane inventarioempleado_form;
 
     // Buttons related to asset actions
-    @FXML private Button Add_Activos;
-    @FXML private Button Clear_Campos;
-    @FXML private Button Delete_Activos;
+    @FXML
+    private Button Add_Activos;
+    @FXML
+    private Button Clear_Campos;
+    @FXML
+    private Button Delete_Activos;
 
     // TextFields for asset input details
-    @FXML private TextField Descripcion_Activos;
-    @FXML private TextField Literal_Activos;
-    @FXML private TextField Renglon_Gasto_Activos;
-    @FXML private TextField Search_Bienes;
+    @FXML
+    private TextField Descripcion_Activos;
+    @FXML
+    private TextField Literal_Activos;
+    @FXML
+    private TextField Renglon_Gasto_Activos;
+    @FXML
+    private TextField Search_Bienes;
 
     // TableView and columns for adding employees (specific to addEmployee_form)
-    @FXML private TableView<Map> addEmployee_tableView11;
-    @FXML private TableColumn<?, ?> addEmployee_col_employeeID11;
-    @FXML private TableColumn<?, ?> addEmployee_col_firstName11;
-    @FXML private TableColumn<?, ?> addEmployee_col_lastName11;
-    @FXML private TableView<?> addEmployee_tableView1;
+    @FXML
+    private TableView<Map> addEmployee_tableView11;
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_employeeID11;
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_firstName11;
+    @FXML
+    private TableColumn<?, ?> addEmployee_col_lastName11;
+    @FXML
+    private TableView<?> addEmployee_tableView1;
 
     // TableView for asset balances (specific to saldo_activos_form)
-    @FXML private TableView<?> inventarioglobal_tableView;
+    @FXML
+    private TableView<?> inventarioglobal_tableView;
 
     // TableView and columns for buildings inventory
-    @FXML private TableView<Map> edificiotabla;
-    @FXML private TableColumn<?, ?> col_id_edificios;
-    @FXML private TableColumn<?, ?> col_nombre_edificios;
-    @FXML private TableColumn<?, ?> col_ubicacion_edificios;
-    @FXML private TableColumn<?, ?> col_descripcion_edificios;
-    @FXML private TableColumn<?, ?> col_seccion_edificios;
+    @FXML
+    private TableView<Map> edificiotabla;
+    @FXML
+    private TableColumn<?, ?> col_id_edificios;
+    @FXML
+    private TableColumn<?, ?> col_nombre_edificios;
+    @FXML
+    private TableColumn<?, ?> col_ubicacion_edificios;
+    @FXML
+    private TableColumn<?, ?> col_descripcion_edificios;
+    @FXML
+    private TableColumn<?, ?> col_seccion_edificios;
 
     // TextFields for building input details
-    @FXML private TextField agregar_idedificio;
-    @FXML private TextField agregar_nombreedificios;
-    @FXML private TextField agregar_ubicacion;
-    @FXML private TextField agregar_descripcion;
-    @FXML private TextField agregar_seccion;
+    @FXML
+    private TextField agregar_idedificio;
+    @FXML
+    private TextField agregar_nombreedificios;
+    @FXML
+    private TextField agregar_ubicacion;
+    @FXML
+    private TextField agregar_descripcion;
+    @FXML
+    private TextField agregar_seccion;
 
     // TableView and columns for employee inventory (specific to inventarioempleado_form)
-    @FXML private TableView<Map> inventarioempl_table;
-    @FXML private TableColumn<?, ?> inventarioempleado_tarjeta;
-    @FXML private TableColumn<?, ?> inventarioempleado_codigoactivo;
-    @FXML private TableColumn<?, ?> inventarioempleado_desc;
-    @FXML private TableColumn<?, ?> inventarioempleado_valor;
-    @FXML private TableColumn<?, ?> inventarioempleado_registropersonal;
-    @FXML private TableColumn<?, ?> inventarioempleado_nombre;
-    @FXML private TableColumn<?, ?> inventarioempleado_activo;
-    @FXML private TableColumn<?, ?> inventarioempleado_seccion;
-    @FXML private TableColumn<?, ?> inventarioempleado_estado;
+    @FXML
+    private TableView<Map> inventarioempl_table;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_tarjeta;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_codigoactivo;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_desc;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_valor;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_registropersonal;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_nombre;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_activo;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_seccion;
+    @FXML
+    private TableColumn<?, ?> inventarioempleado_estado;
 
     // TextFields for employee inventory details
-    @FXML private TextField empleadotarjetafield;
-    @FXML private TextField empleadocodigofield;
-    @FXML private TextField empleadodescripfield;
-    @FXML private TextField empleadovalorfield;
-    @FXML private TextField empleadoregistrofield;
-    @FXML private TextField empleadonombrefield;
-    @FXML private TextField empleadoactivofield;
-    @FXML private TextField empleadoseccionfield;
-    @FXML private TextField empleadoestadofield;
+    @FXML
+    private TextField empleadotarjetafield;
+    @FXML
+    private TextField empleadocodigofield;
+    @FXML
+    private TextField empleadodescripfield;
+    @FXML
+    private TextField empleadovalorfield;
+    @FXML
+    private TextField empleadoregistrofield;
+    @FXML
+    private TextField empleadonombrefield;
+    @FXML
+    private TextField empleadoactivofield;
+    @FXML
+    private TextField empleadoseccionfield;
+    @FXML
+    private TextField empleadoestadofield;
 
 
     // TableView and columns for employee inventory (specific to agregarempleado_table)
-    @FXML private TableView<Map> agregarempleado_table;
-    @FXML private TableColumn<?, ?> codigoempleado;
-    @FXML private TableColumn<?, ?> apellidoempleado;
-    @FXML private TableColumn<?, ?> dpiempleado;
-    @FXML private TableColumn<?, ?> nombreempleado;
-    @FXML private TableColumn<?, ?> direccionempleado;
-    @FXML private TableColumn<?, ?> telefonoempleado;
-    @FXML private TableColumn<?, ?> puestoempleado;
-    @FXML private TableColumn<?, ?> correoempleado;
+    @FXML
+    private TableView<Map> agregarempleado_table;
+    @FXML
+    private TableColumn<?, ?> codigoempleado;
+    @FXML
+    private TableColumn<?, ?> apellidoempleado;
+    @FXML
+    private TableColumn<?, ?> dpiempleado;
+    @FXML
+    private TableColumn<?, ?> nombreempleado;
+    @FXML
+    private TableColumn<?, ?> direccionempleado;
+    @FXML
+    private TableColumn<?, ?> telefonoempleado;
+    @FXML
+    private TableColumn<?, ?> puestoempleado;
+    @FXML
+    private TableColumn<?, ?> correoempleado;
 
     // TextFields for employee inventory details
-    @FXML private TextField agregarempl_codigo;
-    @FXML private TextField agregarempl_nombre;
-    @FXML private TextField agregarempl_apellido;
-    @FXML private TextField agregarempl_direccion;
-    @FXML private TextField agregarempl_telefono;
-    @FXML private TextField agregarempl_puesto;
-    @FXML private TextField agregarempl_correo;
-    @FXML private TextField agregarempl_dpi;
+    @FXML
+    private TextField agregarempl_codigo;
+    @FXML
+    private TextField agregarempl_nombre;
+    @FXML
+    private TextField agregarempl_apellido;
+    @FXML
+    private TextField agregarempl_direccion;
+    @FXML
+    private TextField agregarempl_telefono;
+    @FXML
+    private TextField agregarempl_puesto;
+    @FXML
+    private TextField agregarempl_correo;
+    @FXML
+    private TextField agregarempl_dpi;
 
 
-    @FXML  private TableView<Map> empleados_table;
-    @FXML private TableColumn<?, ?> empleadoscodigo;
-    @FXML private TableColumn<?, ?> empleadosnombre;
-    @FXML private TableColumn<?, ?> empleadosapellido;
-    @FXML private TableColumn<?, ?> empleadospuesto;
+    @FXML
+    private TableView<Map> empleados_table;
+    @FXML
+    private TableColumn<?, ?> empleadoscodigo;
+    @FXML
+    private TableColumn<?, ?> empleadosnombre;
+    @FXML
+    private TableColumn<?, ?> empleadosapellido;
+    @FXML
+    private TableColumn<?, ?> empleadospuesto;
 
 
     /**
@@ -461,6 +542,75 @@ public class DashboardController implements Initializable {
     }
 
 
+
+
+
+
+
+
+    @FXML
+    void actualizartablaempl(MouseEvent event) {
+
+    }
+
+    private String ColCodigos = "Codigo";
+    private String ColNombres = "Nombre";
+    private String ColApellidos = "Apellido";
+    private String ColPuestos = "Puesto";
+
+
+    public ObservableList<Map> getempleados() {
+        var sql = "SELECT * FROM usac_inventory.empleados";
+        ObservableList<Map> empleadosList = FXCollections.observableArrayList();
+        try {
+            DatabaseConnection connectNow = new DatabaseConnection();
+            PreparedStatement consulta = connectNow.getConnection().prepareStatement(sql);
+            ResultSet resultSett = consulta.executeQuery();
+            while (resultSett.next()) {
+                Empleados Empleados = new Empleados();
+                Map<String, Object> coleccionn = new HashMap<>();
+                Empleados.setCodigo(resultSett.getInt("Codigo"));
+                Empleados.setNombre(resultSett.getString("Nombre"));
+                Empleados.setApellido(resultSett.getString("Apellido"));
+                Empleados.setPuesto(resultSett.getString("Puesto"));
+                coleccionn.put(ColCodigos, Empleados.getCodigo());
+                coleccionn.put(ColNombres, Empleados.getNombre());
+                coleccionn.put(ColApellidos, Empleados.getApellido());
+                coleccionn.put(ColPuestos, Empleados.getPuesto());
+
+
+                empleadosList.add(coleccionn);
+            }
+            resultSett.close();
+            consulta.close();
+
+        } catch (Exception u) {
+            throw new RuntimeException(u);
+        }
+        return empleadosList;
+    }
+
+    private void llenarTablaEmpleados() {
+        ObservableList<Map> lista = getempleados();
+        this.empleadoscodigo.setCellValueFactory(new MapValueFactory(ColCodigos));
+        this.empleadosnombre.setCellValueFactory(new MapValueFactory(ColNombres));
+        this.empleadosapellido.setCellValueFactory(new MapValueFactory(ColApellidos));
+        this.empleadospuesto.setCellValueFactory(new MapValueFactory(ColPuestos));
+
+        this.empleados_table.setItems(lista);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
     public void switchForm(ActionEvent event) {
         // Reset all form visibility to false
         home_form.setVisible(false);
@@ -502,6 +652,7 @@ public class DashboardController implements Initializable {
         } else if (event.getSource() == empleado) {
             empleado_form.setVisible(true);
             empleado.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
+            llenarTablaEmpleados();
         } else if (event.getSource() == edificio) {
             edificios_form.setVisible(true);
             edificio.setStyle("-fx-background-color: linear-gradient(to bottom right, #7f00ff, #e100ff)");
@@ -765,6 +916,9 @@ public class DashboardController implements Initializable {
         }
     }
 
+
+
+
     @FXML
     void exportToExcel(MouseEvent event) {
         ObservableList<Map> dataList = getEmpleadobienes();
@@ -926,7 +1080,9 @@ public class DashboardController implements Initializable {
     void actualizarempleado(MouseEvent event) {
         DatabaseConnection connectNoww = new DatabaseConnection();
         String copiarEmpleados = "INSERT INTO usac_inventory.empleados (Codigo, Nombre, Apellido, Puesto) " +
-                "SELECT Codigo, Nombre, Apellido, Puesto FROM usac_inventory.empleadoagregado";
+                "SELECT Codigo, Nombre, Apellido, Puesto FROM usac_inventory.empleadoagregado " +
+                "ON DUPLICATE KEY UPDATE Nombre = VALUES(Nombre), Apellido = VALUES(Apellido), Puesto = VALUES(Puesto)";
+
 
         try (Connection connectDBs = connectNoww.getConnection();
              PreparedStatement preparedStatementt = connectDBs.prepareStatement(copiarEmpleados)) {
@@ -938,6 +1094,73 @@ public class DashboardController implements Initializable {
             e.printStackTrace();
         }
     }
+
+
+
+
+
+    @FXML
+    void eliminarempleados(MouseEvent event) {
+        String Codigo = JOptionPane.showInputDialog(null, "Ingrese el Codigo a Eliminar: ", "Ingrese aquí el texto", JOptionPane.OK_CANCEL_OPTION);
+
+        if (Codigo == null || Codigo.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Operación cancelada");
+            return; // Sale del método sin hacer nada
+        } else {
+            DatabaseConnection connecttNow = new DatabaseConnection();
+            String addEmpleados = "DELETE FROM usac_inventory.empleados WHERE (Codigo = ?)";
+            try (Connection connectDBs = connecttNow.getConnection();
+                 PreparedStatement preparedStatement = connectDBs.prepareStatement(addEmpleados)) {
+                preparedStatement.setString(1, Codigo);
+                preparedStatement.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Se han Eliminado los datos");
+            } catch (SQLException u) {
+                JOptionPane.showMessageDialog(null, "Datos ingresados no validos");
+                u.printStackTrace();
+            }
+        }
+        llenarTablaEmpleados();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // Método auxiliar para convertir el valor de una celda a String
@@ -975,9 +1198,12 @@ public class DashboardController implements Initializable {
        // initializeTableViews();
         initializeHomeButton();
         initializeDarkMode();
-
-        Platform.runLater(this::maximize);
     }
+
+
+
+
+
 
 
 
@@ -994,8 +1220,6 @@ public class DashboardController implements Initializable {
 
       //  );
  //   }
-
-
 
 
 
@@ -1164,5 +1388,6 @@ public class DashboardController implements Initializable {
         Stage stage = (Stage) main_form.getScene().getWindow(); // Get the current application stage
         stage.setIconified(true); // Minimize the stage
     }
+
 
 }

@@ -59,7 +59,7 @@
                      <children>
                         <AnchorPane prefHeight="555.0" prefWidth="212.0" styleClass="nav-form" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="73.0" layoutY="105.0" size="7em" />
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="73.0" layoutY="105.0" size="7em" text="" />
                               <Label layoutX="69.0" layoutY="117.0" text="Bienvenido," textFill="WHITE">
                                  <font>
                                     <Font name="Tahoma" size="17.0" />
@@ -102,22 +102,22 @@
                               </Button>
                               <Button fx:id="inventario_activos" layoutX="16.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventario Activos">
                                  <graphic>
-                                    <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" />
+                                    <FontAwesomeIcon fill="WHITE" glyphName="BUILDING" size="1.5em" text="" />
                                  </graphic>
                               </Button>
                               <Button fx:id="inventario_Global" layoutX="16.0" layoutY="316.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Inventario General">
                                  <graphic>
-                                    <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" />
+                                    <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" text="" />
                                  </graphic>
                               </Button>
                               <Button fx:id="empleado" layoutX="15.0" layoutY="391.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Empleados">
                                  <graphic>
-                                    <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" text="" />
+                                    <FontAwesomeIcon fill="WHITE" glyphName="USER" size="1.5em" text="" />
                                  </graphic>
                               </Button>
                               <Button fx:id="edificio" layoutX="15.0" layoutY="428.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Edificios">
                                  <graphic>
-                                    <FontAwesomeIcon fill="WHITE" glyphName="ARCHIVE" size="1.5em" text="" />
+                                    <FontAwesomeIcon fill="WHITE" glyphName="BUILDING" size="1.5em" text="" />
                                  </graphic>
                               </Button>
                               <ThemeModeToggle fx:id="toggleContainer" layoutX="56.0" layoutY="626.0" />
@@ -529,8 +529,8 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                                  <children>
-                                    <Button layoutX="114.0" layoutY="595.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Elimimar" />
-                                    <Label layoutX="97.0" layoutY="566.0" text="Eliminar Empleado">
+                                    <Button layoutX="98.0" layoutY="568.0" mnemonicParsing="false" onMouseClicked="#eliminarempleados" prefHeight="50.0" prefWidth="80.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Elimimar" />
+                                    <Label layoutX="81.0" layoutY="539.0" text="Eliminar Empleado">
                                        <font>
                                           <Font name="Tahoma Bold" size="12.0" />
                                        </font>
